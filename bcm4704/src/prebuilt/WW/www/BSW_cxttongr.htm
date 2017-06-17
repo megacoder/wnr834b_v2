@@ -1,0 +1,68 @@
+<html>
+<head>
+<%2%>
+<title>Smart Wizard Result</title> 
+<link rel="stylesheet" href="form.css">
+<script language="JavaScript" type="text/javascript">
+<!-- Start Script
+function do_submit()
+{
+    document.forms[0].submit();
+}
+function msg_close()
+{
+    do_submit();
+}
+function loadframe(fname)
+{
+    if( top.sideframe != null)
+        top.sideframe.location.href=fname;
+}
+// End Script -->
+</script>
+<style type="text/css">
+TD {FONT-SIZE: 10pt; FONT-FAMILY: Arial, Helvetica, Geneva, Swiss, SunSans-Regular, sans-serif}
+H1 {FONT-WEIGHT: bold; FONT-SIZE: 18pt; BACKGROUND: white; COLOR: #09c; FONT-FAMILY: Arial, Helvetica, Geneva, Swiss, SunSans-Regular, sans-serif}
+P { FONT-SIZE: 10pt; FONT-FAMILY: Arial, Helvetica, Geneva, Swiss, SunSans-Regular, sans-serif }
+.prgbar { font-family:Arial; padding:0px; height: 20px; width: 200px; font-weight: bolder; font-size: 10pt; border: 1px solid; border-color: #09c; color: #0000FF}
+</style>
+</head>
+<body onload="loadframe('BSW_menu3.htm');setTimeout('msg_close()', 1500);" bgcolor="#ffffff" leftmargin="0" topmargin="0" marginwidth="0" marginheight="0" >
+<form name="vfy_succ" method="POST" action="bsw_vfysucc.cgi"> 
+<table border="0" cellpadding="0" cellspacing="3" width="99%">
+<tr>
+	<td width="40%"></td><td colspan="2"><h1>Success</h1></td>
+</tr>
+<tr> <!-- RULE -->
+ <td colspan="2" background="liteblue.gif" height="12"> &nbsp;</td>
+</tr>
+<tr>
+ <td colspan="2"><B><BR>
+ Your wired connection to the Internet is working!
+ You can now setup your wireless computers to connect to your network.
+ </B></td>
+</tr>
+<tr>
+    <td></td><td align="left">
+    <BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <!--<input type="button" name="b_done" value="&nbsp;Close&nbsp;" onClick="urlredirect();">-->
+	<input type="button" name="b_done" value=" Close ">
+	<BR><BR>
+	</td>
+</tr>
+<tr> <!-- RULE -->
+ <td colspan="2" background="liteblue.gif" height="12"> &nbsp;</td>
+</tr>
+<tr>
+ <td colspan="2"><b>Note: In the future, go to www.routerlogin.com to view or change your networksetting.
+ Your user name is "Admin" and your password is "<%406%>"
+ </b></td>
+</tr>
+</table>
+</div>
+ <input type="hidden" name="redirect" value="Yes">
+</form>
+</body>
+</html>
+

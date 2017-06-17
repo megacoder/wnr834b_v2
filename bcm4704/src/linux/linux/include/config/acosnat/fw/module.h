@@ -1,0 +1,1 @@
+#define CONFIG_ACOSNAT_FW_MODULE 1

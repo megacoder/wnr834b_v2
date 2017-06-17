@@ -1,0 +1,57 @@
+<html>
+<head>
+<%0%>
+
+<title>Ergebnisse des Konfigurationsassistenten</title> 
+<link rel="stylesheet" type="text/css" href="style.css">
+<script language="JavaScript" type="text/javascript">
+<!-- Start Script
+function do_submit()
+{document.forms[0].submit();
+}
+function CloseWindow()
+{
+    top.window.opener=null;
+    top.window.close();
+}
+function msg_close()
+{
+    alert("Schließen Sie dieses Fenster. Die meisten Browser werden geschlossen, wenn Sie auf 'OK' klicken. \nBefolgen Sie ggf. die Anweisungen zum Schließen des Browsers.");
+    CloseWindow();
+}
+function loadframe(fname)
+{
+    if (top.sideframe != null)
+        top.sideframe.location.href=fname;
+}
+// End Script -->
+</script>
+</head>
+<body onload="loadframe('BSW_menu3.htm');msg_close();" bgcolor="#ffffff" leftmargin="0" topmargin="0" marginwidth="0" marginheight="0" >
+<form name="vfy_succ" method="POST" action="bsw_vfysucc.cgi"> 
+<table border="0" cellpadding="0" cellspacing="3" width="99%">
+  <tr>
+   <td valign="top">
+     <h1><BR>&nbsp;&nbsp;Überprüfen Sie die Netzwerkeinstellungen. </h1>
+     <p>&nbsp;&nbsp;Die Internetverbindung wurde eingerichtet. Sie können Ihre drahtlosen Computer jetzt für das Netzwerk einrichten. </p>
+     <p>&nbsp;</p>
+     <p>&nbsp;</p>
+     <p>&nbsp;</p>
+     <p>&nbsp;</p>
+     <p>&nbsp;</p>
+   </td>
+   <td><img src="spacer.gif" width="1" height="18" border="0" alt="" /></td>
+  </tr>
+<tr>
+    <td>&nbsp;
+	<input type="button" name="b_done" value="&nbsp;Schließen&nbsp;" onClick="msg_close();">
+	<BR><BR>
+	</td>
+</tr>
+</table>
+</div>
+ <input type="hidden" name="blankmode" value="Yes">
+</form>
+</body>
+</html>
+

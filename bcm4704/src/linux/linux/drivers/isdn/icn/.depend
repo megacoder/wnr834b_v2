@@ -1,0 +1,24 @@
+icn.o: icn.c \
+   icn.h \
+   /home/aspen/WNR834Bv2-V2.1.13_2.1.13/bcm4704/src/linux/linux/include/linux/module.h \
+   /home/aspen/WNR834Bv2-V2.1.13_2.1.13/bcm4704/src/linux/linux/include/linux/init.h
+icn.h: \
+   /home/aspen/WNR834Bv2-V2.1.13_2.1.13/bcm4704/src/linux/linux/include/linux/version.h \
+   /home/aspen/WNR834Bv2-V2.1.13_2.1.13/bcm4704/src/linux/linux/include/linux/errno.h \
+   /home/aspen/WNR834Bv2-V2.1.13_2.1.13/bcm4704/src/linux/linux/include/linux/fs.h \
+   /home/aspen/WNR834Bv2-V2.1.13_2.1.13/bcm4704/src/linux/linux/include/linux/major.h \
+   /home/aspen/WNR834Bv2-V2.1.13_2.1.13/bcm4704/src/linux/linux/include/asm/segment.h \
+   /home/aspen/WNR834Bv2-V2.1.13_2.1.13/bcm4704/src/linux/linux/include/asm/io.h \
+   /home/aspen/WNR834Bv2-V2.1.13_2.1.13/bcm4704/src/linux/linux/include/linux/kernel.h \
+   /home/aspen/WNR834Bv2-V2.1.13_2.1.13/bcm4704/src/linux/linux/include/linux/signal.h \
+   /home/aspen/WNR834Bv2-V2.1.13_2.1.13/bcm4704/src/linux/linux/include/linux/slab.h \
+   /home/aspen/WNR834Bv2-V2.1.13_2.1.13/bcm4704/src/linux/linux/include/linux/mm.h \
+   /home/aspen/WNR834Bv2-V2.1.13_2.1.13/bcm4704/src/linux/linux/include/linux/mman.h \
+   /home/aspen/WNR834Bv2-V2.1.13_2.1.13/bcm4704/src/linux/linux/include/linux/ioport.h \
+   /home/aspen/WNR834Bv2-V2.1.13_2.1.13/bcm4704/src/linux/linux/include/linux/timer.h \
+   /home/aspen/WNR834Bv2-V2.1.13_2.1.13/bcm4704/src/linux/linux/include/linux/wait.h \
+   /home/aspen/WNR834Bv2-V2.1.13_2.1.13/bcm4704/src/linux/linux/include/linux/delay.h \
+   /home/aspen/WNR834Bv2-V2.1.13_2.1.13/bcm4704/src/linux/linux/include/linux/isdnif.h
+	@touch icn.h
+.PRECIOUS:	icn.h \
+

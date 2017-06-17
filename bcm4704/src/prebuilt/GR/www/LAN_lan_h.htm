@@ -1,0 +1,78 @@
+<html>
+<head>
+<%0%>
+<title>Hilfe</title>
+<link rel="stylesheet" href="help.css">
+</head>
+
+<body bgcolor="#0099cc" >
+
+	
+<h1>Hilfe: LAN-Konfiguration</h1>
+		<p>In den meisten Fällen können die Standardeinstellungen für DHCP und TCP/IP beibehalten werden.</p>
+<hr>		
+
+<a name="dev_name"></a>
+<p><b>Gerätename</b></p>
+<p>Dies ist der Anzeigename des Routers. Unter diesem Namen
+wird der Router im Netzwerk von Windows Vista und
+im Netzwerk-Explorer anderer Windows-Systeme angezeigt.</span></p>
+<hr>
+
+
+<a name="tcp"></a>
+<p><B>LAN-TCP/IP-Konfiguration</B></p>
+
+<p>Die erweiterten Einstellungen auf dieser Seite richten sich vorrangig an Netzwerkadministratoren in Umgebungen mit mehreren Routern. Wenn Sie diese Einstellungen anpassen, müssen Sie Ihre(n) Computer neu starten, damit die Änderungen wirksam werden. </p>
+
+<ul><li><B>IP-Adresse:</B> Geben Sie die IP-Adresse des Routers in Dezimalschreibweise mit Punkten ein (Werkseinstellung: 192.168.1.1). <li><B>IP-Subnetzmaske:</B> Die Subnetzmaske bestimmt den Netzwerkabschnitt der IP-Adressen. Der Router berechnet die Subnetzmaske automatisch anhand der zugewiesenen IP-Adresse. Sofern Sie nicht mit mehreren Subnetzen arbeiten, verwenden Sie die standardmäßige (vom Router berechnete) Subnetzmaske 255.255.255.0. <li><B>RIP-Richtung:</B> Mittels RIP (Routing Information Protocol, RFC1058 und RFC1389) können Routinginformationen zwischen Routern ausgetauscht werden. Mit der Option <B>RIP-Richtung</B> können Sie festlegen, auf welche Weise der Router RIP-Pakete sendet und empfängt. Die Standardeinstellung ist <B>Keine</B>. <ul><li>Wenn Sie <B>Beide</B> oder <B>Nur abgehend</B> wählen, versendet der Router die Routingtabelle in regelmäßigen Abständen per Broadcast. <li>Wenn Sie <B>Beide</B> oder <B>Nur ankommend</B> wählen, übernimmt der Router eingehende Routinginformationen. <li>Wenn Sie <B>Keine</B> wählen, sendet der Router keine RIP-Pakete und ignoriert empfangene RIP-Pakete. Die Standardeinstellung ist <B>Keine</B>. </ul>
+<li><B>RIP-Version:</B> Mit dieser Option können Sie das Format und die Broadcastmethode für den Versand von RIP-Paketen durch den Router steuern. (In Empfangsrichtung unterstützt der Router beide Formate.) Standardmäßig ist diese Option deaktiviert. <ul>
+ <li>RIP-1 wird praktisch von allen Netzwerkgeräten unterstützt. RIP-1 eignet sich für alle gängigen Netzwerkkonfigurationen. <li>Bei RIP-2 werden mehr Informationen übertragen. Sowohl bei RIP-2B als auch bei RIP-2M werden die Routingdaten im RIP-2-Format übermittelt. <UL>
+ <li>Bei RIP-2B erfolgt die Übertragung mittels Subnetz-Broadcasting, bei RIP-2M erfolgt die Übertragung mittels Multicasting. <li>Bei RIP-2M erfolgt die Übertragung mittels Multicasting (siehe Hinweis unten). </ul> 
+</ul>
+</ul>
+
+<p><B>Hinweis: </B>Durch Multicasting werden Geräte, die nicht als Router fungieren, entlastet, da sie die RIP-Multicast-Adressen nicht überwachen und keine RIP-Pakete erhalten. Wenn allerdings ein Router im Netzwerk Multicasting verwendet, müssen auch alle anderen Router Multicasting verwenden. </p>
+
+
+<hr>
+<a name="dhcp"></a>
+<h2>Router als DHCP-Server verwenden</h2>
+<p>Der Router ist standardmäßig als DHCP-Server (Dynamic Host Configuration Protocol) konfiguriert, der die TCP/IP-Konfiguration aller angeschlossenen Computer festlegt. </P><p> Sofern Sie nicht von Ihrem Internet-Provider angewiesen werden, diese Einstellungen zu ändern, lassen Sie das Kontrollkästchen <B>Router als DHCP-Server verwenden</B> aktiviert. </P><p> Wenn Sie vom Internet-Provider angewiesen werden, diese Option zu deaktivieren, müssen Sie einen anderen DHCP-Server im Netzwerk betreiben oder die Computer manuell konfigurieren. <ul>
+<li><B>Erste IP-Adresse:</B> In diesem Feld können Sie die Anfangsadresse des fortlaufenden IP-Adressbereichs festlegen. Standardmäßig lautet die erste IP-Adresse 192.168.1.2. <li><B>Letzte IP-Adresse:</B> In diesem Feld können Sie die Endadresse des fortlaufenden IP-Adressbereichs festlegen. Standardmäßig lautet die letzte IP-Adresse 192.168.1.254. </ul>
+
+<hr>
+<a name="reserved"></a>
+</P><p><B>Adressreservierung</B></p>
+
+<p>Wenn Sie für einen Computer im LAN eine reservierte IP-Adresse festlegen, wird diesem bei jedem Zugriff auf den DHCP-Server dieselbe IP-Adresse zugewiesen. Indem Sie einem Server eine reservierte IP-Adresse zuweisen, ist dieser immer unter derselben Adresse erreichbar. </P><p>
+<B>So reservieren Sie eine IP-Adresse:</B> 
+<ol>
+<li> Klicken Sie auf die Schaltfläche <B>Hinzufügen</B>. <li> Aktivieren Sie in der Tabelle <B>IP-Adressen reservieren</B> die Optionsschaltfläche des Computers, dem Sie eine reservierte IP-Adresse zuweisen möchten. <li> Wenn der Computer nicht in der Tabelle <B>IP-Adressen reservieren</B> aufgelistet ist, geben Sie dessen IP-Adresse, MAC-Adresse und Gerätenamen manuell ein. <li> Klicken Sie anschließend auf die Schaltfläche <B>Hinzufügen</B>. </ol>
+
+<BR>
+
+</P><p><B>So bearbeiten Sie eine reservierte IP-Adresse:</B> </p>
+
+<ol>
+<li> Aktivieren Sie die Optionsschaltfläche neben der reservierten Adresse, die Sie bearbeiten möchten. <li> Klicken Sie auf die Schaltfläche <B>Bearbeiten</B>. <li> Ändern Sie die IP-Adresse, die MAC-Adresse oder den Gerätenamen. <li> Klicken Sie anschließend auf die Schaltfläche <B>Übernehmen</B>. </ol>
+
+
+<p><B>So löschen Sie eine reservierte IP-Adresse:</B> </p>
+
+<ol>
+<li> Aktivieren Sie die Optionsschaltfläche neben der reservierten Adresse, die Sie löschen möchten. <li> Klicken Sie auf die Schaltfläche <B>Löschen</B>. </ol>
+
+
+<hr>
+<a name="To"></a>
+<p><B>So speichern oder verwerfen Sie die Änderungen:</B></p>
+<p> Klicken Sie auf <B>Übernehmen</B>, um die geänderten Einstellungen an den Router zu übermitteln. <BR> Klicken Sie auf <B>Abbrechen</B>, um die Seite ohne Speichern der Änderungen zu verlassen. </p>
+
+
+
+
+</body>
+
+</html>
+

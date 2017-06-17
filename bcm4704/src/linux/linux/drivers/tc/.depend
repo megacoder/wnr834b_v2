@@ -1,0 +1,70 @@
+lk201.o: lk201.c \
+   /home/aspen/WNR834Bv2-V2.1.13_2.1.13/bcm4704/src/linux/linux/include/linux/errno.h \
+   /home/aspen/WNR834Bv2-V2.1.13_2.1.13/bcm4704/src/linux/linux/include/linux/sched.h \
+   /home/aspen/WNR834Bv2-V2.1.13_2.1.13/bcm4704/src/linux/linux/include/linux/tty.h \
+   /home/aspen/WNR834Bv2-V2.1.13_2.1.13/bcm4704/src/linux/linux/include/linux/kernel.h \
+   /home/aspen/WNR834Bv2-V2.1.13_2.1.13/bcm4704/src/linux/linux/include/linux/init.h \
+   /home/aspen/WNR834Bv2-V2.1.13_2.1.13/bcm4704/src/linux/linux/include/linux/delay.h \
+   /home/aspen/WNR834Bv2-V2.1.13_2.1.13/bcm4704/src/linux/linux/include/linux/kbd_ll.h \
+   /home/aspen/WNR834Bv2-V2.1.13_2.1.13/bcm4704/src/linux/linux/include/linux/kbd_kern.h \
+   /home/aspen/WNR834Bv2-V2.1.13_2.1.13/bcm4704/src/linux/linux/include/linux/vt_kern.h \
+   /home/aspen/WNR834Bv2-V2.1.13_2.1.13/bcm4704/src/linux/linux/include/asm/keyboard.h \
+   /home/aspen/WNR834Bv2-V2.1.13_2.1.13/bcm4704/src/linux/linux/include/asm/dec/tc.h \
+   /home/aspen/WNR834Bv2-V2.1.13_2.1.13/bcm4704/src/linux/linux/include/asm/dec/machtype.h \
+   zs.h \
+   lk201.h \
+   $(wildcard /home/aspen/WNR834Bv2-V2.1.13_2.1.13/bcm4704/src/linux/linux/include/config/magic/sysrq.h)
+tc.o: tc.c \
+   /home/aspen/WNR834Bv2-V2.1.13_2.1.13/bcm4704/src/linux/linux/include/linux/string.h \
+   /home/aspen/WNR834Bv2-V2.1.13_2.1.13/bcm4704/src/linux/linux/include/linux/init.h \
+   /home/aspen/WNR834Bv2-V2.1.13_2.1.13/bcm4704/src/linux/linux/include/linux/ioport.h \
+   /home/aspen/WNR834Bv2-V2.1.13_2.1.13/bcm4704/src/linux/linux/include/linux/kernel.h \
+   /home/aspen/WNR834Bv2-V2.1.13_2.1.13/bcm4704/src/linux/linux/include/linux/module.h \
+   /home/aspen/WNR834Bv2-V2.1.13_2.1.13/bcm4704/src/linux/linux/include/asm/addrspace.h \
+   /home/aspen/WNR834Bv2-V2.1.13_2.1.13/bcm4704/src/linux/linux/include/asm/errno.h \
+   /home/aspen/WNR834Bv2-V2.1.13_2.1.13/bcm4704/src/linux/linux/include/asm/dec/machtype.h \
+   /home/aspen/WNR834Bv2-V2.1.13_2.1.13/bcm4704/src/linux/linux/include/asm/dec/prom.h \
+   /home/aspen/WNR834Bv2-V2.1.13_2.1.13/bcm4704/src/linux/linux/include/asm/dec/tcinfo.h \
+   /home/aspen/WNR834Bv2-V2.1.13_2.1.13/bcm4704/src/linux/linux/include/asm/dec/tcmodule.h \
+   /home/aspen/WNR834Bv2-V2.1.13_2.1.13/bcm4704/src/linux/linux/include/asm/dec/interrupts.h \
+   /home/aspen/WNR834Bv2-V2.1.13_2.1.13/bcm4704/src/linux/linux/include/asm/paccess.h \
+   /home/aspen/WNR834Bv2-V2.1.13_2.1.13/bcm4704/src/linux/linux/include/asm/ptrace.h
+zs.o: zs.c \
+   /home/aspen/WNR834Bv2-V2.1.13_2.1.13/bcm4704/src/linux/linux/include/linux/version.h \
+   /home/aspen/WNR834Bv2-V2.1.13_2.1.13/bcm4704/src/linux/linux/include/linux/errno.h \
+   /home/aspen/WNR834Bv2-V2.1.13_2.1.13/bcm4704/src/linux/linux/include/linux/signal.h \
+   /home/aspen/WNR834Bv2-V2.1.13_2.1.13/bcm4704/src/linux/linux/include/linux/sched.h \
+   /home/aspen/WNR834Bv2-V2.1.13_2.1.13/bcm4704/src/linux/linux/include/linux/timer.h \
+   /home/aspen/WNR834Bv2-V2.1.13_2.1.13/bcm4704/src/linux/linux/include/linux/interrupt.h \
+   /home/aspen/WNR834Bv2-V2.1.13_2.1.13/bcm4704/src/linux/linux/include/linux/tty.h \
+   /home/aspen/WNR834Bv2-V2.1.13_2.1.13/bcm4704/src/linux/linux/include/linux/tty_flip.h \
+   /home/aspen/WNR834Bv2-V2.1.13_2.1.13/bcm4704/src/linux/linux/include/linux/major.h \
+   /home/aspen/WNR834Bv2-V2.1.13_2.1.13/bcm4704/src/linux/linux/include/linux/string.h \
+   /home/aspen/WNR834Bv2-V2.1.13_2.1.13/bcm4704/src/linux/linux/include/linux/fcntl.h \
+   /home/aspen/WNR834Bv2-V2.1.13_2.1.13/bcm4704/src/linux/linux/include/linux/mm.h \
+   /home/aspen/WNR834Bv2-V2.1.13_2.1.13/bcm4704/src/linux/linux/include/linux/kernel.h \
+   /home/aspen/WNR834Bv2-V2.1.13_2.1.13/bcm4704/src/linux/linux/include/linux/delay.h \
+   /home/aspen/WNR834Bv2-V2.1.13_2.1.13/bcm4704/src/linux/linux/include/linux/init.h \
+   /home/aspen/WNR834Bv2-V2.1.13_2.1.13/bcm4704/src/linux/linux/include/linux/ioport.h \
+   $(wildcard /home/aspen/WNR834Bv2-V2.1.13_2.1.13/bcm4704/src/linux/linux/include/config/serial/dec/console.h) \
+   /home/aspen/WNR834Bv2-V2.1.13_2.1.13/bcm4704/src/linux/linux/include/linux/console.h \
+   /home/aspen/WNR834Bv2-V2.1.13_2.1.13/bcm4704/src/linux/linux/include/asm/io.h \
+   /home/aspen/WNR834Bv2-V2.1.13_2.1.13/bcm4704/src/linux/linux/include/asm/pgtable.h \
+   /home/aspen/WNR834Bv2-V2.1.13_2.1.13/bcm4704/src/linux/linux/include/asm/irq.h \
+   /home/aspen/WNR834Bv2-V2.1.13_2.1.13/bcm4704/src/linux/linux/include/asm/system.h \
+   /home/aspen/WNR834Bv2-V2.1.13_2.1.13/bcm4704/src/linux/linux/include/asm/segment.h \
+   /home/aspen/WNR834Bv2-V2.1.13_2.1.13/bcm4704/src/linux/linux/include/asm/bitops.h \
+   /home/aspen/WNR834Bv2-V2.1.13_2.1.13/bcm4704/src/linux/linux/include/asm/uaccess.h \
+   /home/aspen/WNR834Bv2-V2.1.13_2.1.13/bcm4704/src/linux/linux/include/asm/bootinfo.h \
+   $(wildcard /home/aspen/WNR834Bv2-V2.1.13_2.1.13/bcm4704/src/linux/linux/include/config/decstation.h) \
+   /home/aspen/WNR834Bv2-V2.1.13_2.1.13/bcm4704/src/linux/linux/include/asm/dec/interrupts.h \
+   /home/aspen/WNR834Bv2-V2.1.13_2.1.13/bcm4704/src/linux/linux/include/asm/dec/machtype.h \
+   /home/aspen/WNR834Bv2-V2.1.13_2.1.13/bcm4704/src/linux/linux/include/asm/dec/tc.h \
+   /home/aspen/WNR834Bv2-V2.1.13_2.1.13/bcm4704/src/linux/linux/include/asm/dec/ioasic_addrs.h \
+   $(wildcard /home/aspen/WNR834Bv2-V2.1.13_2.1.13/bcm4704/src/linux/linux/include/config/baget/mips.h) \
+   /home/aspen/WNR834Bv2-V2.1.13_2.1.13/bcm4704/src/linux/linux/include/asm/baget/baget.h \
+   $(wildcard /home/aspen/WNR834Bv2-V2.1.13_2.1.13/bcm4704/src/linux/linux/include/config/kgdb.h) \
+   $(wildcard /home/aspen/WNR834Bv2-V2.1.13_2.1.13/bcm4704/src/linux/linux/include/config/magic/sysrq.h) \
+   /home/aspen/WNR834Bv2-V2.1.13_2.1.13/bcm4704/src/linux/linux/include/linux/sysrq.h \
+   zs.h \
+   $(wildcard /home/aspen/WNR834Bv2-V2.1.13_2.1.13/bcm4704/src/linux/linux/include/config/devfs/fs.h)

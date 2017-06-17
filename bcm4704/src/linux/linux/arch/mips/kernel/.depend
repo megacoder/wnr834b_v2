@@ -1,0 +1,621 @@
+branch.o: branch.c \
+   /home/aspen/WNR834Bv2-V2.1.13_2.1.13/bcm4704/src/linux/linux/include/linux/kernel.h \
+   /home/aspen/WNR834Bv2-V2.1.13_2.1.13/bcm4704/src/linux/linux/include/linux/sched.h \
+   /home/aspen/WNR834Bv2-V2.1.13_2.1.13/bcm4704/src/linux/linux/include/linux/signal.h \
+   /home/aspen/WNR834Bv2-V2.1.13_2.1.13/bcm4704/src/linux/linux/include/asm/branch.h \
+   /home/aspen/WNR834Bv2-V2.1.13_2.1.13/bcm4704/src/linux/linux/include/asm/cpu.h \
+   /home/aspen/WNR834Bv2-V2.1.13_2.1.13/bcm4704/src/linux/linux/include/asm/inst.h \
+   /home/aspen/WNR834Bv2-V2.1.13_2.1.13/bcm4704/src/linux/linux/include/asm/ptrace.h \
+   /home/aspen/WNR834Bv2-V2.1.13_2.1.13/bcm4704/src/linux/linux/include/asm/uaccess.h \
+   /home/aspen/WNR834Bv2-V2.1.13_2.1.13/bcm4704/src/linux/linux/include/asm/processor.h
+cpu-probe.o: cpu-probe.c \
+   /home/aspen/WNR834Bv2-V2.1.13_2.1.13/bcm4704/src/linux/linux/include/linux/init.h \
+   /home/aspen/WNR834Bv2-V2.1.13_2.1.13/bcm4704/src/linux/linux/include/linux/kernel.h \
+   /home/aspen/WNR834Bv2-V2.1.13_2.1.13/bcm4704/src/linux/linux/include/linux/stddef.h \
+   /home/aspen/WNR834Bv2-V2.1.13_2.1.13/bcm4704/src/linux/linux/include/asm/bugs.h \
+   /home/aspen/WNR834Bv2-V2.1.13_2.1.13/bcm4704/src/linux/linux/include/asm/cpu.h \
+   /home/aspen/WNR834Bv2-V2.1.13_2.1.13/bcm4704/src/linux/linux/include/asm/fpu.h \
+   /home/aspen/WNR834Bv2-V2.1.13_2.1.13/bcm4704/src/linux/linux/include/asm/mipsregs.h \
+   $(wildcard /home/aspen/WNR834Bv2-V2.1.13_2.1.13/bcm4704/src/linux/linux/include/config/pm.h) \
+   $(wildcard /home/aspen/WNR834Bv2-V2.1.13_2.1.13/bcm4704/src/linux/linux/include/config/cpu/r3000.h) \
+   $(wildcard /home/aspen/WNR834Bv2-V2.1.13_2.1.13/bcm4704/src/linux/linux/include/config/cpu/mips32.h) \
+   $(wildcard /home/aspen/WNR834Bv2-V2.1.13_2.1.13/bcm4704/src/linux/linux/include/config/cpu/mips64.h) \
+   $(wildcard /home/aspen/WNR834Bv2-V2.1.13_2.1.13/bcm4704/src/linux/linux/include/config/cpu/little/endian.h) \
+   $(wildcard /home/aspen/WNR834Bv2-V2.1.13_2.1.13/bcm4704/src/linux/linux/include/config/vr4181.h) \
+   $(wildcard /home/aspen/WNR834Bv2-V2.1.13_2.1.13/bcm4704/src/linux/linux/include/config/sb1/pass/1/workarounds.h)
+entry.o: entry.S \
+   /home/aspen/WNR834Bv2-V2.1.13_2.1.13/bcm4704/src/linux/linux/include/linux/init.h \
+   /home/aspen/WNR834Bv2-V2.1.13_2.1.13/bcm4704/src/linux/linux/include/linux/sys.h \
+   /home/aspen/WNR834Bv2-V2.1.13_2.1.13/bcm4704/src/linux/linux/include/asm/addrspace.h \
+   /home/aspen/WNR834Bv2-V2.1.13_2.1.13/bcm4704/src/linux/linux/include/asm/asm.h \
+   /home/aspen/WNR834Bv2-V2.1.13_2.1.13/bcm4704/src/linux/linux/include/asm/cacheops.h \
+   /home/aspen/WNR834Bv2-V2.1.13_2.1.13/bcm4704/src/linux/linux/include/asm/current.h \
+   /home/aspen/WNR834Bv2-V2.1.13_2.1.13/bcm4704/src/linux/linux/include/asm/errno.h \
+   /home/aspen/WNR834Bv2-V2.1.13_2.1.13/bcm4704/src/linux/linux/include/asm/mipsregs.h \
+   /home/aspen/WNR834Bv2-V2.1.13_2.1.13/bcm4704/src/linux/linux/include/asm/page.h \
+   /home/aspen/WNR834Bv2-V2.1.13_2.1.13/bcm4704/src/linux/linux/include/asm/pgtable-bits.h \
+   /home/aspen/WNR834Bv2-V2.1.13_2.1.13/bcm4704/src/linux/linux/include/asm/stackframe.h \
+   /home/aspen/WNR834Bv2-V2.1.13_2.1.13/bcm4704/src/linux/linux/include/asm/processor.h \
+   /home/aspen/WNR834Bv2-V2.1.13_2.1.13/bcm4704/src/linux/linux/include/asm/regdef.h \
+   /home/aspen/WNR834Bv2-V2.1.13_2.1.13/bcm4704/src/linux/linux/include/asm/fpregdef.h \
+   /home/aspen/WNR834Bv2-V2.1.13_2.1.13/bcm4704/src/linux/linux/include/asm/unistd.h \
+   /home/aspen/WNR834Bv2-V2.1.13_2.1.13/bcm4704/src/linux/linux/include/asm/isadep.h \
+   $(wildcard /home/aspen/WNR834Bv2-V2.1.13_2.1.13/bcm4704/src/linux/linux/include/config/bcm4710.h) \
+   $(wildcard /home/aspen/WNR834Bv2-V2.1.13_2.1.13/bcm4704/src/linux/linux/include/config/bcm4704.h) \
+   $(wildcard /home/aspen/WNR834Bv2-V2.1.13_2.1.13/bcm4704/src/linux/linux/include/config/proc/fs.h) \
+   $(wildcard /home/aspen/WNR834Bv2-V2.1.13_2.1.13/bcm4704/src/linux/linux/include/config/binfmt/irix.h) \
+   irix5sys.h \
+   syscalls.h \
+   irix5sys.h \
+   syscalls.h
+gdb-low.o: gdb-low.S \
+   /home/aspen/WNR834Bv2-V2.1.13_2.1.13/bcm4704/src/linux/linux/include/linux/sys.h \
+   /home/aspen/WNR834Bv2-V2.1.13_2.1.13/bcm4704/src/linux/linux/include/asm/asm.h \
+   /home/aspen/WNR834Bv2-V2.1.13_2.1.13/bcm4704/src/linux/linux/include/asm/errno.h \
+   /home/aspen/WNR834Bv2-V2.1.13_2.1.13/bcm4704/src/linux/linux/include/asm/mipsregs.h \
+   /home/aspen/WNR834Bv2-V2.1.13_2.1.13/bcm4704/src/linux/linux/include/asm/regdef.h \
+   /home/aspen/WNR834Bv2-V2.1.13_2.1.13/bcm4704/src/linux/linux/include/asm/stackframe.h \
+   /home/aspen/WNR834Bv2-V2.1.13_2.1.13/bcm4704/src/linux/linux/include/asm/gdb-stub.h \
+   $(wildcard /home/aspen/WNR834Bv2-V2.1.13_2.1.13/bcm4704/src/linux/linux/include/config/cpu/r3000.h) \
+   $(wildcard /home/aspen/WNR834Bv2-V2.1.13_2.1.13/bcm4704/src/linux/linux/include/config/cpu/tx39xx.h)
+gdb-stub.o: gdb-stub.c \
+   /home/aspen/WNR834Bv2-V2.1.13_2.1.13/bcm4704/src/linux/linux/include/linux/string.h \
+   /home/aspen/WNR834Bv2-V2.1.13_2.1.13/bcm4704/src/linux/linux/include/linux/kernel.h \
+   /home/aspen/WNR834Bv2-V2.1.13_2.1.13/bcm4704/src/linux/linux/include/linux/signal.h \
+   /home/aspen/WNR834Bv2-V2.1.13_2.1.13/bcm4704/src/linux/linux/include/linux/sched.h \
+   /home/aspen/WNR834Bv2-V2.1.13_2.1.13/bcm4704/src/linux/linux/include/linux/mm.h \
+   /home/aspen/WNR834Bv2-V2.1.13_2.1.13/bcm4704/src/linux/linux/include/linux/console.h \
+   /home/aspen/WNR834Bv2-V2.1.13_2.1.13/bcm4704/src/linux/linux/include/linux/init.h \
+   /home/aspen/WNR834Bv2-V2.1.13_2.1.13/bcm4704/src/linux/linux/include/asm/asm.h \
+   /home/aspen/WNR834Bv2-V2.1.13_2.1.13/bcm4704/src/linux/linux/include/asm/mipsregs.h \
+   /home/aspen/WNR834Bv2-V2.1.13_2.1.13/bcm4704/src/linux/linux/include/asm/pgtable.h \
+   /home/aspen/WNR834Bv2-V2.1.13_2.1.13/bcm4704/src/linux/linux/include/asm/system.h \
+   /home/aspen/WNR834Bv2-V2.1.13_2.1.13/bcm4704/src/linux/linux/include/asm/gdb-stub.h \
+   /home/aspen/WNR834Bv2-V2.1.13_2.1.13/bcm4704/src/linux/linux/include/asm/inst.h \
+   $(wildcard /home/aspen/WNR834Bv2-V2.1.13_2.1.13/bcm4704/src/linux/linux/include/config/gdb/console.h)
+head.o: head.S \
+   /home/aspen/WNR834Bv2-V2.1.13_2.1.13/bcm4704/src/linux/linux/include/linux/init.h \
+   /home/aspen/WNR834Bv2-V2.1.13_2.1.13/bcm4704/src/linux/linux/include/linux/threads.h \
+   /home/aspen/WNR834Bv2-V2.1.13_2.1.13/bcm4704/src/linux/linux/include/asm/asm.h \
+   /home/aspen/WNR834Bv2-V2.1.13_2.1.13/bcm4704/src/linux/linux/include/asm/current.h \
+   /home/aspen/WNR834Bv2-V2.1.13_2.1.13/bcm4704/src/linux/linux/include/asm/offset.h \
+   /home/aspen/WNR834Bv2-V2.1.13_2.1.13/bcm4704/src/linux/linux/include/asm/pgtable-bits.h \
+   /home/aspen/WNR834Bv2-V2.1.13_2.1.13/bcm4704/src/linux/linux/include/asm/processor.h \
+   /home/aspen/WNR834Bv2-V2.1.13_2.1.13/bcm4704/src/linux/linux/include/asm/regdef.h \
+   /home/aspen/WNR834Bv2-V2.1.13_2.1.13/bcm4704/src/linux/linux/include/asm/cachectl.h \
+   /home/aspen/WNR834Bv2-V2.1.13_2.1.13/bcm4704/src/linux/linux/include/asm/mipsregs.h \
+   /home/aspen/WNR834Bv2-V2.1.13_2.1.13/bcm4704/src/linux/linux/include/asm/stackframe.h \
+   $(wildcard /home/aspen/WNR834Bv2-V2.1.13_2.1.13/bcm4704/src/linux/linux/include/config/bcm4710.h) \
+   $(wildcard /home/aspen/WNR834Bv2-V2.1.13_2.1.13/bcm4704/src/linux/linux/include/config/hwsim.h) \
+   $(wildcard /home/aspen/WNR834Bv2-V2.1.13_2.1.13/bcm4704/src/linux/linux/include/config/hwsim/zmem.h) \
+   $(wildcard /home/aspen/WNR834Bv2-V2.1.13_2.1.13/bcm4704/src/linux/linux/include/config/smp.h)
+i8259.o: i8259.c \
+   /home/aspen/WNR834Bv2-V2.1.13_2.1.13/bcm4704/src/linux/linux/include/linux/delay.h \
+   /home/aspen/WNR834Bv2-V2.1.13_2.1.13/bcm4704/src/linux/linux/include/linux/init.h \
+   /home/aspen/WNR834Bv2-V2.1.13_2.1.13/bcm4704/src/linux/linux/include/linux/ioport.h \
+   /home/aspen/WNR834Bv2-V2.1.13_2.1.13/bcm4704/src/linux/linux/include/linux/interrupt.h \
+   /home/aspen/WNR834Bv2-V2.1.13_2.1.13/bcm4704/src/linux/linux/include/linux/kernel.h \
+   /home/aspen/WNR834Bv2-V2.1.13_2.1.13/bcm4704/src/linux/linux/include/linux/spinlock.h \
+   /home/aspen/WNR834Bv2-V2.1.13_2.1.13/bcm4704/src/linux/linux/include/asm/io.h
+init_task.o: init_task.c \
+   /home/aspen/WNR834Bv2-V2.1.13_2.1.13/bcm4704/src/linux/linux/include/linux/mm.h \
+   /home/aspen/WNR834Bv2-V2.1.13_2.1.13/bcm4704/src/linux/linux/include/linux/sched.h \
+   /home/aspen/WNR834Bv2-V2.1.13_2.1.13/bcm4704/src/linux/linux/include/asm/uaccess.h \
+   /home/aspen/WNR834Bv2-V2.1.13_2.1.13/bcm4704/src/linux/linux/include/asm/pgtable.h
+ipc.o: ipc.c \
+   /home/aspen/WNR834Bv2-V2.1.13_2.1.13/bcm4704/src/linux/linux/include/linux/errno.h \
+   /home/aspen/WNR834Bv2-V2.1.13_2.1.13/bcm4704/src/linux/linux/include/linux/sched.h \
+   /home/aspen/WNR834Bv2-V2.1.13_2.1.13/bcm4704/src/linux/linux/include/linux/mm.h \
+   /home/aspen/WNR834Bv2-V2.1.13_2.1.13/bcm4704/src/linux/linux/include/linux/smp.h \
+   /home/aspen/WNR834Bv2-V2.1.13_2.1.13/bcm4704/src/linux/linux/include/linux/smp_lock.h \
+   /home/aspen/WNR834Bv2-V2.1.13_2.1.13/bcm4704/src/linux/linux/include/linux/sem.h \
+   /home/aspen/WNR834Bv2-V2.1.13_2.1.13/bcm4704/src/linux/linux/include/linux/msg.h \
+   /home/aspen/WNR834Bv2-V2.1.13_2.1.13/bcm4704/src/linux/linux/include/linux/shm.h \
+   /home/aspen/WNR834Bv2-V2.1.13_2.1.13/bcm4704/src/linux/linux/include/asm/ipc.h \
+   /home/aspen/WNR834Bv2-V2.1.13_2.1.13/bcm4704/src/linux/linux/include/asm/uaccess.h
+irixelf.o: irixelf.c \
+   /home/aspen/WNR834Bv2-V2.1.13_2.1.13/bcm4704/src/linux/linux/include/linux/module.h \
+   /home/aspen/WNR834Bv2-V2.1.13_2.1.13/bcm4704/src/linux/linux/include/linux/fs.h \
+   /home/aspen/WNR834Bv2-V2.1.13_2.1.13/bcm4704/src/linux/linux/include/linux/stat.h \
+   /home/aspen/WNR834Bv2-V2.1.13_2.1.13/bcm4704/src/linux/linux/include/linux/sched.h \
+   /home/aspen/WNR834Bv2-V2.1.13_2.1.13/bcm4704/src/linux/linux/include/linux/mm.h \
+   /home/aspen/WNR834Bv2-V2.1.13_2.1.13/bcm4704/src/linux/linux/include/linux/mman.h \
+   /home/aspen/WNR834Bv2-V2.1.13_2.1.13/bcm4704/src/linux/linux/include/linux/a.out.h \
+   /home/aspen/WNR834Bv2-V2.1.13_2.1.13/bcm4704/src/linux/linux/include/linux/errno.h \
+   /home/aspen/WNR834Bv2-V2.1.13_2.1.13/bcm4704/src/linux/linux/include/linux/init.h \
+   /home/aspen/WNR834Bv2-V2.1.13_2.1.13/bcm4704/src/linux/linux/include/linux/signal.h \
+   /home/aspen/WNR834Bv2-V2.1.13_2.1.13/bcm4704/src/linux/linux/include/linux/binfmts.h \
+   /home/aspen/WNR834Bv2-V2.1.13_2.1.13/bcm4704/src/linux/linux/include/linux/string.h \
+   /home/aspen/WNR834Bv2-V2.1.13_2.1.13/bcm4704/src/linux/linux/include/linux/file.h \
+   /home/aspen/WNR834Bv2-V2.1.13_2.1.13/bcm4704/src/linux/linux/include/linux/fcntl.h \
+   /home/aspen/WNR834Bv2-V2.1.13_2.1.13/bcm4704/src/linux/linux/include/linux/slab.h \
+   /home/aspen/WNR834Bv2-V2.1.13_2.1.13/bcm4704/src/linux/linux/include/linux/shm.h \
+   /home/aspen/WNR834Bv2-V2.1.13_2.1.13/bcm4704/src/linux/linux/include/linux/personality.h \
+   /home/aspen/WNR834Bv2-V2.1.13_2.1.13/bcm4704/src/linux/linux/include/linux/elfcore.h \
+   /home/aspen/WNR834Bv2-V2.1.13_2.1.13/bcm4704/src/linux/linux/include/linux/smp_lock.h \
+   /home/aspen/WNR834Bv2-V2.1.13_2.1.13/bcm4704/src/linux/linux/include/asm/uaccess.h \
+   /home/aspen/WNR834Bv2-V2.1.13_2.1.13/bcm4704/src/linux/linux/include/asm/pgalloc.h \
+   /home/aspen/WNR834Bv2-V2.1.13_2.1.13/bcm4704/src/linux/linux/include/asm/ptrace.h \
+   /home/aspen/WNR834Bv2-V2.1.13_2.1.13/bcm4704/src/linux/linux/include/asm/mipsregs.h \
+   /home/aspen/WNR834Bv2-V2.1.13_2.1.13/bcm4704/src/linux/linux/include/asm/prctl.h \
+   /home/aspen/WNR834Bv2-V2.1.13_2.1.13/bcm4704/src/linux/linux/include/linux/elf.h
+irixinv.o: irixinv.c \
+   /home/aspen/WNR834Bv2-V2.1.13_2.1.13/bcm4704/src/linux/linux/include/linux/mm.h \
+   /home/aspen/WNR834Bv2-V2.1.13_2.1.13/bcm4704/src/linux/linux/include/linux/init.h \
+   /home/aspen/WNR834Bv2-V2.1.13_2.1.13/bcm4704/src/linux/linux/include/linux/slab.h \
+   /home/aspen/WNR834Bv2-V2.1.13_2.1.13/bcm4704/src/linux/linux/include/asm/uaccess.h \
+   /home/aspen/WNR834Bv2-V2.1.13_2.1.13/bcm4704/src/linux/linux/include/asm/inventory.h
+irixioctl.o: irixioctl.c \
+   /home/aspen/WNR834Bv2-V2.1.13_2.1.13/bcm4704/src/linux/linux/include/linux/kernel.h \
+   /home/aspen/WNR834Bv2-V2.1.13_2.1.13/bcm4704/src/linux/linux/include/linux/sched.h \
+   /home/aspen/WNR834Bv2-V2.1.13_2.1.13/bcm4704/src/linux/linux/include/linux/fs.h \
+   /home/aspen/WNR834Bv2-V2.1.13_2.1.13/bcm4704/src/linux/linux/include/linux/mm.h \
+   /home/aspen/WNR834Bv2-V2.1.13_2.1.13/bcm4704/src/linux/linux/include/linux/smp.h \
+   /home/aspen/WNR834Bv2-V2.1.13_2.1.13/bcm4704/src/linux/linux/include/linux/smp_lock.h \
+   /home/aspen/WNR834Bv2-V2.1.13_2.1.13/bcm4704/src/linux/linux/include/linux/tty.h \
+   /home/aspen/WNR834Bv2-V2.1.13_2.1.13/bcm4704/src/linux/linux/include/linux/file.h \
+   /home/aspen/WNR834Bv2-V2.1.13_2.1.13/bcm4704/src/linux/linux/include/asm/uaccess.h \
+   /home/aspen/WNR834Bv2-V2.1.13_2.1.13/bcm4704/src/linux/linux/include/asm/ioctl.h \
+   /home/aspen/WNR834Bv2-V2.1.13_2.1.13/bcm4704/src/linux/linux/include/asm/ioctls.h
+irixsig.o: irixsig.c \
+   /home/aspen/WNR834Bv2-V2.1.13_2.1.13/bcm4704/src/linux/linux/include/linux/kernel.h \
+   /home/aspen/WNR834Bv2-V2.1.13_2.1.13/bcm4704/src/linux/linux/include/linux/sched.h \
+   /home/aspen/WNR834Bv2-V2.1.13_2.1.13/bcm4704/src/linux/linux/include/linux/mm.h \
+   /home/aspen/WNR834Bv2-V2.1.13_2.1.13/bcm4704/src/linux/linux/include/linux/errno.h \
+   /home/aspen/WNR834Bv2-V2.1.13_2.1.13/bcm4704/src/linux/linux/include/linux/smp.h \
+   /home/aspen/WNR834Bv2-V2.1.13_2.1.13/bcm4704/src/linux/linux/include/linux/smp_lock.h \
+   /home/aspen/WNR834Bv2-V2.1.13_2.1.13/bcm4704/src/linux/linux/include/linux/time.h \
+   /home/aspen/WNR834Bv2-V2.1.13_2.1.13/bcm4704/src/linux/linux/include/asm/ptrace.h \
+   /home/aspen/WNR834Bv2-V2.1.13_2.1.13/bcm4704/src/linux/linux/include/asm/uaccess.h
+irq.o: irq.c \
+   /home/aspen/WNR834Bv2-V2.1.13_2.1.13/bcm4704/src/linux/linux/include/linux/kernel.h \
+   /home/aspen/WNR834Bv2-V2.1.13_2.1.13/bcm4704/src/linux/linux/include/linux/delay.h \
+   /home/aspen/WNR834Bv2-V2.1.13_2.1.13/bcm4704/src/linux/linux/include/linux/init.h \
+   /home/aspen/WNR834Bv2-V2.1.13_2.1.13/bcm4704/src/linux/linux/include/linux/interrupt.h \
+   /home/aspen/WNR834Bv2-V2.1.13_2.1.13/bcm4704/src/linux/linux/include/linux/kernel_stat.h \
+   /home/aspen/WNR834Bv2-V2.1.13_2.1.13/bcm4704/src/linux/linux/include/linux/module.h \
+   /home/aspen/WNR834Bv2-V2.1.13_2.1.13/bcm4704/src/linux/linux/include/linux/proc_fs.h \
+   /home/aspen/WNR834Bv2-V2.1.13_2.1.13/bcm4704/src/linux/linux/include/linux/slab.h \
+   /home/aspen/WNR834Bv2-V2.1.13_2.1.13/bcm4704/src/linux/linux/include/linux/mm.h \
+   /home/aspen/WNR834Bv2-V2.1.13_2.1.13/bcm4704/src/linux/linux/include/linux/random.h \
+   /home/aspen/WNR834Bv2-V2.1.13_2.1.13/bcm4704/src/linux/linux/include/linux/sched.h \
+   /home/aspen/WNR834Bv2-V2.1.13_2.1.13/bcm4704/src/linux/linux/include/asm/atomic.h \
+   /home/aspen/WNR834Bv2-V2.1.13_2.1.13/bcm4704/src/linux/linux/include/asm/system.h \
+   /home/aspen/WNR834Bv2-V2.1.13_2.1.13/bcm4704/src/linux/linux/include/asm/uaccess.h \
+   $(wildcard /home/aspen/WNR834Bv2-V2.1.13_2.1.13/bcm4704/src/linux/linux/include/config/smp.h)
+irq_cpu.o: irq_cpu.c \
+   /home/aspen/WNR834Bv2-V2.1.13_2.1.13/bcm4704/src/linux/linux/include/linux/init.h \
+   /home/aspen/WNR834Bv2-V2.1.13_2.1.13/bcm4704/src/linux/linux/include/linux/interrupt.h \
+   /home/aspen/WNR834Bv2-V2.1.13_2.1.13/bcm4704/src/linux/linux/include/linux/kernel.h \
+   /home/aspen/WNR834Bv2-V2.1.13_2.1.13/bcm4704/src/linux/linux/include/asm/irq_cpu.h \
+   /home/aspen/WNR834Bv2-V2.1.13_2.1.13/bcm4704/src/linux/linux/include/asm/mipsregs.h
+mips_ksyms.o: mips_ksyms.c \
+   /home/aspen/WNR834Bv2-V2.1.13_2.1.13/bcm4704/src/linux/linux/include/linux/module.h \
+   /home/aspen/WNR834Bv2-V2.1.13_2.1.13/bcm4704/src/linux/linux/include/linux/string.h \
+   /home/aspen/WNR834Bv2-V2.1.13_2.1.13/bcm4704/src/linux/linux/include/linux/mm.h \
+   /home/aspen/WNR834Bv2-V2.1.13_2.1.13/bcm4704/src/linux/linux/include/linux/interrupt.h \
+   /home/aspen/WNR834Bv2-V2.1.13_2.1.13/bcm4704/src/linux/linux/include/asm/irq.h \
+   /home/aspen/WNR834Bv2-V2.1.13_2.1.13/bcm4704/src/linux/linux/include/linux/in6.h \
+   /home/aspen/WNR834Bv2-V2.1.13_2.1.13/bcm4704/src/linux/linux/include/linux/pci.h \
+   /home/aspen/WNR834Bv2-V2.1.13_2.1.13/bcm4704/src/linux/linux/include/linux/ide.h \
+   /home/aspen/WNR834Bv2-V2.1.13_2.1.13/bcm4704/src/linux/linux/include/asm/bootinfo.h \
+   /home/aspen/WNR834Bv2-V2.1.13_2.1.13/bcm4704/src/linux/linux/include/asm/checksum.h \
+   /home/aspen/WNR834Bv2-V2.1.13_2.1.13/bcm4704/src/linux/linux/include/asm/dma.h \
+   /home/aspen/WNR834Bv2-V2.1.13_2.1.13/bcm4704/src/linux/linux/include/asm/io.h \
+   /home/aspen/WNR834Bv2-V2.1.13_2.1.13/bcm4704/src/linux/linux/include/asm/page.h \
+   /home/aspen/WNR834Bv2-V2.1.13_2.1.13/bcm4704/src/linux/linux/include/asm/pgalloc.h \
+   /home/aspen/WNR834Bv2-V2.1.13_2.1.13/bcm4704/src/linux/linux/include/asm/semaphore.h \
+   /home/aspen/WNR834Bv2-V2.1.13_2.1.13/bcm4704/src/linux/linux/include/asm/sgi/sgihpc.h \
+   /home/aspen/WNR834Bv2-V2.1.13_2.1.13/bcm4704/src/linux/linux/include/asm/sgi/sgimc.h \
+   /home/aspen/WNR834Bv2-V2.1.13_2.1.13/bcm4704/src/linux/linux/include/asm/softirq.h \
+   /home/aspen/WNR834Bv2-V2.1.13_2.1.13/bcm4704/src/linux/linux/include/asm/uaccess.h \
+   $(wildcard /home/aspen/WNR834Bv2-V2.1.13_2.1.13/bcm4704/src/linux/linux/include/config/blk/dev/fd.h) \
+   /home/aspen/WNR834Bv2-V2.1.13_2.1.13/bcm4704/src/linux/linux/include/asm/floppy.h \
+   $(wildcard /home/aspen/WNR834Bv2-V2.1.13_2.1.13/bcm4704/src/linux/linux/include/config/eisa.h) \
+   $(wildcard /home/aspen/WNR834Bv2-V2.1.13_2.1.13/bcm4704/src/linux/linux/include/config/mips/jazz.h) \
+   $(wildcard /home/aspen/WNR834Bv2-V2.1.13_2.1.13/bcm4704/src/linux/linux/include/config/sgi/ip22.h) \
+   /home/aspen/WNR834Bv2-V2.1.13_2.1.13/bcm4704/src/linux/linux/include/asm/branch.h \
+   /home/aspen/WNR834Bv2-V2.1.13_2.1.13/bcm4704/src/linux/linux/include/linux/sched.h \
+   $(wildcard /home/aspen/WNR834Bv2-V2.1.13_2.1.13/bcm4704/src/linux/linux/include/config/vt.h) \
+   $(wildcard /home/aspen/WNR834Bv2-V2.1.13_2.1.13/bcm4704/src/linux/linux/include/config/blk/dev/ide.h) \
+   $(wildcard /home/aspen/WNR834Bv2-V2.1.13_2.1.13/bcm4704/src/linux/linux/include/config/blk/dev/ide/module.h) \
+   $(wildcard /home/aspen/WNR834Bv2-V2.1.13_2.1.13/bcm4704/src/linux/linux/include/config/mcount.h)
+old-time.o: old-time.c \
+   /home/aspen/WNR834Bv2-V2.1.13_2.1.13/bcm4704/src/linux/linux/include/linux/errno.h \
+   /home/aspen/WNR834Bv2-V2.1.13_2.1.13/bcm4704/src/linux/linux/include/linux/init.h \
+   /home/aspen/WNR834Bv2-V2.1.13_2.1.13/bcm4704/src/linux/linux/include/linux/sched.h \
+   /home/aspen/WNR834Bv2-V2.1.13_2.1.13/bcm4704/src/linux/linux/include/linux/kernel.h \
+   /home/aspen/WNR834Bv2-V2.1.13_2.1.13/bcm4704/src/linux/linux/include/linux/param.h \
+   /home/aspen/WNR834Bv2-V2.1.13_2.1.13/bcm4704/src/linux/linux/include/linux/string.h \
+   /home/aspen/WNR834Bv2-V2.1.13_2.1.13/bcm4704/src/linux/linux/include/linux/mm.h \
+   /home/aspen/WNR834Bv2-V2.1.13_2.1.13/bcm4704/src/linux/linux/include/linux/interrupt.h \
+   /home/aspen/WNR834Bv2-V2.1.13_2.1.13/bcm4704/src/linux/linux/include/linux/kernel_stat.h \
+   /home/aspen/WNR834Bv2-V2.1.13_2.1.13/bcm4704/src/linux/linux/include/asm/bootinfo.h \
+   /home/aspen/WNR834Bv2-V2.1.13_2.1.13/bcm4704/src/linux/linux/include/asm/cpu.h \
+   /home/aspen/WNR834Bv2-V2.1.13_2.1.13/bcm4704/src/linux/linux/include/asm/mipsregs.h \
+   /home/aspen/WNR834Bv2-V2.1.13_2.1.13/bcm4704/src/linux/linux/include/asm/io.h \
+   /home/aspen/WNR834Bv2-V2.1.13_2.1.13/bcm4704/src/linux/linux/include/asm/irq.h \
+   /home/aspen/WNR834Bv2-V2.1.13_2.1.13/bcm4704/src/linux/linux/include/asm/ddb5074.h \
+   /home/aspen/WNR834Bv2-V2.1.13_2.1.13/bcm4704/src/linux/linux/include/linux/mc146818rtc.h \
+   /home/aspen/WNR834Bv2-V2.1.13_2.1.13/bcm4704/src/linux/linux/include/linux/timex.h \
+   $(wildcard /home/aspen/WNR834Bv2-V2.1.13_2.1.13/bcm4704/src/linux/linux/include/config/ddb5074.h) \
+   $(wildcard /home/aspen/WNR834Bv2-V2.1.13_2.1.13/bcm4704/src/linux/linux/include/config/sgi/ip22.h)
+pci_auto.o: pci_auto.c \
+   /home/aspen/WNR834Bv2-V2.1.13_2.1.13/bcm4704/src/linux/linux/include/linux/kernel.h \
+   /home/aspen/WNR834Bv2-V2.1.13_2.1.13/bcm4704/src/linux/linux/include/linux/init.h \
+   /home/aspen/WNR834Bv2-V2.1.13_2.1.13/bcm4704/src/linux/linux/include/linux/types.h \
+   /home/aspen/WNR834Bv2-V2.1.13_2.1.13/bcm4704/src/linux/linux/include/linux/pci.h \
+   /home/aspen/WNR834Bv2-V2.1.13_2.1.13/bcm4704/src/linux/linux/include/asm/pci_channel.h
+pci.o: pci.c \
+   /home/aspen/WNR834Bv2-V2.1.13_2.1.13/bcm4704/src/linux/linux/include/linux/kernel.h \
+   /home/aspen/WNR834Bv2-V2.1.13_2.1.13/bcm4704/src/linux/linux/include/linux/init.h \
+   /home/aspen/WNR834Bv2-V2.1.13_2.1.13/bcm4704/src/linux/linux/include/linux/types.h \
+   /home/aspen/WNR834Bv2-V2.1.13_2.1.13/bcm4704/src/linux/linux/include/linux/pci.h \
+   /home/aspen/WNR834Bv2-V2.1.13_2.1.13/bcm4704/src/linux/linux/include/asm/pci_channel.h \
+   $(wildcard /home/aspen/WNR834Bv2-V2.1.13_2.1.13/bcm4704/src/linux/linux/include/config/pci/auto.h)
+pci-dma.o: pci-dma.c \
+   /home/aspen/WNR834Bv2-V2.1.13_2.1.13/bcm4704/src/linux/linux/include/linux/types.h \
+   /home/aspen/WNR834Bv2-V2.1.13_2.1.13/bcm4704/src/linux/linux/include/linux/mm.h \
+   /home/aspen/WNR834Bv2-V2.1.13_2.1.13/bcm4704/src/linux/linux/include/linux/module.h \
+   /home/aspen/WNR834Bv2-V2.1.13_2.1.13/bcm4704/src/linux/linux/include/linux/string.h \
+   /home/aspen/WNR834Bv2-V2.1.13_2.1.13/bcm4704/src/linux/linux/include/linux/pci.h \
+   /home/aspen/WNR834Bv2-V2.1.13_2.1.13/bcm4704/src/linux/linux/include/asm/io.h \
+   $(wildcard /home/aspen/WNR834Bv2-V2.1.13_2.1.13/bcm4704/src/linux/linux/include/config/isa.h) \
+   $(wildcard /home/aspen/WNR834Bv2-V2.1.13_2.1.13/bcm4704/src/linux/linux/include/config/noncoherent/io.h)
+proc.o: proc.c \
+   /home/aspen/WNR834Bv2-V2.1.13_2.1.13/bcm4704/src/linux/linux/include/linux/delay.h \
+   /home/aspen/WNR834Bv2-V2.1.13_2.1.13/bcm4704/src/linux/linux/include/linux/kernel.h \
+   /home/aspen/WNR834Bv2-V2.1.13_2.1.13/bcm4704/src/linux/linux/include/linux/sched.h \
+   /home/aspen/WNR834Bv2-V2.1.13_2.1.13/bcm4704/src/linux/linux/include/linux/seq_file.h \
+   /home/aspen/WNR834Bv2-V2.1.13_2.1.13/bcm4704/src/linux/linux/include/asm/bootinfo.h \
+   /home/aspen/WNR834Bv2-V2.1.13_2.1.13/bcm4704/src/linux/linux/include/asm/cpu.h \
+   /home/aspen/WNR834Bv2-V2.1.13_2.1.13/bcm4704/src/linux/linux/include/asm/mipsregs.h \
+   /home/aspen/WNR834Bv2-V2.1.13_2.1.13/bcm4704/src/linux/linux/include/asm/processor.h \
+   /home/aspen/WNR834Bv2-V2.1.13_2.1.13/bcm4704/src/linux/linux/include/asm/watch.h \
+   $(wildcard /home/aspen/WNR834Bv2-V2.1.13_2.1.13/bcm4704/src/linux/linux/include/config/cpu/has/llsc.h) \
+   $(wildcard /home/aspen/WNR834Bv2-V2.1.13_2.1.13/bcm4704/src/linux/linux/include/config/smp.h) \
+   $(wildcard /home/aspen/WNR834Bv2-V2.1.13_2.1.13/bcm4704/src/linux/linux/include/config/bcm4710.h) \
+   $(wildcard /home/aspen/WNR834Bv2-V2.1.13_2.1.13/bcm4704/src/linux/linux/include/config/bcm4704.h)
+process.o: process.c \
+   /home/aspen/WNR834Bv2-V2.1.13_2.1.13/bcm4704/src/linux/linux/include/linux/errno.h \
+   /home/aspen/WNR834Bv2-V2.1.13_2.1.13/bcm4704/src/linux/linux/include/linux/sched.h \
+   /home/aspen/WNR834Bv2-V2.1.13_2.1.13/bcm4704/src/linux/linux/include/linux/kernel.h \
+   /home/aspen/WNR834Bv2-V2.1.13_2.1.13/bcm4704/src/linux/linux/include/linux/mm.h \
+   /home/aspen/WNR834Bv2-V2.1.13_2.1.13/bcm4704/src/linux/linux/include/linux/stddef.h \
+   /home/aspen/WNR834Bv2-V2.1.13_2.1.13/bcm4704/src/linux/linux/include/linux/unistd.h \
+   /home/aspen/WNR834Bv2-V2.1.13_2.1.13/bcm4704/src/linux/linux/include/linux/personality.h \
+   /home/aspen/WNR834Bv2-V2.1.13_2.1.13/bcm4704/src/linux/linux/include/linux/slab.h \
+   /home/aspen/WNR834Bv2-V2.1.13_2.1.13/bcm4704/src/linux/linux/include/linux/mman.h \
+   /home/aspen/WNR834Bv2-V2.1.13_2.1.13/bcm4704/src/linux/linux/include/linux/sys.h \
+   /home/aspen/WNR834Bv2-V2.1.13_2.1.13/bcm4704/src/linux/linux/include/linux/user.h \
+   /home/aspen/WNR834Bv2-V2.1.13_2.1.13/bcm4704/src/linux/linux/include/linux/a.out.h \
+   /home/aspen/WNR834Bv2-V2.1.13_2.1.13/bcm4704/src/linux/linux/include/asm/bootinfo.h \
+   /home/aspen/WNR834Bv2-V2.1.13_2.1.13/bcm4704/src/linux/linux/include/asm/cpu.h \
+   /home/aspen/WNR834Bv2-V2.1.13_2.1.13/bcm4704/src/linux/linux/include/asm/fpu.h \
+   /home/aspen/WNR834Bv2-V2.1.13_2.1.13/bcm4704/src/linux/linux/include/asm/pgtable.h \
+   /home/aspen/WNR834Bv2-V2.1.13_2.1.13/bcm4704/src/linux/linux/include/asm/system.h \
+   /home/aspen/WNR834Bv2-V2.1.13_2.1.13/bcm4704/src/linux/linux/include/asm/mipsregs.h \
+   /home/aspen/WNR834Bv2-V2.1.13_2.1.13/bcm4704/src/linux/linux/include/asm/processor.h \
+   /home/aspen/WNR834Bv2-V2.1.13_2.1.13/bcm4704/src/linux/linux/include/asm/ptrace.h \
+   /home/aspen/WNR834Bv2-V2.1.13_2.1.13/bcm4704/src/linux/linux/include/asm/uaccess.h \
+   /home/aspen/WNR834Bv2-V2.1.13_2.1.13/bcm4704/src/linux/linux/include/asm/io.h \
+   /home/aspen/WNR834Bv2-V2.1.13_2.1.13/bcm4704/src/linux/linux/include/asm/elf.h \
+   /home/aspen/WNR834Bv2-V2.1.13_2.1.13/bcm4704/src/linux/linux/include/asm/isadep.h
+ptrace.o: ptrace.c \
+   /home/aspen/WNR834Bv2-V2.1.13_2.1.13/bcm4704/src/linux/linux/include/linux/kernel.h \
+   /home/aspen/WNR834Bv2-V2.1.13_2.1.13/bcm4704/src/linux/linux/include/linux/sched.h \
+   /home/aspen/WNR834Bv2-V2.1.13_2.1.13/bcm4704/src/linux/linux/include/linux/mm.h \
+   /home/aspen/WNR834Bv2-V2.1.13_2.1.13/bcm4704/src/linux/linux/include/linux/errno.h \
+   /home/aspen/WNR834Bv2-V2.1.13_2.1.13/bcm4704/src/linux/linux/include/linux/ptrace.h \
+   /home/aspen/WNR834Bv2-V2.1.13_2.1.13/bcm4704/src/linux/linux/include/linux/smp.h \
+   /home/aspen/WNR834Bv2-V2.1.13_2.1.13/bcm4704/src/linux/linux/include/linux/smp_lock.h \
+   /home/aspen/WNR834Bv2-V2.1.13_2.1.13/bcm4704/src/linux/linux/include/linux/user.h \
+   /home/aspen/WNR834Bv2-V2.1.13_2.1.13/bcm4704/src/linux/linux/include/asm/mipsregs.h \
+   /home/aspen/WNR834Bv2-V2.1.13_2.1.13/bcm4704/src/linux/linux/include/asm/pgtable.h \
+   /home/aspen/WNR834Bv2-V2.1.13_2.1.13/bcm4704/src/linux/linux/include/asm/page.h \
+   /home/aspen/WNR834Bv2-V2.1.13_2.1.13/bcm4704/src/linux/linux/include/asm/system.h \
+   /home/aspen/WNR834Bv2-V2.1.13_2.1.13/bcm4704/src/linux/linux/include/asm/uaccess.h \
+   /home/aspen/WNR834Bv2-V2.1.13_2.1.13/bcm4704/src/linux/linux/include/asm/bootinfo.h \
+   /home/aspen/WNR834Bv2-V2.1.13_2.1.13/bcm4704/src/linux/linux/include/asm/cpu.h \
+   /home/aspen/WNR834Bv2-V2.1.13_2.1.13/bcm4704/src/linux/linux/include/asm/fpu.h
+r2300_fpu.o: r2300_fpu.S \
+   /home/aspen/WNR834Bv2-V2.1.13_2.1.13/bcm4704/src/linux/linux/include/asm/asm.h \
+   /home/aspen/WNR834Bv2-V2.1.13_2.1.13/bcm4704/src/linux/linux/include/asm/errno.h \
+   /home/aspen/WNR834Bv2-V2.1.13_2.1.13/bcm4704/src/linux/linux/include/asm/fpregdef.h \
+   /home/aspen/WNR834Bv2-V2.1.13_2.1.13/bcm4704/src/linux/linux/include/asm/mipsregs.h \
+   /home/aspen/WNR834Bv2-V2.1.13_2.1.13/bcm4704/src/linux/linux/include/asm/offset.h \
+   /home/aspen/WNR834Bv2-V2.1.13_2.1.13/bcm4704/src/linux/linux/include/asm/regdef.h
+r2300_switch.o: r2300_switch.S \
+   /home/aspen/WNR834Bv2-V2.1.13_2.1.13/bcm4704/src/linux/linux/include/asm/asm.h \
+   /home/aspen/WNR834Bv2-V2.1.13_2.1.13/bcm4704/src/linux/linux/include/asm/cachectl.h \
+   /home/aspen/WNR834Bv2-V2.1.13_2.1.13/bcm4704/src/linux/linux/include/asm/current.h \
+   /home/aspen/WNR834Bv2-V2.1.13_2.1.13/bcm4704/src/linux/linux/include/asm/fpregdef.h \
+   /home/aspen/WNR834Bv2-V2.1.13_2.1.13/bcm4704/src/linux/linux/include/asm/mipsregs.h \
+   /home/aspen/WNR834Bv2-V2.1.13_2.1.13/bcm4704/src/linux/linux/include/asm/offset.h \
+   /home/aspen/WNR834Bv2-V2.1.13_2.1.13/bcm4704/src/linux/linux/include/asm/page.h \
+   /home/aspen/WNR834Bv2-V2.1.13_2.1.13/bcm4704/src/linux/linux/include/asm/pgtable-bits.h \
+   /home/aspen/WNR834Bv2-V2.1.13_2.1.13/bcm4704/src/linux/linux/include/asm/processor.h \
+   /home/aspen/WNR834Bv2-V2.1.13_2.1.13/bcm4704/src/linux/linux/include/asm/regdef.h \
+   /home/aspen/WNR834Bv2-V2.1.13_2.1.13/bcm4704/src/linux/linux/include/asm/stackframe.h \
+   /home/aspen/WNR834Bv2-V2.1.13_2.1.13/bcm4704/src/linux/linux/include/asm/asmmacro.h \
+   $(wildcard /home/aspen/WNR834Bv2-V2.1.13_2.1.13/bcm4704/src/linux/linux/include/config/cpu/has/llsc.h)
+r4k_fpu.o: r4k_fpu.S \
+   /home/aspen/WNR834Bv2-V2.1.13_2.1.13/bcm4704/src/linux/linux/include/asm/asm.h \
+   /home/aspen/WNR834Bv2-V2.1.13_2.1.13/bcm4704/src/linux/linux/include/asm/errno.h \
+   /home/aspen/WNR834Bv2-V2.1.13_2.1.13/bcm4704/src/linux/linux/include/asm/fpregdef.h \
+   /home/aspen/WNR834Bv2-V2.1.13_2.1.13/bcm4704/src/linux/linux/include/asm/mipsregs.h \
+   /home/aspen/WNR834Bv2-V2.1.13_2.1.13/bcm4704/src/linux/linux/include/asm/offset.h \
+   /home/aspen/WNR834Bv2-V2.1.13_2.1.13/bcm4704/src/linux/linux/include/asm/regdef.h
+r4k_switch.o: r4k_switch.S \
+   /home/aspen/WNR834Bv2-V2.1.13_2.1.13/bcm4704/src/linux/linux/include/asm/asm.h \
+   /home/aspen/WNR834Bv2-V2.1.13_2.1.13/bcm4704/src/linux/linux/include/asm/cachectl.h \
+   /home/aspen/WNR834Bv2-V2.1.13_2.1.13/bcm4704/src/linux/linux/include/asm/current.h \
+   /home/aspen/WNR834Bv2-V2.1.13_2.1.13/bcm4704/src/linux/linux/include/asm/fpregdef.h \
+   /home/aspen/WNR834Bv2-V2.1.13_2.1.13/bcm4704/src/linux/linux/include/asm/mipsregs.h \
+   /home/aspen/WNR834Bv2-V2.1.13_2.1.13/bcm4704/src/linux/linux/include/asm/offset.h \
+   /home/aspen/WNR834Bv2-V2.1.13_2.1.13/bcm4704/src/linux/linux/include/asm/page.h \
+   /home/aspen/WNR834Bv2-V2.1.13_2.1.13/bcm4704/src/linux/linux/include/asm/pgtable-bits.h \
+   /home/aspen/WNR834Bv2-V2.1.13_2.1.13/bcm4704/src/linux/linux/include/asm/processor.h \
+   /home/aspen/WNR834Bv2-V2.1.13_2.1.13/bcm4704/src/linux/linux/include/asm/regdef.h \
+   /home/aspen/WNR834Bv2-V2.1.13_2.1.13/bcm4704/src/linux/linux/include/asm/stackframe.h \
+   /home/aspen/WNR834Bv2-V2.1.13_2.1.13/bcm4704/src/linux/linux/include/asm/asmmacro.h \
+   $(wildcard /home/aspen/WNR834Bv2-V2.1.13_2.1.13/bcm4704/src/linux/linux/include/config/cpu/has/llsc.h) \
+   $(wildcard /home/aspen/WNR834Bv2-V2.1.13_2.1.13/bcm4704/src/linux/linux/include/config/smp.h)
+r6000_fpu.o: r6000_fpu.S \
+   /home/aspen/WNR834Bv2-V2.1.13_2.1.13/bcm4704/src/linux/linux/include/asm/asm.h \
+   /home/aspen/WNR834Bv2-V2.1.13_2.1.13/bcm4704/src/linux/linux/include/asm/fpregdef.h \
+   /home/aspen/WNR834Bv2-V2.1.13_2.1.13/bcm4704/src/linux/linux/include/asm/mipsregs.h \
+   /home/aspen/WNR834Bv2-V2.1.13_2.1.13/bcm4704/src/linux/linux/include/asm/offset.h \
+   /home/aspen/WNR834Bv2-V2.1.13_2.1.13/bcm4704/src/linux/linux/include/asm/regdef.h
+reset.o: reset.c \
+   /home/aspen/WNR834Bv2-V2.1.13_2.1.13/bcm4704/src/linux/linux/include/linux/kernel.h \
+   /home/aspen/WNR834Bv2-V2.1.13_2.1.13/bcm4704/src/linux/linux/include/linux/types.h \
+   /home/aspen/WNR834Bv2-V2.1.13_2.1.13/bcm4704/src/linux/linux/include/linux/reboot.h \
+   /home/aspen/WNR834Bv2-V2.1.13_2.1.13/bcm4704/src/linux/linux/include/asm/reboot.h
+scall_o32.o: scall_o32.S \
+   /home/aspen/WNR834Bv2-V2.1.13_2.1.13/bcm4704/src/linux/linux/include/linux/errno.h \
+   /home/aspen/WNR834Bv2-V2.1.13_2.1.13/bcm4704/src/linux/linux/include/asm/asm.h \
+   /home/aspen/WNR834Bv2-V2.1.13_2.1.13/bcm4704/src/linux/linux/include/asm/current.h \
+   /home/aspen/WNR834Bv2-V2.1.13_2.1.13/bcm4704/src/linux/linux/include/asm/mipsregs.h \
+   /home/aspen/WNR834Bv2-V2.1.13_2.1.13/bcm4704/src/linux/linux/include/asm/regdef.h \
+   /home/aspen/WNR834Bv2-V2.1.13_2.1.13/bcm4704/src/linux/linux/include/asm/stackframe.h \
+   /home/aspen/WNR834Bv2-V2.1.13_2.1.13/bcm4704/src/linux/linux/include/asm/isadep.h \
+   /home/aspen/WNR834Bv2-V2.1.13_2.1.13/bcm4704/src/linux/linux/include/asm/sysmips.h \
+   /home/aspen/WNR834Bv2-V2.1.13_2.1.13/bcm4704/src/linux/linux/include/asm/unistd.h \
+   $(wildcard /home/aspen/WNR834Bv2-V2.1.13_2.1.13/bcm4704/src/linux/linux/include/config/print/syscalls.h) \
+   $(wildcard /home/aspen/WNR834Bv2-V2.1.13_2.1.13/bcm4704/src/linux/linux/include/config/cpu/has/llsc.h)
+semaphore.o: semaphore.c \
+   /home/aspen/WNR834Bv2-V2.1.13_2.1.13/bcm4704/src/linux/linux/include/linux/sched.h \
+   /home/aspen/WNR834Bv2-V2.1.13_2.1.13/bcm4704/src/linux/linux/include/asm/semaphore-helper.h
+setup.o: setup.c \
+   /home/aspen/WNR834Bv2-V2.1.13_2.1.13/bcm4704/src/linux/linux/include/linux/errno.h \
+   /home/aspen/WNR834Bv2-V2.1.13_2.1.13/bcm4704/src/linux/linux/include/linux/hdreg.h \
+   /home/aspen/WNR834Bv2-V2.1.13_2.1.13/bcm4704/src/linux/linux/include/linux/init.h \
+   /home/aspen/WNR834Bv2-V2.1.13_2.1.13/bcm4704/src/linux/linux/include/linux/ioport.h \
+   /home/aspen/WNR834Bv2-V2.1.13_2.1.13/bcm4704/src/linux/linux/include/linux/sched.h \
+   /home/aspen/WNR834Bv2-V2.1.13_2.1.13/bcm4704/src/linux/linux/include/linux/kernel.h \
+   /home/aspen/WNR834Bv2-V2.1.13_2.1.13/bcm4704/src/linux/linux/include/linux/mm.h \
+   /home/aspen/WNR834Bv2-V2.1.13_2.1.13/bcm4704/src/linux/linux/include/linux/module.h \
+   /home/aspen/WNR834Bv2-V2.1.13_2.1.13/bcm4704/src/linux/linux/include/linux/stddef.h \
+   /home/aspen/WNR834Bv2-V2.1.13_2.1.13/bcm4704/src/linux/linux/include/linux/string.h \
+   /home/aspen/WNR834Bv2-V2.1.13_2.1.13/bcm4704/src/linux/linux/include/linux/unistd.h \
+   /home/aspen/WNR834Bv2-V2.1.13_2.1.13/bcm4704/src/linux/linux/include/linux/slab.h \
+   /home/aspen/WNR834Bv2-V2.1.13_2.1.13/bcm4704/src/linux/linux/include/linux/user.h \
+   /home/aspen/WNR834Bv2-V2.1.13_2.1.13/bcm4704/src/linux/linux/include/linux/utsname.h \
+   /home/aspen/WNR834Bv2-V2.1.13_2.1.13/bcm4704/src/linux/linux/include/linux/a.out.h \
+   /home/aspen/WNR834Bv2-V2.1.13_2.1.13/bcm4704/src/linux/linux/include/linux/tty.h \
+   /home/aspen/WNR834Bv2-V2.1.13_2.1.13/bcm4704/src/linux/linux/include/linux/bootmem.h \
+   /home/aspen/WNR834Bv2-V2.1.13_2.1.13/bcm4704/src/linux/linux/include/linux/blk.h \
+   /home/aspen/WNR834Bv2-V2.1.13_2.1.13/bcm4704/src/linux/linux/include/linux/ide.h \
+   /home/aspen/WNR834Bv2-V2.1.13_2.1.13/bcm4704/src/linux/linux/include/linux/timex.h \
+   /home/aspen/WNR834Bv2-V2.1.13_2.1.13/bcm4704/src/linux/linux/include/asm/asm.h \
+   /home/aspen/WNR834Bv2-V2.1.13_2.1.13/bcm4704/src/linux/linux/include/asm/bootinfo.h \
+   /home/aspen/WNR834Bv2-V2.1.13_2.1.13/bcm4704/src/linux/linux/include/asm/cachectl.h \
+   /home/aspen/WNR834Bv2-V2.1.13_2.1.13/bcm4704/src/linux/linux/include/asm/cpu.h \
+   /home/aspen/WNR834Bv2-V2.1.13_2.1.13/bcm4704/src/linux/linux/include/asm/io.h \
+   /home/aspen/WNR834Bv2-V2.1.13_2.1.13/bcm4704/src/linux/linux/include/asm/ptrace.h \
+   /home/aspen/WNR834Bv2-V2.1.13_2.1.13/bcm4704/src/linux/linux/include/asm/system.h \
+   $(wildcard /home/aspen/WNR834Bv2-V2.1.13_2.1.13/bcm4704/src/linux/linux/include/config/smp.h) \
+   $(wildcard /home/aspen/WNR834Bv2-V2.1.13_2.1.13/bcm4704/src/linux/linux/include/config/eisa.h) \
+   $(wildcard /home/aspen/WNR834Bv2-V2.1.13_2.1.13/bcm4704/src/linux/linux/include/config/blk/dev/ide.h) \
+   $(wildcard /home/aspen/WNR834Bv2-V2.1.13_2.1.13/bcm4704/src/linux/linux/include/config/blk/dev/ide/module.h) \
+   $(wildcard /home/aspen/WNR834Bv2-V2.1.13_2.1.13/bcm4704/src/linux/linux/include/config/pc/keyb.h) \
+   $(wildcard /home/aspen/WNR834Bv2-V2.1.13_2.1.13/bcm4704/src/linux/linux/include/config/sgi/ip22.h) \
+   $(wildcard /home/aspen/WNR834Bv2-V2.1.13_2.1.13/bcm4704/src/linux/linux/include/config/blk/dev/initrd.h) \
+   $(wildcard /home/aspen/WNR834Bv2-V2.1.13_2.1.13/bcm4704/src/linux/linux/include/config/highmem.h) \
+   $(wildcard /home/aspen/WNR834Bv2-V2.1.13_2.1.13/bcm4704/src/linux/linux/include/config/blk/dev/fd.h) \
+   $(wildcard /home/aspen/WNR834Bv2-V2.1.13_2.1.13/bcm4704/src/linux/linux/include/config/baget/mips.h) \
+   $(wildcard /home/aspen/WNR834Bv2-V2.1.13_2.1.13/bcm4704/src/linux/linux/include/config/mips/cobalt.h) \
+   $(wildcard /home/aspen/WNR834Bv2-V2.1.13_2.1.13/bcm4704/src/linux/linux/include/config/decstation.h) \
+   $(wildcard /home/aspen/WNR834Bv2-V2.1.13_2.1.13/bcm4704/src/linux/linux/include/config/mips/atlas.h) \
+   $(wildcard /home/aspen/WNR834Bv2-V2.1.13_2.1.13/bcm4704/src/linux/linux/include/config/mips/jazz.h) \
+   $(wildcard /home/aspen/WNR834Bv2-V2.1.13_2.1.13/bcm4704/src/linux/linux/include/config/mips/malta.h) \
+   $(wildcard /home/aspen/WNR834Bv2-V2.1.13_2.1.13/bcm4704/src/linux/linux/include/config/momenco/ocelot.h) \
+   $(wildcard /home/aspen/WNR834Bv2-V2.1.13_2.1.13/bcm4704/src/linux/linux/include/config/momenco/ocelot/g.h) \
+   $(wildcard /home/aspen/WNR834Bv2-V2.1.13_2.1.13/bcm4704/src/linux/linux/include/config/mips/sead.h) \
+   $(wildcard /home/aspen/WNR834Bv2-V2.1.13_2.1.13/bcm4704/src/linux/linux/include/config/sni/rm200/pci.h) \
+   $(wildcard /home/aspen/WNR834Bv2-V2.1.13_2.1.13/bcm4704/src/linux/linux/include/config/ddb5074.h) \
+   $(wildcard /home/aspen/WNR834Bv2-V2.1.13_2.1.13/bcm4704/src/linux/linux/include/config/ddb5476.h) \
+   $(wildcard /home/aspen/WNR834Bv2-V2.1.13_2.1.13/bcm4704/src/linux/linux/include/config/ddb5477.h) \
+   $(wildcard /home/aspen/WNR834Bv2-V2.1.13_2.1.13/bcm4704/src/linux/linux/include/config/cpu/vr41xx.h) \
+   $(wildcard /home/aspen/WNR834Bv2-V2.1.13_2.1.13/bcm4704/src/linux/linux/include/config/nec/osprey.h) \
+   $(wildcard /home/aspen/WNR834Bv2-V2.1.13_2.1.13/bcm4704/src/linux/linux/include/config/nec/eagle.h) \
+   $(wildcard /home/aspen/WNR834Bv2-V2.1.13_2.1.13/bcm4704/src/linux/linux/include/config/zao/capcella.h) \
+   $(wildcard /home/aspen/WNR834Bv2-V2.1.13_2.1.13/bcm4704/src/linux/linux/include/config/victor/mpc30x.h) \
+   $(wildcard /home/aspen/WNR834Bv2-V2.1.13_2.1.13/bcm4704/src/linux/linux/include/config/ibm/workpad.h) \
+   $(wildcard /home/aspen/WNR834Bv2-V2.1.13_2.1.13/bcm4704/src/linux/linux/include/config/casio/e55.h) \
+   $(wildcard /home/aspen/WNR834Bv2-V2.1.13_2.1.13/bcm4704/src/linux/linux/include/config/mips/ev96100.h) \
+   $(wildcard /home/aspen/WNR834Bv2-V2.1.13_2.1.13/bcm4704/src/linux/linux/include/config/mips/ev64120.h) \
+   $(wildcard /home/aspen/WNR834Bv2-V2.1.13_2.1.13/bcm4704/src/linux/linux/include/config/mips/ivr.h) \
+   $(wildcard /home/aspen/WNR834Bv2-V2.1.13_2.1.13/bcm4704/src/linux/linux/include/config/mips/ite8172.h) \
+   $(wildcard /home/aspen/WNR834Bv2-V2.1.13_2.1.13/bcm4704/src/linux/linux/include/config/nino.h) \
+   $(wildcard /home/aspen/WNR834Bv2-V2.1.13_2.1.13/bcm4704/src/linux/linux/include/config/lasat.h) \
+   $(wildcard /home/aspen/WNR834Bv2-V2.1.13_2.1.13/bcm4704/src/linux/linux/include/config/cpu/au1x00.h) \
+   $(wildcard /home/aspen/WNR834Bv2-V2.1.13_2.1.13/bcm4704/src/linux/linux/include/config/toshiba/jmr3927.h) \
+   $(wildcard /home/aspen/WNR834Bv2-V2.1.13_2.1.13/bcm4704/src/linux/linux/include/config/sibyte/board.h) \
+   $(wildcard /home/aspen/WNR834Bv2-V2.1.13_2.1.13/bcm4704/src/linux/linux/include/config/hp/laserjet.h)
+signal.o: signal.c \
+   /home/aspen/WNR834Bv2-V2.1.13_2.1.13/bcm4704/src/linux/linux/include/linux/sched.h \
+   /home/aspen/WNR834Bv2-V2.1.13_2.1.13/bcm4704/src/linux/linux/include/linux/mm.h \
+   /home/aspen/WNR834Bv2-V2.1.13_2.1.13/bcm4704/src/linux/linux/include/linux/smp.h \
+   /home/aspen/WNR834Bv2-V2.1.13_2.1.13/bcm4704/src/linux/linux/include/linux/smp_lock.h \
+   /home/aspen/WNR834Bv2-V2.1.13_2.1.13/bcm4704/src/linux/linux/include/linux/kernel.h \
+   /home/aspen/WNR834Bv2-V2.1.13_2.1.13/bcm4704/src/linux/linux/include/linux/personality.h \
+   /home/aspen/WNR834Bv2-V2.1.13_2.1.13/bcm4704/src/linux/linux/include/linux/signal.h \
+   /home/aspen/WNR834Bv2-V2.1.13_2.1.13/bcm4704/src/linux/linux/include/linux/errno.h \
+   /home/aspen/WNR834Bv2-V2.1.13_2.1.13/bcm4704/src/linux/linux/include/linux/wait.h \
+   /home/aspen/WNR834Bv2-V2.1.13_2.1.13/bcm4704/src/linux/linux/include/linux/unistd.h \
+   /home/aspen/WNR834Bv2-V2.1.13_2.1.13/bcm4704/src/linux/linux/include/asm/asm.h \
+   /home/aspen/WNR834Bv2-V2.1.13_2.1.13/bcm4704/src/linux/linux/include/asm/bitops.h \
+   /home/aspen/WNR834Bv2-V2.1.13_2.1.13/bcm4704/src/linux/linux/include/asm/cpu.h \
+   /home/aspen/WNR834Bv2-V2.1.13_2.1.13/bcm4704/src/linux/linux/include/asm/fpu.h \
+   /home/aspen/WNR834Bv2-V2.1.13_2.1.13/bcm4704/src/linux/linux/include/asm/offset.h \
+   /home/aspen/WNR834Bv2-V2.1.13_2.1.13/bcm4704/src/linux/linux/include/asm/pgalloc.h \
+   /home/aspen/WNR834Bv2-V2.1.13_2.1.13/bcm4704/src/linux/linux/include/asm/ptrace.h \
+   /home/aspen/WNR834Bv2-V2.1.13_2.1.13/bcm4704/src/linux/linux/include/asm/uaccess.h \
+   /home/aspen/WNR834Bv2-V2.1.13_2.1.13/bcm4704/src/linux/linux/include/asm/ucontext.h \
+   $(wildcard /home/aspen/WNR834Bv2-V2.1.13_2.1.13/bcm4704/src/linux/linux/include/config/binfmt/irix.h)
+smp.o: smp.c \
+   /home/aspen/WNR834Bv2-V2.1.13_2.1.13/bcm4704/src/linux/linux/include/linux/cache.h \
+   /home/aspen/WNR834Bv2-V2.1.13_2.1.13/bcm4704/src/linux/linux/include/linux/delay.h \
+   /home/aspen/WNR834Bv2-V2.1.13_2.1.13/bcm4704/src/linux/linux/include/linux/init.h \
+   /home/aspen/WNR834Bv2-V2.1.13_2.1.13/bcm4704/src/linux/linux/include/linux/interrupt.h \
+   /home/aspen/WNR834Bv2-V2.1.13_2.1.13/bcm4704/src/linux/linux/include/linux/spinlock.h \
+   /home/aspen/WNR834Bv2-V2.1.13_2.1.13/bcm4704/src/linux/linux/include/linux/threads.h \
+   /home/aspen/WNR834Bv2-V2.1.13_2.1.13/bcm4704/src/linux/linux/include/linux/module.h \
+   /home/aspen/WNR834Bv2-V2.1.13_2.1.13/bcm4704/src/linux/linux/include/linux/time.h \
+   /home/aspen/WNR834Bv2-V2.1.13_2.1.13/bcm4704/src/linux/linux/include/linux/timex.h \
+   /home/aspen/WNR834Bv2-V2.1.13_2.1.13/bcm4704/src/linux/linux/include/linux/sched.h \
+   /home/aspen/WNR834Bv2-V2.1.13_2.1.13/bcm4704/src/linux/linux/include/asm/atomic.h \
+   /home/aspen/WNR834Bv2-V2.1.13_2.1.13/bcm4704/src/linux/linux/include/asm/cpu.h \
+   /home/aspen/WNR834Bv2-V2.1.13_2.1.13/bcm4704/src/linux/linux/include/asm/processor.h \
+   /home/aspen/WNR834Bv2-V2.1.13_2.1.13/bcm4704/src/linux/linux/include/asm/system.h \
+   /home/aspen/WNR834Bv2-V2.1.13_2.1.13/bcm4704/src/linux/linux/include/asm/hardirq.h \
+   /home/aspen/WNR834Bv2-V2.1.13_2.1.13/bcm4704/src/linux/linux/include/asm/softirq.h \
+   /home/aspen/WNR834Bv2-V2.1.13_2.1.13/bcm4704/src/linux/linux/include/asm/mmu_context.h \
+   /home/aspen/WNR834Bv2-V2.1.13_2.1.13/bcm4704/src/linux/linux/include/asm/smp.h \
+   $(wildcard /home/aspen/WNR834Bv2-V2.1.13_2.1.13/bcm4704/src/linux/linux/include/config/sgi/ip27.h)
+syscall.o: syscall.c \
+   /home/aspen/WNR834Bv2-V2.1.13_2.1.13/bcm4704/src/linux/linux/include/linux/compiler.h \
+   /home/aspen/WNR834Bv2-V2.1.13_2.1.13/bcm4704/src/linux/linux/include/linux/linkage.h \
+   /home/aspen/WNR834Bv2-V2.1.13_2.1.13/bcm4704/src/linux/linux/include/linux/mm.h \
+   /home/aspen/WNR834Bv2-V2.1.13_2.1.13/bcm4704/src/linux/linux/include/linux/smp.h \
+   /home/aspen/WNR834Bv2-V2.1.13_2.1.13/bcm4704/src/linux/linux/include/linux/smp_lock.h \
+   /home/aspen/WNR834Bv2-V2.1.13_2.1.13/bcm4704/src/linux/linux/include/linux/mman.h \
+   /home/aspen/WNR834Bv2-V2.1.13_2.1.13/bcm4704/src/linux/linux/include/linux/sched.h \
+   /home/aspen/WNR834Bv2-V2.1.13_2.1.13/bcm4704/src/linux/linux/include/linux/file.h \
+   /home/aspen/WNR834Bv2-V2.1.13_2.1.13/bcm4704/src/linux/linux/include/linux/slab.h \
+   /home/aspen/WNR834Bv2-V2.1.13_2.1.13/bcm4704/src/linux/linux/include/linux/utsname.h \
+   /home/aspen/WNR834Bv2-V2.1.13_2.1.13/bcm4704/src/linux/linux/include/linux/unistd.h \
+   /home/aspen/WNR834Bv2-V2.1.13_2.1.13/bcm4704/src/linux/linux/include/asm/branch.h \
+   /home/aspen/WNR834Bv2-V2.1.13_2.1.13/bcm4704/src/linux/linux/include/asm/offset.h \
+   /home/aspen/WNR834Bv2-V2.1.13_2.1.13/bcm4704/src/linux/linux/include/asm/ptrace.h \
+   /home/aspen/WNR834Bv2-V2.1.13_2.1.13/bcm4704/src/linux/linux/include/asm/signal.h \
+   /home/aspen/WNR834Bv2-V2.1.13_2.1.13/bcm4704/src/linux/linux/include/asm/shmparam.h \
+   /home/aspen/WNR834Bv2-V2.1.13_2.1.13/bcm4704/src/linux/linux/include/asm/uaccess.h \
+   $(wildcard /home/aspen/WNR834Bv2-V2.1.13_2.1.13/bcm4704/src/linux/linux/include/config/print/syscalls.h) \
+   syscalls.h \
+   $(wildcard /home/aspen/WNR834Bv2-V2.1.13_2.1.13/bcm4704/src/linux/linux/include/config/hwsim.h) \
+   $(wildcard /home/aspen/WNR834Bv2-V2.1.13_2.1.13/bcm4704/src/linux/linux/include/config/binfmt/irix.h) \
+   irix5sys.h
+sysirix.o: sysirix.c \
+   /home/aspen/WNR834Bv2-V2.1.13_2.1.13/bcm4704/src/linux/linux/include/linux/kernel.h \
+   /home/aspen/WNR834Bv2-V2.1.13_2.1.13/bcm4704/src/linux/linux/include/linux/sched.h \
+   /home/aspen/WNR834Bv2-V2.1.13_2.1.13/bcm4704/src/linux/linux/include/linux/pagemap.h \
+   /home/aspen/WNR834Bv2-V2.1.13_2.1.13/bcm4704/src/linux/linux/include/linux/mm.h \
+   /home/aspen/WNR834Bv2-V2.1.13_2.1.13/bcm4704/src/linux/linux/include/linux/mman.h \
+   /home/aspen/WNR834Bv2-V2.1.13_2.1.13/bcm4704/src/linux/linux/include/linux/slab.h \
+   /home/aspen/WNR834Bv2-V2.1.13_2.1.13/bcm4704/src/linux/linux/include/linux/swap.h \
+   /home/aspen/WNR834Bv2-V2.1.13_2.1.13/bcm4704/src/linux/linux/include/linux/errno.h \
+   /home/aspen/WNR834Bv2-V2.1.13_2.1.13/bcm4704/src/linux/linux/include/linux/timex.h \
+   /home/aspen/WNR834Bv2-V2.1.13_2.1.13/bcm4704/src/linux/linux/include/linux/times.h \
+   /home/aspen/WNR834Bv2-V2.1.13_2.1.13/bcm4704/src/linux/linux/include/linux/elf.h \
+   /home/aspen/WNR834Bv2-V2.1.13_2.1.13/bcm4704/src/linux/linux/include/linux/msg.h \
+   /home/aspen/WNR834Bv2-V2.1.13_2.1.13/bcm4704/src/linux/linux/include/linux/shm.h \
+   /home/aspen/WNR834Bv2-V2.1.13_2.1.13/bcm4704/src/linux/linux/include/linux/smp.h \
+   /home/aspen/WNR834Bv2-V2.1.13_2.1.13/bcm4704/src/linux/linux/include/linux/smp_lock.h \
+   /home/aspen/WNR834Bv2-V2.1.13_2.1.13/bcm4704/src/linux/linux/include/linux/utsname.h \
+   /home/aspen/WNR834Bv2-V2.1.13_2.1.13/bcm4704/src/linux/linux/include/linux/file.h \
+   /home/aspen/WNR834Bv2-V2.1.13_2.1.13/bcm4704/src/linux/linux/include/asm/ptrace.h \
+   /home/aspen/WNR834Bv2-V2.1.13_2.1.13/bcm4704/src/linux/linux/include/asm/page.h \
+   /home/aspen/WNR834Bv2-V2.1.13_2.1.13/bcm4704/src/linux/linux/include/asm/pgalloc.h \
+   /home/aspen/WNR834Bv2-V2.1.13_2.1.13/bcm4704/src/linux/linux/include/asm/uaccess.h \
+   /home/aspen/WNR834Bv2-V2.1.13_2.1.13/bcm4704/src/linux/linux/include/asm/inventory.h
+sysmips.o: sysmips.c \
+   /home/aspen/WNR834Bv2-V2.1.13_2.1.13/bcm4704/src/linux/linux/include/linux/errno.h \
+   /home/aspen/WNR834Bv2-V2.1.13_2.1.13/bcm4704/src/linux/linux/include/linux/linkage.h \
+   /home/aspen/WNR834Bv2-V2.1.13_2.1.13/bcm4704/src/linux/linux/include/linux/mm.h \
+   /home/aspen/WNR834Bv2-V2.1.13_2.1.13/bcm4704/src/linux/linux/include/linux/smp.h \
+   /home/aspen/WNR834Bv2-V2.1.13_2.1.13/bcm4704/src/linux/linux/include/linux/smp_lock.h \
+   /home/aspen/WNR834Bv2-V2.1.13_2.1.13/bcm4704/src/linux/linux/include/linux/sched.h \
+   /home/aspen/WNR834Bv2-V2.1.13_2.1.13/bcm4704/src/linux/linux/include/linux/string.h \
+   /home/aspen/WNR834Bv2-V2.1.13_2.1.13/bcm4704/src/linux/linux/include/linux/utsname.h \
+   /home/aspen/WNR834Bv2-V2.1.13_2.1.13/bcm4704/src/linux/linux/include/asm/cachectl.h \
+   /home/aspen/WNR834Bv2-V2.1.13_2.1.13/bcm4704/src/linux/linux/include/asm/pgalloc.h \
+   /home/aspen/WNR834Bv2-V2.1.13_2.1.13/bcm4704/src/linux/linux/include/asm/sysmips.h \
+   /home/aspen/WNR834Bv2-V2.1.13_2.1.13/bcm4704/src/linux/linux/include/asm/uaccess.h
+time.o: time.c \
+   /home/aspen/WNR834Bv2-V2.1.13_2.1.13/bcm4704/src/linux/linux/include/linux/types.h \
+   /home/aspen/WNR834Bv2-V2.1.13_2.1.13/bcm4704/src/linux/linux/include/linux/kernel.h \
+   /home/aspen/WNR834Bv2-V2.1.13_2.1.13/bcm4704/src/linux/linux/include/linux/init.h \
+   /home/aspen/WNR834Bv2-V2.1.13_2.1.13/bcm4704/src/linux/linux/include/linux/sched.h \
+   /home/aspen/WNR834Bv2-V2.1.13_2.1.13/bcm4704/src/linux/linux/include/linux/param.h \
+   /home/aspen/WNR834Bv2-V2.1.13_2.1.13/bcm4704/src/linux/linux/include/linux/time.h \
+   /home/aspen/WNR834Bv2-V2.1.13_2.1.13/bcm4704/src/linux/linux/include/linux/smp.h \
+   /home/aspen/WNR834Bv2-V2.1.13_2.1.13/bcm4704/src/linux/linux/include/linux/kernel_stat.h \
+   /home/aspen/WNR834Bv2-V2.1.13_2.1.13/bcm4704/src/linux/linux/include/linux/spinlock.h \
+   /home/aspen/WNR834Bv2-V2.1.13_2.1.13/bcm4704/src/linux/linux/include/linux/interrupt.h \
+   /home/aspen/WNR834Bv2-V2.1.13_2.1.13/bcm4704/src/linux/linux/include/linux/module.h \
+   $(wildcard /home/aspen/WNR834Bv2-V2.1.13_2.1.13/bcm4704/src/linux/linux/include/config/kernprof.h) \
+   /home/aspen/WNR834Bv2-V2.1.13_2.1.13/bcm4704/src/linux/linux/include/linux/kernprof.h \
+   /home/aspen/WNR834Bv2-V2.1.13_2.1.13/bcm4704/src/linux/linux/include/asm/bootinfo.h \
+   /home/aspen/WNR834Bv2-V2.1.13_2.1.13/bcm4704/src/linux/linux/include/asm/cpu.h \
+   /home/aspen/WNR834Bv2-V2.1.13_2.1.13/bcm4704/src/linux/linux/include/asm/time.h \
+   /home/aspen/WNR834Bv2-V2.1.13_2.1.13/bcm4704/src/linux/linux/include/asm/hardirq.h \
+   /home/aspen/WNR834Bv2-V2.1.13_2.1.13/bcm4704/src/linux/linux/include/asm/div64.h \
+   $(wildcard /home/aspen/WNR834Bv2-V2.1.13_2.1.13/bcm4704/src/linux/linux/include/config/smp.h)
+traps.o: traps.c \
+   /home/aspen/WNR834Bv2-V2.1.13_2.1.13/bcm4704/src/linux/linux/include/linux/init.h \
+   /home/aspen/WNR834Bv2-V2.1.13_2.1.13/bcm4704/src/linux/linux/include/linux/mm.h \
+   /home/aspen/WNR834Bv2-V2.1.13_2.1.13/bcm4704/src/linux/linux/include/linux/module.h \
+   /home/aspen/WNR834Bv2-V2.1.13_2.1.13/bcm4704/src/linux/linux/include/linux/sched.h \
+   /home/aspen/WNR834Bv2-V2.1.13_2.1.13/bcm4704/src/linux/linux/include/linux/smp.h \
+   /home/aspen/WNR834Bv2-V2.1.13_2.1.13/bcm4704/src/linux/linux/include/linux/smp_lock.h \
+   /home/aspen/WNR834Bv2-V2.1.13_2.1.13/bcm4704/src/linux/linux/include/linux/spinlock.h \
+   /home/aspen/WNR834Bv2-V2.1.13_2.1.13/bcm4704/src/linux/linux/include/asm/bootinfo.h \
+   /home/aspen/WNR834Bv2-V2.1.13_2.1.13/bcm4704/src/linux/linux/include/asm/branch.h \
+   /home/aspen/WNR834Bv2-V2.1.13_2.1.13/bcm4704/src/linux/linux/include/asm/cpu.h \
+   /home/aspen/WNR834Bv2-V2.1.13_2.1.13/bcm4704/src/linux/linux/include/asm/fpu.h \
+   /home/aspen/WNR834Bv2-V2.1.13_2.1.13/bcm4704/src/linux/linux/include/asm/cachectl.h \
+   /home/aspen/WNR834Bv2-V2.1.13_2.1.13/bcm4704/src/linux/linux/include/asm/inst.h \
+   /home/aspen/WNR834Bv2-V2.1.13_2.1.13/bcm4704/src/linux/linux/include/asm/jazz.h \
+   /home/aspen/WNR834Bv2-V2.1.13_2.1.13/bcm4704/src/linux/linux/include/asm/module.h \
+   /home/aspen/WNR834Bv2-V2.1.13_2.1.13/bcm4704/src/linux/linux/include/asm/pgtable.h \
+   /home/aspen/WNR834Bv2-V2.1.13_2.1.13/bcm4704/src/linux/linux/include/asm/io.h \
+   /home/aspen/WNR834Bv2-V2.1.13_2.1.13/bcm4704/src/linux/linux/include/asm/siginfo.h \
+   /home/aspen/WNR834Bv2-V2.1.13_2.1.13/bcm4704/src/linux/linux/include/asm/watch.h \
+   /home/aspen/WNR834Bv2-V2.1.13_2.1.13/bcm4704/src/linux/linux/include/asm/tlbdebug.h \
+   /home/aspen/WNR834Bv2-V2.1.13_2.1.13/bcm4704/src/linux/linux/include/asm/types.h \
+   /home/aspen/WNR834Bv2-V2.1.13_2.1.13/bcm4704/src/linux/linux/include/asm/system.h \
+   /home/aspen/WNR834Bv2-V2.1.13_2.1.13/bcm4704/src/linux/linux/include/asm/traps.h \
+   /home/aspen/WNR834Bv2-V2.1.13_2.1.13/bcm4704/src/linux/linux/include/asm/uaccess.h \
+   /home/aspen/WNR834Bv2-V2.1.13_2.1.13/bcm4704/src/linux/linux/include/asm/mmu_context.h \
+   $(wildcard /home/aspen/WNR834Bv2-V2.1.13_2.1.13/bcm4704/src/linux/linux/include/config/proc/fs.h) \
+   $(wildcard /home/aspen/WNR834Bv2-V2.1.13_2.1.13/bcm4704/src/linux/linux/include/config/modules.h) \
+   $(wildcard /home/aspen/WNR834Bv2-V2.1.13_2.1.13/bcm4704/src/linux/linux/include/config/cpu/has/llsc.h) \
+   $(wildcard /home/aspen/WNR834Bv2-V2.1.13_2.1.13/bcm4704/src/linux/linux/include/config/smp.h) \
+   $(wildcard /home/aspen/WNR834Bv2-V2.1.13_2.1.13/bcm4704/src/linux/linux/include/config/cpu/mips32.h) \
+   $(wildcard /home/aspen/WNR834Bv2-V2.1.13_2.1.13/bcm4704/src/linux/linux/include/config/cpu/mips64.h)
+unaligned.o: unaligned.c \
+   /home/aspen/WNR834Bv2-V2.1.13_2.1.13/bcm4704/src/linux/linux/include/linux/mm.h \
+   /home/aspen/WNR834Bv2-V2.1.13_2.1.13/bcm4704/src/linux/linux/include/linux/signal.h \
+   /home/aspen/WNR834Bv2-V2.1.13_2.1.13/bcm4704/src/linux/linux/include/linux/smp.h \
+   /home/aspen/WNR834Bv2-V2.1.13_2.1.13/bcm4704/src/linux/linux/include/linux/smp_lock.h \
+   /home/aspen/WNR834Bv2-V2.1.13_2.1.13/bcm4704/src/linux/linux/include/asm/asm.h \
+   /home/aspen/WNR834Bv2-V2.1.13_2.1.13/bcm4704/src/linux/linux/include/asm/branch.h \
+   /home/aspen/WNR834Bv2-V2.1.13_2.1.13/bcm4704/src/linux/linux/include/asm/byteorder.h \
+   /home/aspen/WNR834Bv2-V2.1.13_2.1.13/bcm4704/src/linux/linux/include/asm/inst.h \
+   /home/aspen/WNR834Bv2-V2.1.13_2.1.13/bcm4704/src/linux/linux/include/asm/uaccess.h \
+   /home/aspen/WNR834Bv2-V2.1.13_2.1.13/bcm4704/src/linux/linux/include/asm/system.h \
+   $(wildcard /home/aspen/WNR834Bv2-V2.1.13_2.1.13/bcm4704/src/linux/linux/include/config/proc/fs.h) \
+   $(wildcard /home/aspen/WNR834Bv2-V2.1.13_2.1.13/bcm4704/src/linux/linux/include/config/mips64.h)

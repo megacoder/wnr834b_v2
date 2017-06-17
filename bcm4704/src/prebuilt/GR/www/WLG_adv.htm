@@ -1,0 +1,125 @@
+<html>
+<head>
+<%0%>
+
+<title>Erweiterte WLAN-Konfiguration</title>
+<link rel="stylesheet" href="form.css">
+<STYLE TYPE="text/javascript">
+	classes.num.all.fontFamily = "Courier";
+	classes.num.all.fontSize = "10pt" ;
+</style>
+<script language="javascript" type="text/javascript" src="utility.js"></script>
+<script language="javascript" type="text/javascript" src="func.js"></script>
+<script language="javascript" type="text/javascript">
+<!-- hide script from old browsers
+
+function checkData()
+{
+	var cf = document.forms[0];
+	var frag = parseInt(cf.frag.value);
+	var rts = parseInt(cf.rts.value);
+
+	if (isNaN(frag) || frag > 2346 || frag < 256) {
+		alert("Der Fragmentierungsgrenzwert muss im Bereich 256 bis 2346 liegen.");
+		return false;
+	}
+	if (isNaN(rts) || rts > 2347 || rts < 1) {
+		alert("Der CTS/RTS-Grenzwert muss im Bereich 1 bis 2347 liegen.");
+		return false;
+	}
+	return true;
+}
+
+function loadSettings()
+{
+	var cf = document.forms[0];
+	if (cf.wps_enable.value == "disabled")
+	{
+		cf.pin_disable.disabled = true;
+		cf.wsc_config.disabled = true;
+	}
+}
+
+//-->
+</script>
+</head>
+<body bgcolor="#ffffff" onload="loadSettings();loadhelp('WLG_adv');">
+<form name="formname" method="POST" action="wlg_adv.cgi">
+<table border="0" cellpadding="0" cellspacing="3" width="100%">
+<tr>
+  <td colspan="2"><h1>Erweiterte WLAN-Konfiguration</h1></td></tr>
+<tr>
+  <td colspan="2" background="liteblue.gif" height="12">&nbsp; </td></tr>
+<tr>
+  <td nowrap colspan="2"><a href="javascript:loadhelp('WLG_adv','settings')" tabindex="-1"><B>Einstellungen für WLAN-Router</B></a></td></tr>
+<tr>
+  <td colspan="2">
+    <input type="checkbox"  <%345%> name="enable_ap" value="enable_ap"> WLAN-Funktionen des Routers aktivieren </td></tr>
+<tr>
+  <td nowrap colspan="2">
+    <input type="checkbox" <%346%> name="ssid_bc" value="ssid_bc"> SSID-Broadcast aktivieren </td></tr>
+<tr>
+  <td align=left>&nbsp;&nbsp;Grenzwert für Fragmentierung (Bereich 256 bis 2346):&nbsp;&nbsp;</td>
+  <td align=left>
+    <input TYPE="text" NAME="frag" size=5 maxlength=4 value="<%347%>"></td></tr>
+<tr>
+  <td align=left>&nbsp;&nbsp;CTS/RTS-Grenzwert (Bereich 1 bis 2347):&nbsp;&nbsp;</td>
+  <td align=left>
+    <input TYPE="text" NAME="rts" size=5 maxlength=4 value="<%348%>"></td></tr>
+<tr>
+  <td align=left>&nbsp;&nbsp;Präambelmodus</td>
+  <td align=left>
+      <select name="enable_shortpreamble"><option value="" <%349%>>Lange Präambel</option><option value="enable_shortpreamble" <%350%>>Kurze Präambel </option></select></td></tr>
+<tr>
+  <td colspan="2" background="liteblue.gif" height="12">&nbsp; </td></tr>
+
+
+ <tr>
+  <td width="60%"><b>WPS-Einstellungen</b></td>
+ </tr>
+
+ <tr>
+
+  <%351%>
+  <td width="60%">&nbsp;&nbsp;Router-PIN:</td>
+  <td width="40%"><b><font size=4><%352%></font></b></td>
+  <%353%>
+  <%354%>
+  <td width="60%"><font color=gray>&nbsp;&nbsp;Router-PIN:</font></td>
+  <td width="40%"><b><font size=4 color=gray><%352%></font></b></td>
+  <%355%>
+  
+ </tr>
+ <tr>
+  <td colspan=2>
+  <INPUT TYPE="checkbox" NAME="pin_disable" VALUE="1" <%356%>>
+  <font size=2 <%357%>> Router-PIN deaktivieren <%358%></font>
+  </td>
+ </tr>
+ <tr>
+  <td colspan=2>
+  <INPUT TYPE="checkbox" NAME="wsc_config" <%359%>>
+  <font size=2 <%357%>> Aktuelle WLAN-Einstellungen beibehalten </font>
+  </td>
+ </tr>
+
+
+<tr>
+  <td colspan="2" background="liteblue.gif" height="12">&nbsp; </td></tr>
+<tr>
+  <td nowrap><a href="javascript:loadhelp('WLG_adv','access')" tabindex="-1"><B>Liste der zugriffsberechtigten WLAN-Karten</B></a></td>
+  <td align="left">
+      <input type="button" name="access" value="Zugriffsliste anpassen" onClick="self.location.href='WLG_acl.htm'"></td></tr>
+<tr>
+  <td colspan="2" background="liteblue.gif" height="12">&nbsp; </td></tr>
+<tr>
+
+<tr>
+  <td colspan="2" align="center" height="35" valign="bottom">
+	<input type="submit" name="Apply" value="Übernehmen" onclick="return checkData();">
+	<input type="button" name="Cancel" value="Abbrechen" onclick="reset();loadSettings();"></td></tr>
+</table>
+<input type="hidden" name="wps_enable" value="<%360%>">
+</form>
+</body>
+</html>

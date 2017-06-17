@@ -1,0 +1,46 @@
+<html>
+<head>
+<%0%>
+<title>Hilfe</title> 
+<link rel="stylesheet" href="help.css">
+</head>
+<body bgcolor="#0099cc" >
+<h1>Hilfe: Statische Routen</h1> 
+</P><p> Durch Einrichten einer statischen Route stellen Sie dem Router Informationen zur Verfügung, die aus bestimmten Gründen nicht automatisch abgerufen werden können. Das kann zum Beispiel dann erforderlich sein, wenn RIP im LAN deaktiviert ist. (Weitere Informationen finden Sie auf der Seite <I>LAN-IP-Konfiguration</I>.) In der Tabelle werden alle bereits definierten statischen Routen angezeigt. Über den Bereich unterhalb der Tabelle der statischen Routen können Sie Routen hinzufügen und löschen. </p>
+<hr>
+<p>
+	<B>So richten Sie eine statische Route ein:</B> 
+</p>
+<ol>
+	<li> Klicken Sie auf die Schaltfläche <B>Hinzufügen</B>. </li>
+
+	<li> Geben Sie im Feld <B>Routenname</B> unterhalb der Tabellen eine Bezeichnung für die Route ein. <BR> (Der Routenname hat nur eine beschreibende Funktion und kann frei gewählt werden.) </li>
+<li> Wählen Sie <B>Privat</B>, wenn der Zugriff auf das LAN beschränkt werden soll. </li>
+
+
+	<li> Zum Aktivieren der Route wählen Sie <B>Aktiv</B>. </li>
+	<li> Geben Sie die <B>IP-Zieladresse</B> des Zielhosts für die Route ein. </li>
+	<li> Geben Sie die <B>IP-Subnetzmaske</B> für das Ziel ein. <BR> Wenn es sich dabei um einen einzelnen Host handelt, geben Sie 255.255.255.255 ein. </li>
+	<li> Geben Sie die <B>Gateway-IP-Adresse</B> ein; hierbei muss es sich um einen Router im selben Segment handeln. </li>
+	<li> Geben Sie im Feld <B>Metrik</B> einen Wert aus dem Bereich 2 bis 15 ein. <BR> Dieser Wert steht für die Anzahl der weiteren Router im Netzwerk. Üblicherweise liefern die Werte 2 und 3 die besten Ergebnisse; bei direkten Verbindungen sollte immer der Wert 2 gewählt werden. </li>
+	
+	<li> Klicken Sie auf <B>Übernehmen</B>, um die statische Route zur Tabelle hinzuzufügen. </li>
+</ol>
+<p>
+	<B>So bearbeiten Sie eine statische Route:</B> 
+
+<ol>
+	<li> Klicken Sie auf die Optionsschaltfläche neben der Route, die Sie bearbeiten möchten. </li>
+	<li> Nehmen Sie die gewünschten Änderungen vor. <li>Klicken Sie anschließend auf <B>Übernehmen</B>. </ol>
+
+</P><p>
+	<B>So löschen Sie eine statische Route:</B> 
+
+<ol>
+	<li> Klicken Sie auf die Optionsschaltfläche neben der Route, die Sie löschen möchten. </li>
+	<li>Klicken Sie auf <B>Löschen</B>. </li>
+		<li> Klicken Sie auf <B>Übernehmen</B>, um die statische Route aus der Tabelle zu entfernen. </li>
+</ol>
+</body>
+</html>
+

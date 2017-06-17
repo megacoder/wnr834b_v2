@@ -1,0 +1,51 @@
+infblock.o: infblock.c \
+   /home/aspen/WNR834Bv2-V2.1.13_2.1.13/bcm4704/src/linux/linux/include/linux/zutil.h \
+   infblock.h \
+   inftrees.h \
+   infcodes.h \
+   infutil.h
+infcodes.o: infcodes.c \
+   /home/aspen/WNR834Bv2-V2.1.13_2.1.13/bcm4704/src/linux/linux/include/linux/zutil.h \
+   inftrees.h \
+   infblock.h \
+   infcodes.h \
+   infutil.h \
+   inffast.h
+infcodes.h: \
+   infblock.h
+	@touch infcodes.h
+inffast.o: inffast.c \
+   /home/aspen/WNR834Bv2-V2.1.13_2.1.13/bcm4704/src/linux/linux/include/linux/zutil.h \
+   inftrees.h \
+   infblock.h \
+   infcodes.h \
+   infutil.h \
+   inffast.h
+inflate.o: inflate.c \
+   /home/aspen/WNR834Bv2-V2.1.13_2.1.13/bcm4704/src/linux/linux/include/linux/module.h \
+   /home/aspen/WNR834Bv2-V2.1.13_2.1.13/bcm4704/src/linux/linux/include/linux/zutil.h \
+   infblock.h \
+   infutil.h
+inflate_syms.o: inflate_syms.c \
+   /home/aspen/WNR834Bv2-V2.1.13_2.1.13/bcm4704/src/linux/linux/include/linux/module.h \
+   /home/aspen/WNR834Bv2-V2.1.13_2.1.13/bcm4704/src/linux/linux/include/linux/init.h \
+   /home/aspen/WNR834Bv2-V2.1.13_2.1.13/bcm4704/src/linux/linux/include/linux/zlib.h
+inftrees.o: inftrees.c \
+   /home/aspen/WNR834Bv2-V2.1.13_2.1.13/bcm4704/src/linux/linux/include/linux/zutil.h \
+   inftrees.h \
+   infutil.h \
+   inffixed.h
+infutil.o: infutil.c \
+   /home/aspen/WNR834Bv2-V2.1.13_2.1.13/bcm4704/src/linux/linux/include/linux/zutil.h \
+   infblock.h \
+   inftrees.h \
+   infcodes.h \
+   infutil.h
+infutil.h: \
+   /home/aspen/WNR834Bv2-V2.1.13_2.1.13/bcm4704/src/linux/linux/include/linux/zconf.h \
+   inftrees.h \
+   infcodes.h
+	@touch infutil.h
+.PRECIOUS:	infcodes.h \
+	infutil.h \
+

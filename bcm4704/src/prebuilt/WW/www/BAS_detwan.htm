@@ -1,0 +1,36 @@
+<HTML>
+<head>
+<%2%>
+<link rel="stylesheet" href="form.css">
+<script language="JavaScript">
+<!--
+function do_submit()
+{document.forms[0].submit();
+}
+function wait1()
+{
+setTimeout('do_submit()',1500);
+}
+//-->
+</script>
+
+</HEAD>
+<BODY onLoad="wait1();" bgcolor="#ffffff" LINK=#000000 VLINK=#000000 ALINK=#000000>
+<form name="formname" method="POST" action="bas_detwan.cgi">
+ <input type="hidden" name="WDect" value="Execute">
+</form>		
+<table WIDTH="100%" BORDER="0" CELLSPACING="0" CELLPADDING="0">
+<tr colspan="2">
+<td align=center ><b>We are testing the Internet connection using your settings.</b></TD>
+</p> 
+</TR>
+<tr> <!-- RULE -->
+ <td colspan="2" background="liteblue.gif" height="12"> &nbsp;</td>
+</tr>
+<tr colspan="2">
+ <td align=center>Please wait...</TD>
+</TR>
+</TABLE>
+</BODY>
+</HTML>
+

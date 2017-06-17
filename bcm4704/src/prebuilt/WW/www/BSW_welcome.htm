@@ -1,0 +1,68 @@
+<html>
+<head>
+<%2%>
+<title>Configuration Assistant</title>
+<link rel="stylesheet" type="text/css" href="style.css">
+<script type="text/javascript">
+<!--
+function selectEdit(value)
+{
+	if (value == 0)
+	    document.forms[0].select.value = 0;
+	else if (value == 1)
+		document.forms[0].select.value = 1;
+}
+
+function CloseWindow()
+{
+ top.window.opener=null;
+ top.window.close();
+}
+
+function msg_close()
+{
+ alert("Close this window. Most browsers will close when you click OK. \nIf your browser asks, follow the prompts to close and exit the browser.");
+ CloseWindow();
+}
+
+-->
+</script>
+</head>
+<body bgcolor="#ffffff" leftmargin="0" marginwidth="0" topmargin="0" marginheight="0">
+<form name="smart_dns" action="blkDetWan.cgi" method="POST">
+<p><br>
+  <tr>
+   <td rowspan="2" colspan="5"   valign="top">
+     <h1>&nbsp;&nbsp;Would you like help setting up your wireless network? </h1>
+     <table width="600" border="2" cellpadding="2" cellspacing="0" bordercolor="#FFFFFF" bgcolor="#E6E6E6">
+       <tr>
+         <td width="35" align="center" valign="middle"><label>
+           <input name="advselect" type="radio" value="yes" onclick="selectEdit(0)" checked>
+           </label>         </td>
+         <td width="549" valign="middle" class="InductiveOptions">Yes, please guide me through the options. </td>
+       </tr>
+       <tr>
+         <td align="center" valign="middle"><input name="advselect" type="radio" value="no" onclick="selectEdit(1)"></td>
+         <td valign="middle" class="InductiveOptions">No, I am an advanced  user. I would like to manually configure my new router. (Be sure to power off  and on your modem before setting your configuration.)</td>
+       </tr>
+     </table>
+<%5%>
+    <br><b>Please note:</b> Your router's IP address has been changed to: <b><%37%></b>
+<%6%>
+<%388%>
+     <p>&nbsp;</p>
+     <p>&nbsp;</p>
+     <p>&nbsp;</p>
+     <p>&nbsp;</p>
+   <td><img src="images/spacer.gif" width="1" height="18" border="0" alt="" /></td>
+  </tr>
+  <tr>
+    <td><input type="button" name="quit" value="   Quit   " onclick="msg_close();">
+    <td><img src="spacer.gif" width="200" height="18"></td>
+    <td><input type="button" name="next" value="   Next>  " onclick="this.form.submit();">
+  </tr>
+<input type="hidden" name="select" value="0"> 
+</form>
+</BODY>
+</HTML>
+

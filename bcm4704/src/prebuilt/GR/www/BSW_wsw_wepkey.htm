@@ -1,0 +1,67 @@
+<html>
+<head>
+<%0%>
+<title>Konfigurationsassistent</title>
+<link rel="stylesheet" type="text/css" href="style.css">
+<script type="text/javascript">
+<!-- Start Script
+function selectEdit(value)
+{
+	if (value == 0)
+	    document.forms[0].select.value = 0;
+	else if (value == 1)
+		document.forms[0].select.value = 1;
+	else if (value == 2)
+		document.forms[0].select.value = 2;		
+}
+
+function printPage()
+{
+    if (window.print)
+        window.print();
+    else
+        alert("Ihr Browser unterstützt die Druckfunktion nicht.");
+}
+// End Script -->
+</script>
+</head>
+
+<body bgcolor="#ffffff" leftmargin="0" marginwidth="0" topmargin="0" marginheight="0">
+<form name="wsw_wepkey" action="wsw_wepkey.cgi" method="post">
+<p>
+<div align="center">
+<table BORDER="0" CELLSPACING="0" CELLPADDING="5" width="100%">
+
+  <tr>
+   <td valign="top">
+     <h1><BR>&nbsp;&nbsp;Bewahren Sie die WEP-Passphrase und den WEP-Schlüssel an einem sicheren Ort auf. </h1>
+     <p>&nbsp;&nbsp;Sie sollten diese Informationen an einem geeigneten Ort aufbewahren, damit Sie weitere Geräte in ihr drahtloses Netzwerk aufnehmen können. <br />
+     </p>
+     <p><strong>&nbsp;&nbsp;Passphrase:</strong> <%398%> </p>
+     <p><strong>&nbsp;&nbsp;Schlüssel 1:</strong> <%399%>  </p>
+     <p>&nbsp;       </p>
+      <p>&nbsp;</p>
+     <p>&nbsp;</p>
+   </td>
+   <td><img src="spacer.gif" width="1" height="18" border="0" alt="" /></td>
+  </tr>
+
+
+ <tr>
+    <td>&nbsp;&nbsp;
+    <!--<input type="button" name="Print" value="&nbsp; Print &nbsp;" onclick="printPage()">-->
+    <!--<input type="submit" name="Back" value="&nbsp; Back &nbsp;" onclick="selectEdit(1)">-->
+	<input type="submit" name="Next" value="  Weiter &gt;  " onclick="selectEdit(2)">
+	<BR><BR>
+	</td>
+ </tr>
+
+ 
+</table>
+</div>
+<input type="hidden" name="select" value="0"> 
+</form>
+</BODY>
+
+</HTML>
+

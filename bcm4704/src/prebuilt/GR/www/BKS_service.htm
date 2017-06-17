@@ -1,0 +1,78 @@
+<html>
+<head>
+<%0%>
+<title>Dienste sperren</title> 
+<link rel="stylesheet" href="form.css">
+<%13%>
+<script language="javascript" type="text/javascript">
+<!--
+function chgSel(index)
+{
+ document.forms[0].select.value = index;
+ return true;
+}
+//-->
+</script> 
+</head>
+<body bgcolor="#ffffff" onload="loadhelp('BKS_service');document.forms[0].elements[0].focus();">
+<form name="frmService" method="POST" action="fw_serv.cgi">
+	<table border="0" cellpadding="0" cellspacing="3" width="100%">
+	<tr>
+		<td colspan="2"><h1>Dienste sperren</h1></td>
+	</tr>
+<tr> <!-- RULE -->
+ <td colspan="2" background="liteblue.gif" height="12">&nbsp; </td>
+</tr>
+ <TR>
+ <TD align="left" colspan="2"><a href="javascript:loadhelp('BKS_service','block')" tabindex="-1"><B>Dienste sperren</B></a><BR>
+ <input type="radio" <%69%> name="skeyword" value="never">Nie<BR> 
+ <input type="radio" <%70%> name="skeyword" value="perschedule">Nach Zeitplan<BR>
+ <input type="radio" <%71%> name="skeyword" value="always">Immer </TD>
+ </TR>
+<tr> <!-- RULE -->
+ <td colspan="2" background="liteblue.gif" height="12">&nbsp; </td>
+</tr>
+<tr>
+	<td colspan="2">
+		<a href="javascript:loadhelp('BKS_service','table')" tabindex="-1"><B>Diensttabelle</B></a></td>
+</tr>
+	<tr>
+	<td colspan="2">
+		<table border="1" cellpadding="2" cellspacing="0" width="100%">
+		<tr>
+			<td nowrap align="center" width="6%">&nbsp;	 	</td>
+			<td nowrap align="center" width="6%"><span class="thead"># </span>	</td>
+			<td nowrap align="center"><span class="thead">Diensttyp</span></td>
+			<td nowrap align="center"><span class="thead">Port</span></td>
+			<td nowrap align="center"><span class="thead">IP</span></td>
+		</tr>
+		<%72%>
+        </table>
+	</td>
+</tr>
+<tr> <!-- RULE -->
+ <td colspan="2" background="liteblue.gif" height="12">&nbsp; </td>
+</tr>
+<tr>
+<td colspan="2" align="center">
+	<input type="Submit" name="Add" value=" Hinzufügen ">
+	<input type="Submit" name="Edit" value="Bearbeiten">
+	<input type="Submit" name="Delete" value="Löschen"></td>
+</tr>
+<tr> <!-- RULE -->
+ <td colspan="2" background="liteblue.gif" height="12">&nbsp; </td>
+</tr>
+<tr>
+<td colspan="2" align="center">
+ <input type="submit" name="apply" value="Übernehmen">
+ <input type="reset" name="cancel" value="Abbrechen">
+</td>
+</tr>
+</table>
+
+	<input type="hidden" name="select" value="-1">
+
+</form>
+</body>
+</html>
+

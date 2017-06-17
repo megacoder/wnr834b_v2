@@ -1,0 +1,109 @@
+<html>
+<head>
+<%0%>
+<link rel="stylesheet" href="form.css">
+<title>PPPoE-Status</title>
+<script language="javascript" type="text/javascript">
+<!--
+
+function refreshPage() {
+	if(document.forms[0].Connect.value == 'Renew')
+		return true;
+	window.setTimeout('window.location.href = "RST_st_poe.htm";',10000);
+}
+
+function disableConButton()
+{
+    document.forms[0].Connect.disabled = true;
+    document.forms[0].Disconnect.disabled = true;
+    document.forms[0].ConMethod.value = "  Connect  ";
+
+    document.forms[0].submit();    
+    
+    return true;
+}
+
+function disableDisConButton()
+{
+    document.forms[0].Connect.disabled = true;
+    document.forms[0].Disconnect.disabled = true;
+    document.forms[0].ConMethod.value = "Disconnect";
+
+    document.forms[0].submit();     
+    
+    return true;
+}
+
+//-->
+</script>
+</head>
+<body bgcolor="#ffffff" onLoad="refreshPage()">
+<form name="poe_st" method="post" action="st_poe.cgi">
+
+<TABLE border=0 width="100%">
+ 
+ <TR>
+ <TD colspan="2" align="left" nowrap><h1>Verbindungsstatus </h1></TD>
+ </TR>
+ 
+</TABLE>
+
+<table border="0" cellpadding="0" cellspacing="3" width="100%">
+
+<tr> <!-- RULE -->
+ <td background="liteblue.gif" height="12"> &nbsp;</td>
+</tr>
+</table>
+
+
+<table width="100%" border=1 cellspacing=1 cellpadding=4>
+<tr>
+	<TD NOWRAP width="50%"><B>Verbindungsdauer</B></td>
+	<TD NOWRAP width="50%"><%267%></td>
+</tr>
+<tr>
+	<TD NOWRAP><B>Verbindung zum Server herstellen</B></td>
+	<TD NOWRAP><%268%></td>
+</tr>
+<tr>
+	<TD NOWRAP><B>Verbindungsparameter übermitteln</B></td>
+	<TD NOWRAP><%269%></td>
+</tr>
+<tr>
+	<TD NOWRAP><B>Authentifizierung</B></td>
+	<TD NOWRAP><%270%></td>
+</tr>
+<tr>
+	<TD NOWRAP><B>IP-Adresse beziehen</B></td>
+	<TD NOWRAP><%271%></td>
+</tr>
+<tr>
+	<TD NOWRAP><B>Netzwerkmaske beziehen</B></td>
+        <TD NOWRAP><%272%></td>
+</tr>
+</table>
+
+
+<table border="0" cellpadding="0" cellspacing="3" width="100%">
+ <TR>
+ <TD align="center" nowrap>
+<BR>
+<input type="submit" name="Connect" value=" Verbinden " onClick="return disableConButton()" <%273%>>
+<input type="submit" name="Disconnect" value="Verbindung beenden" onClick="alert('Stellen Sie die Verbindung über die Schaltfläche <Verbinden> wieder her.'); return disableDisConButton()"></TD>
+</TR>
+
+<tr> <!-- RULE -->
+ <td background="liteblue.gif" height="12"> &nbsp;</td>
+</tr>
+ <TR>
+ <TD align="center"><input type=button name="close" value="Fenster schließen" onclick="self.close();"></TD>
+</TR>
+</TABLE>
+<input type="hidden" name="ConMethod" value="Disconnect">
+
+
+
+</form>
+
+</body>
+</html>

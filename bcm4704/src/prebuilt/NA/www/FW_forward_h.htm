@@ -1,0 +1,137 @@
+<html>
+<head>
+<%2%>
+<title> Help </title>
+<link rel="stylesheet" href="help.css">
+</head>
+<body bgcolor="#0099cc" >
+<h1> Port Forwarding / Port Triggering Help </h1>
+<p>
+Port Triggering is an advanced feature that can be used for gaming and other internet applications. Port Forwarding can typically be used to enable similar functionality, but it is static and has some limitations. 
+</p>
+<p>
+Port Triggering opens an incoming port temporarily and does not require the server on the Internet to track your IP address if it is changed by DHCP, for example. 
+</p>
+<p>
+Port Triggering monitors outbound traffic. When the router detects traffic on the specified outbound port, it remembers the IP address of the computer that sent the data and "triggers" the incoming port. Incoming traffic on the triggered port is then forwarded to the triggering computer.
+</p>
+<p>
+Using the <i>Port Forwarding / Port Triggering</i> page, you can make local computers or servers available to the Internet for different services (for example, FTP or HTTP), to play Internet games (like Quake III), or to use Internet applications (like CUseeMe).
+</p>
+<p>
+Port Forwarding is designed for FTP, Web Server or other server based services. Once port forwarding is set up, requests from the Internet will be forwarded to the proper server. 
+</p>
+<p>
+Port triggering will only allow requests from the Internet after a designated port is 'triggered'. Port triggering applies to chat and Internet games.
+</p>
+<hr>
+
+<p><b>Port Forwarding</b></p>
+<p>
+For the services, applications, or games, that already exist in the pull-down list, you'll only need to specify the computer's IP address. Otherwise, the port number and computer's IP address for each service, game or application should be specified by clicking the <b>Add Custom Service</b> button. 
+</p>
+
+
+<p><b> Port Assignment </b></p>
+<p>You may make up to 20 different port assignments for Internet services, applications or games. In the Service Name lists, you'll be able to select a service, an application or a game. If you don't see an item that you want to use in any of the lists, check with the software or game developer for the correct port numbers to use.
+<p><b> For Internet Services </b></p>
+<p>
+	Before starting, you'll need to determine which type of services you'll provide and the IP address of the computer that will provide those services. The most common services you would provide are a Web (HTTP) server or FTP server.</p>
+
+<a name="setup"></a>
+<p>To setup a computer or server to be accessible to the Internet for an Internet service:
+
+<ol>
+
+	<li>
+		Select the Internet service you want to use from the Service Name list.
+	</li>
+	<li>
+		Type the IP address of the computer in the<b> Server IP Address </b>box.
+	</li>
+	<li>
+		Click <b> Add</b>.
+	</li>
+</ol>
+<p>
+	<b> Note: </b> You may have a single computer or server available for more than one type of service. To do that, select another service, and type the same IP address for that computer or server.
+</p>
+<p><b> For Internet Games or Applications </b></p>
+<p>
+	Before starting, you'll need to know which service, application or game you'll be configuring. Also, you'll need to have the IP address for the computer that you want to use.
+</p>
+
+<p>
+	To setup a computer to play Internet games or use Internet applications:
+
+<ol>
+
+	<li>
+		Select the Internet application or game you want to use from one of the relevant lists.
+		<br>The Start Port and End Port boxes are filled in.
+	
+	<br><b>Note: </b>If you can't find the game or application you want in one of the lists, click <b>Add Custom Service</b> button, and type the <b>Service Name</b>, <b>Starting Port</b>, <b>Ending Port</b>, and <b>Server IP Address</b> information.
+	</li>
+	<li>
+		Type the IP address of the computer in the <b>Server IP Address</b> box.
+	</li>
+	<li>
+		Click <b> Add</b>.
+	</li>
+</ol>
+<p>
+	To setup an additional computer to play, for example Hexen II or KALI:
+
+<ol>
+	<li>
+		Click the <b> Add Custom Service </b>button.
+	</li>
+	<li>
+	 Type the service name in the <b> Service Name </b> box.
+	</li>
+	<li>
+		Type the beginning port number in the<b> Starting Port </b>box.
+		<br>
+		For these games, use the supplied number in the default listing and add +1 for each additional computer. For example, if you've
+ already configured one computer to play Hexen II using port 26900, the second computer's port number would be 26901, the third computer's port number would be 26902.
+	</li>
+	<li>
+		Type the same port number in the<b> Ending Port </b>box.
+	</li>
+	<li>
+		Type the IP address of the computer in the<b> Server IP Address </b>box.
+	</li>
+	<li>
+		Click <b> Apply</b>.
+	</li>
+</ol>
+
+<p>To modify a service entry:
+<ol>
+	<li>
+		Select the entry's radio button of the table.
+	</li>
+	<li>
+	 Click <b>Edit Service</b>
+	</li>
+	<li>
+		Modify the information from the <b>Service Name</b>, the <b>Starting Port</b>, <b>Ending Port</b>, and the <b>Server IP Address</b> boxes.
+	</li>
+	<li>
+		Click <b> Apply</b>.
+	</li>
+</ol>
+
+<p>To delete a service entry:
+<ol>
+	<li>
+		Select the entry's radio button of the table.
+	</li>
+	<li>
+		Click <b> Delete Service</b>.
+	</li>
+</ol>
+
+</body>
+</html>
+

@@ -1,0 +1,125 @@
+<html>
+<head>
+<%2%>
+
+<title>Advanced Wireless Settings</title>
+<link rel="stylesheet" href="form.css">
+<STYLE TYPE="text/javascript">
+	classes.num.all.fontFamily = "Courier";
+	classes.num.all.fontSize = "10pt" ;
+</style>
+<script language="javascript" type="text/javascript" src="utility.js"></script>
+<script language="javascript" type="text/javascript" src="func.js"></script>
+<script language="javascript" type="text/javascript">
+<!-- hide script from old browsers
+
+function checkData()
+{
+	var cf = document.forms[0];
+	var frag = parseInt(cf.frag.value);
+	var rts = parseInt(cf.rts.value);
+
+	if (isNaN(frag) || frag > 2346 || frag < 256) {
+		alert("The Fragmentation Threshold should be between 256-2346.");
+		return false;
+	}
+	if (isNaN(rts) || rts > 2347 || rts < 1) {
+		alert("The CTS/RTS Threshold should be between 1-2347.");
+		return false;
+	}
+	return true;
+}
+
+function loadSettings()
+{
+	var cf = document.forms[0];
+	if (cf.wps_enable.value == "disabled")
+	{
+		cf.pin_disable.disabled = true;
+		cf.wsc_config.disabled = true;
+	}
+}
+
+//-->
+</script>
+</head>
+<body bgcolor="#ffffff" onload="loadSettings();loadhelp('WLG_adv');">
+<form name="formname" method="POST" action="wlg_adv.cgi">
+<table border="0" cellpadding="0" cellspacing="3" width="100%">
+<tr>
+  <td colspan="2"><h1>Advanced Wireless Settings</h1></td></tr>
+<tr>
+  <td colspan="2" background="liteblue.gif" height="12">&nbsp; </td></tr>
+<tr>
+  <td nowrap colspan="2"><a href="javascript:loadhelp('WLG_adv','settings')" tabindex="-1"><b>Wireless Router Settings</b></a></td></tr>
+<tr>
+  <td colspan="2">
+    <input type="checkbox"  <%340%> name="enable_ap" value="enable_ap"> Enable Wireless Router Radio </td></tr>
+<tr>
+  <td nowrap colspan="2">
+    <input type="checkbox"  <%341%> name="ssid_bc" value="ssid_bc"> Enable SSID Broadcast </td></tr>
+<tr>
+  <td align=left>&nbsp;&nbsp;Fragmentation Threshold (256 - 2346):&nbsp;&nbsp;</td>
+  <td align=left>
+    <input TYPE="text" NAME="frag" size=5 maxlength=4 value="<%342%>"></td></tr>
+<tr>
+  <td align=left>&nbsp;&nbsp;CTS/RTS Threshold (1 - 2347):&nbsp;&nbsp;</td>
+  <td align=left>
+    <input TYPE="text" NAME="rts" size=5 maxlength=4 value="<%343%>"></td></tr>
+<tr>
+  <td align=left>&nbsp;&nbsp;Preamble Mode</td>
+  <td align=left>
+      <select name="enable_shortpreamble"><option value="" <%344%>>Long Preamble</option><option value="enable_shortpreamble" <%345%>>Short Preamble</option></select></td></tr>
+<tr>
+  <td colspan="2" background="liteblue.gif" height="12">&nbsp; </td></tr>
+
+
+ <tr>
+  <td width="60%"><b>WPS Settings</b></td>
+ </tr>
+
+ <tr>
+
+  <%346%>
+  <td width="60%">&nbsp;&nbsp;Router's PIN:</td>
+  <td width="40%"><b><font size=4><%347%></font></b></td>
+  <%348%>
+  <%349%>
+  <td width="60%"><font color=gray>&nbsp;&nbsp;Router's PIN:</font></td>
+  <td width="40%"><b><font size=4 color=gray><%347%></font></b></td>
+  <%350%>
+  
+ </tr>
+ <tr>
+  <td colspan=2>
+  <INPUT TYPE="checkbox" NAME="pin_disable" VALUE="1" <%351%>>
+  <font size=2 <%352%>> Disable Router's PIN <%353%></font>
+  </td>
+ </tr>
+ <tr>
+  <td colspan=2>
+  <INPUT TYPE="checkbox" NAME="wsc_config" <%354%>>
+  <font size=2 <%352%>> Keep Existing Wireless Settings </font>
+  </td>
+ </tr>
+
+
+<tr>
+  <td colspan="2" background="liteblue.gif" height="12">&nbsp; </td></tr>
+<tr>
+  <td nowrap><a href="javascript:loadhelp('WLG_adv','access')" tabindex="-1"><b>Wireless Card Access List</b></a></td>
+  <td align="left">
+      <input type="button" name="access" value="Setup Access List" onClick="self.location.href='WLG_acl.htm'"></td></tr>
+<tr>
+  <td colspan="2" background="liteblue.gif" height="12">&nbsp; </td></tr>
+<tr>
+
+<tr>
+  <td colspan="2" align="center" height="35" valign="bottom">
+	<input type="submit" name="Apply" value="Apply" onclick="return checkData();">
+	<input type="button" name="Cancel" value="Cancel" onclick="reset();loadSettings();"></td></tr>
+</table>
+<input type="hidden" name="wps_enable" value="<%355%>">
+</form>
+</body>
+</html>

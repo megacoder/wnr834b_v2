@@ -1,0 +1,7 @@
+#!/bin/sh
+
+echo "Wsccmd Start..."
+
+cp ./wsc_config_"$1"_ap.txt /tmp/wsc_config.txt
+./wsccmd
+rm -rf /tmp/wsc_config.txt

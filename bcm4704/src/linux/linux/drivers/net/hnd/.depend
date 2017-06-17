@@ -1,0 +1,2 @@
+shared_ksyms.o: shared_ksyms.c \
+   /home/aspen/WNR834Bv2-V2.1.13_2.1.13/bcm4704/src/linux/linux/include/linux/module.h

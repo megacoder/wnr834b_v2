@@ -1,0 +1,139 @@
+<html>
+<head>
+<%2%>
+<link rel="stylesheet" href="form.css">
+<STYLE TYPE="text/javascript">
+	classes.num.all.fontFamily = "Courier";
+	classes.num.all.fontSize = "10pt" ;
+</style>
+<title>Edit Address Reservation</title> 
+<%11%>
+<script language="javascript" type="text/javascript">
+<!--
+function goBack()
+{
+	window.location.href="LAN_lan.htm";
+}
+function checkData()
+{
+	var cf = document.forms[0];
+	var msg = "";
+    var rv_ip = cf.reserved_ips.value.split(" ");
+    var rv_mac = cf.reserved_macs.value.split(" ");
+    var i, conflict, reply;
+    
+	var str_dhcp_start = "<%171%>";
+	var str_dhcp_end = "<%172%>"
+	var dhcp_startaddr = str_dhcp_start.split(".");
+	var dhcp_endaddr = str_dhcp_end.split(".");
+	if(checkIP(cf.rsv_ip1,cf.rsv_ip2,cf.rsv_ip3,cf.rsv_ip4,254)
+	    || parseInt(cf.rsv_ip4, 10) < parseInt(dhcp_startaddr[3], 10)
+	    || parseInt(cf.rsv_ip4, 10) > parseInt(dhcp_endaddr[3], 10))
+		msg+= "Invalid IP Address, please enter again\n";
+	if(checkMacStr(cf.rsv_mac))
+		msg+= "Invalid MAC Address, please enter again!\n";
+	msg+= checkBlank(cf.dv_name, "Device Name");
+    if (cf.dv_name.value.match( /[^\x20-\x7E]/ ))
+      msg+="Character is not allowed in Device Name.\n";
+	if (msg.length > 1)
+	{
+		alert(msg);
+		return false;
+	}
+    cf.rsv_ip.value =  parseInt(cf.rsv_ip1.value, 10)+'.'+ parseInt(cf.rsv_ip2.value, 10)+'.'
+                     + parseInt(cf.rsv_ip3.value, 10)+'.'+ parseInt(cf.rsv_ip4.value, 10);
+    cf.rsv_mac.value = cf.rsv_mac.value.replace(/:/g,"");
+    cf.rsv_mac.value = cf.rsv_mac.value.replace(/-/g,"");
+    i = 0;
+    while (typeof rv_ip[i] != "undefined") {
+        if ((rv_ip[i] == cf.orig_rsv_ip.value) && (rv_mac[i] == cf.orig_rsv_mac.value)) {
+            i++;
+            continue;
+        }
+        rv_mac[i]=rv_mac[i].replace(/:/g,"");
+        rv_mac[i]=rv_mac[i].replace(/-/g,"");        
+        if ((rv_ip[i] == cf.rsv_ip.value) || (rv_mac[i] == cf.rsv_mac.value)) {
+            conflict = true;
+            break;
+        }
+        i++;
+    }
+    if (conflict) {
+        reply = confirm("The input data is duplicated with current record,\ncontinue to overwrite?");
+        if (!reply)
+            return false;
+    }
+	return true;
+}
+
+function loadSettings()
+{
+	var cf = document.forms[0];
+	var rsv_ip;
+	
+    cf.orig_rsv_ip.value = cf.rsv_ip.value;    
+	rsv_ip = cf.rsv_ip.value.split(".");
+	cf.rsv_ip1.value = rsv_ip[0];
+	cf.rsv_ip2.value = rsv_ip[1];
+	cf.rsv_ip3.value = rsv_ip[2];
+	cf.rsv_ip4.value = rsv_ip[3];
+
+	cf.rsv_mac.value = "<%178%>";
+	//cf.dv_name.value = "<%179%>";
+    cf.orig_rsv_mac.value = cf.rsv_mac.value;
+    //cf.orig_dv_name.value = cf.dv_name.value;
+    cf.dv_name.value = cf.orig_dv_name.value;
+}
+
+//-->
+</script> 
+</head>
+<body bgcolor="#ffffff" onload="loadSettings();loadhelp('LAN_reserv_edit');">
+<form method="POST" action="reserv.cgi">
+	<table border="0" cellpadding="0" cellspacing="3" width="100%">
+		<tr>
+			<td colspan="2">
+				<h1>Edit Address Reservation</h1> 
+		</td>
+	</tr>
+<tr> <!-- RULE -->
+ <td colspan="2" background="liteblue.gif" height="12"> &nbsp;</td>
+</tr>
+
+<tr>
+	<td width="50%" nowrap>IP Address</td>
+	<td width="50%" align="left" class="num">
+		<input type="text" name="rsv_ip1" class="num" size="4" maxlength="3" disabled="true">.<input type="text" name="rsv_ip2" class="num" size="4" maxlength="3" disabled="true">.<input type="text" name="rsv_ip3" class="num" size="4" maxlength="3" disabled="true">.<input type="text" name="rsv_ip4" class="num" size="4" maxlength="3"></td>
+</tr>
+<tr>
+	<td width="50%" nowrap>MAC Address</td>
+	<td width="50%" align="left" class="num"><input type="text" name="rsv_mac" class="num" size="17" maxlength="17"></td>
+</tr>
+<tr>
+	<td width="50%" nowrap>Device Name:</td>
+	<td width="50%" align="left">
+		<input type="text" name="dv_name" size="20" maxlength="20">
+	</td>
+</tr>
+
+<tr> <!-- RULE -->
+ <td colspan="2" background="liteblue.gif" height="12"> &nbsp;</td>
+</tr>
+
+<tr>
+ <td colspan="2" align="center">
+ <input type="SUBMIT" name="apply" value="Apply" onClick="if(!checkData()) return false;"> 
+ <input type="Button" name="Cancel" value="Cancel" onClick="location.href='LAN_lan.htm'"></td>
+</tr>
+</table>
+<INPUT name=rsv_ip type=hidden value= "<%180%>">
+<INPUT name=rsv_mode type=hidden value="edit">
+<input type="hidden" name="reserved_ips" value="<%175%>">
+<input type="hidden" name="reserved_macs" value="<%176%>">
+<input type="hidden" name="reserved_devname" value="<%177%>">
+<input type="hidden" name="orig_rsv_ip" value="">
+<input type="hidden" name="orig_rsv_mac" value="">
+<input type="hidden" name="orig_dv_name" value="<%179%>">
+</form>
+</body>
+</html>

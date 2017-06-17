@@ -1,0 +1,78 @@
+<html>
+<head>
+<%0%>
+<title>Konfigurationsassistent</title>
+<link rel="stylesheet" type="text/css" href="style.css">
+<%13%>
+<script language="JavaScript" type="text/javascript">
+<!-- Start Script
+function checkData()
+{
+	var cf = document.forms[0];
+	if(cf.wl0_country.selectedIndex == 0)
+	{
+		cf.wl0_country.focus();
+		alert("Bitte wählen Sie die richtige Region für Ihren Standort.");
+		return false;
+	}
+	return true;
+}
+//--> 
+</script>
+</head>
+<body bgcolor="#ffffff" leftmargin="0" topmargin="0" marginwidth="0" marginheight="0">
+<form name="slimwire" action="bsw_region.cgi" method="post" onSubmit="return checkData();">
+ <table border="0" cellpadding="0" cellspacing="3" width="100%" >
+ 
+  <tr>
+   <td valign="top">
+     <h1><BR>&nbsp;&nbsp;Wählen Sie die Region aus. </h1>
+     <p>&nbsp;&nbsp;Bitte geben Sie an, in welcher Region der Router genutzt wird, damit die Einstellungen an die vor Ort geltenden Vorschriften angepasst werden können. <br />
+     </p>
+   </td>
+   <td><img src="spacer.gif" width="1" height="18" border="0" alt="" /></td>
+  </tr>
+ 
+ <tr> 
+ <td>&nbsp;&nbsp;
+ <SELECT name="wl0_country" size="1">
+	<option selected>--- Region auswählen ---</option>
+	<option value="1">Afrika</option>
+	<option value="2">Asien</option>
+	<option value="3">Australien</option>
+	<option value="4">Kanada</option>
+	<option value="5">Europa</option>
+	<option value="6">Israel</option>
+	<option value="7">Japan</option>
+	<option value="8">Korea</option>
+	<option value="9">Mexiko</option>
+	<option value="12">Mittlerer Osten</option>
+	<option value="10">Südamerika</option>
+	<option value="11">USA</option>
+ </SELECT>
+ </td>	
+ </tr>
+
+ <tr> 
+ <td>&nbsp;</td>
+ </tr>
+ <tr> 
+ <td>&nbsp;</td>
+ </tr> 
+ <tr> 
+ <td>&nbsp;</td>
+ </tr>
+ <tr> 
+ <td>&nbsp;</td>
+ </tr> 
+
+ <tr>
+ <td align="center" colspan="2">
+ <br><br><br><br><br>
+ <input type="submit" name="next" value="&nbsp;Weiter &gt;&nbsp;" onClick="return checkData();">&nbsp; &nbsp;
+ <br><br> 
+ </tr>
+</form>
+ </table>
+</body>
+

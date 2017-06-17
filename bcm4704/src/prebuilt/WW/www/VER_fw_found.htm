@@ -1,0 +1,63 @@
+<html>
+<head>
+<%2%>
+
+<title>router form</title>
+<link rel="stylesheet" href="form.css">
+<script language="javascript" type="text/javascript">
+<!-- hide script from old browsers
+function loadhelp(fname,anchname) {
+
+if ((loadhelp.arguments.length == 1 ) || (anchname == "" ))
+	top.helpframe.location.href=fname+"_h.htm";
+else
+	top.helpframe.location.href=fname+"_h.htm#" + anchname;
+}
+function goHome(){
+	window.location.href="<%408%>";
+}
+//-->
+</script>
+</head>
+<body bgcolor="#ffffff">
+<form name="formname" method="POST" action="ver_result.cgi"> 
+<table border="0" cellpadding="0" cellspacing="3" width="100%">
+<tr>
+<td colspan="2">
+	<h1>Firmware Upgrade Assistant</H1>
+</td>
+</tr>
+
+<tr> <!-- RULE -->
+ <td colspan="2" background="liteblue.gif" height="12"> &nbsp;</td>
+</tr>
+
+<tr>
+    <td colspan="2"><b>A New Firmware Version is Found. Do You Want to Upgrade to the New Version Now?</b></td>
+</tr>
+<tr></tr>
+<tr>
+	<td width="50%">Current Version</td>
+        <td width="50%"><%409%></td>
+</tr>
+<tr></tr>
+<tr>
+	<td width="50%">New Version</td>
+        <td width="50%"><%410%></td>
+</tr>
+<tr></tr>
+
+<tr> <!-- RULE -->
+ <td colspan="2" background="liteblue.gif" height="12"> &nbsp;</td>
+</tr>
+<tr>
+	<td colspan="2" align="center">
+		<input type="SUBMIT" name="Yes" value=" Yes ">
+		<input type="BUTTON" name="No" value="  No  " onClick="goHome();">
+	</td></tr>
+</table>
+</form>
+<p></p>
+</body>
+</html>
+

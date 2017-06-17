@@ -1,0 +1,121 @@
+#
+# Copyright 2005  Hon Hai Precision Ind. Co. Ltd.
+#  All Rights Reserved.
+# No portions of this material shall be reproduced in any form without the
+# written permission of Hon Hai Precision Ind. Co. Ltd.
+#
+# All information contained in this document is Hon Hai Precision Ind.
+# Co. Ltd. company private, proprietary, and trade secret property and
+# are protected by international intellectual property laws and treaties.
+#
+# $Id: config.in,v 1.1.1.1 2010/03/05 07:31:02 reynolds Exp $
+#
+#
+# Creater : Jasmine
+# Date : 03/23/2006
+#
+
+#CONFIG_UCLIBC=y
+CONFIG_GLIBC=y
+
+#
+# Paths
+#
+
+# Source bases
+export PLATFORM LINUXDIR LIBDIR USRLIBDIR
+#export CURRENT := $(shell /bin/pwd)
+#export SRCBASE := $(CURRENT)/../../src
+#export Topdir := $(SRCBASE)/..
+
+# Build platform
+export BUILD := i386-pc-linux-gnu
+export HOSTCC := gcc
+
+#
+# Environment
+#
+PLATFORM=mipsel
+LINUXDIR=$(SRCBASE)/linux/linux
+LIBDIR=$(TOOLCHAIN)/lib
+USRLIBDIR=$(TOOLCHAIN)/usr/lib
+
+#
+# Cross-compile environment variables
+#
+
+# Build platform
+export BUILD := i386-pc-linux-gnu
+export HOSTCC := gcc
+
+# uClibc wrapper
+ifeq ($(CONFIG_UCLIBC),y)
+export PLATFORM := $(PLATFORM)-uclibc
+endif
+
+ifeq ($(PLATFORM),mipsel)
+export CROSS_COMPILE := mipsel-linux-
+export CONFIGURE := ./configure mipsel-linux --build=$(BUILD)
+export TOOLCHAIN := $(shell cd $(dir $(shell which $(CROSS_COMPILE)gcc))/../mipsel-linux && pwd -P)
+endif
+
+ifeq ($(PLATFORM),mipsel-uclibc)
+export CROSS_COMPILE := mipsel-uclibc-
+export CONFIGURE := ./configure mipsel-linux --build=$(BUILD)
+export TOOLCHAIN := $(shell cd $(dir $(shell which $(CROSS_COMPILE)gcc))/.. && pwd -P)
+endif
+
+ifeq ($(CONFIG_BCMWPA2),y)
+export CFLAGS += -DBCMWPA2
+endif
+
+export AS		= $(CROSS_COMPILE)as
+export LD		= $(CROSS_COMPILE)ld
+export CC		= $(CROSS_COMPILE)gcc
+export CPP		= $(CC) -E
+export AR		= $(CROSS_COMPILE)ar
+export NM		= $(CROSS_COMPILE)nm
+export STRIP		= $(CROSS_COMPILE)strip
+export OBJCOPY		= $(CROSS_COMPILE)objcopy
+export OBJDUMP		= $(CROSS_COMPILE)objdump
+#export MAKEFILES	= $(Topdir)/.config
+export GENKSYMS	= /sbin/genksyms
+export DEPMOD		= /sbin/depmod
+export MODFLAGS	= -DMODULE
+export PERL		= perl
+export RANLIB := $(CROSS_COMPILE)ranlib
+export SIZE := $(CROSS_COMPILE)size
+
+#
+# Install and target directories
+#
+
+export PLATFORMDIR := $(SRCBASE)/router/$(PLATFORM)
+export INSTALLDIR := $(PLATFORMDIR)/install
+export TARGETDIR := $(PLATFORMDIR)/target
+
+export KERNELRELEASE=2.4.20
+export TOPDIR := $(SRCBASE)/linux/linux
+export KERNELPATH := $(SRCBASE)/linux/linux
+export MODPATH := ${TARGETDIR}/lib/modules/${KERNELRELEASE}/kernel
+MODLIB	:= $(TARGETDIR)/lib/modules/$(KERNELRELEASE)
+export MODLIB
+
+
+ROUTERDIR= $(SRCBASE)/router
+ACOSTOPDIR= $(SRCBASE)/../ap/acos
+export ACOSTOPDIR
+export ROUTERDIR
+
+# Platform dependent flags
+CFLAGS += -DU12H081 -DNEW_WLAN_REGION
+
+# Project flags
+CFLAGS += -DINCLUDE_MONROE_POWER_LED -DINCLUDE_WAN_LAN_SUBNET -DINCLUDE_BURNSN -DINCLUDE_WCN
+CFLAGS += -DINCLUDE_WDS
+CFLAGS += -DINCLUDE_QOS -DAG_QOS
+CFLAGS += -DINCLUDE_L7_FILTER
+export CFLAGS
+
+export LIB_NAT_CFLAGS += -DINCLUDE_WAN_LAN_SUBNET -DAG_QOS
+

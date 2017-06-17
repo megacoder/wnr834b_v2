@@ -1,0 +1,152 @@
+<html>
+<head>
+<%0%>
+<title>QoS-Einrichtung</title> 
+<link rel="stylesheet" href="form.css">
+<STYLE TYPE="text/javascript">
+classes.num.all.fontFamily = "Courier";
+classes.num.all.fontSize = "10pt" ;
+</style>
+<%13%>
+<script language="javascript" type="text/javascript">
+<!--
+function loadSettings()
+{
+	var cf = document.forms[0];
+
+	if(cf.WMM_value.value == "1")
+		cf.wmm_enable.checked = true;
+	else
+		cf.wmm_enable.checked = false;
+
+	if (cf.qos_enable.value == "1")
+		cf.qosEnable.checked = true;
+	else
+		cf.qosEnable.checked = false;
+
+	if (cf.qos_bw_enable.value == "1")
+		cf.bwEnable.checked = true;
+	else
+		cf.bwEnable.checked = false;
+
+	var bw = cf.uplink_bw.value.split(" ");
+	cf.bandwidth.value = bw[0];
+	if (bw[1] == "kbps")
+		cf.rate.selectedIndex = 0;
+	else if (bw[1] == "Mbps")
+		cf.rate.selectedIndex = 1;
+
+	if (cf.repeater.value == "1") {
+		cf.qosEnable.disabled = true;
+		cf.bwEnable.disabled = true;
+		cf.bandwidth.disabled = true;
+		cf.rate.disabled = true;
+		cf.setup_qos_rule.disabled = true;
+	}
+}
+
+function checkData()
+{
+	var cf = document.forms[0];
+	interval = parseInt(cf.bandwidth.value);
+	if ( isNaN(interval) || interval <= 0 ||
+		(cf.rate.selectedIndex == 0 && (interval < 64 || interval > 9999)) ||
+		(cf.rate.selectedIndex == 1 && interval > 100) ||
+		cf.bandwidth.value.match(/[^0-9]/g) ||
+		cf.bandwidth.value.match(/^0/))
+	{
+		alert("Invalid Uplink Bandwidth");
+		return false;
+	}
+	return true;
+}
+
+//-->
+</script> 
+</head>
+<body bgcolor="#ffffff" onload="loadSettings();loadhelp('QOS_main');">
+<form name="frmRules" method="POST" action="qos_main.cgi" onSubmit="return checkData();">
+<table border="0" cellpadding="0" cellspacing="3" width="100%">
+<tr>
+<td colspan="2"><h1>QoS-Einrichtung</h1></td>
+</tr>
+
+<tr> <!-- RULE -->
+<td colspan="2" background="liteblue.gif" height="12"> &nbsp;</td>
+</tr>
+
+<tr>
+<td colspan="2"><input type="checkbox" name="wmm_enable" value="1"><a href="javascript:loadhelp('QOS_main','wmm')" tabindex="-1"> <B>WMM-Einstellungen (Wi-Fi-Multimedia) aktivieren</B></a></td>
+</tr>
+
+<tr> <!-- RULE -->
+<td colspan="2" background="liteblue.gif" height="12"> &nbsp;</td>
+</tr>
+
+<tr>
+<td colspan="2"><input type="checkbox" name="qosEnable" value="1"><a href="javascript:loadhelp('QOS_main','qos')" tabindex="-1"> <B>QoS für Internetzugang aktivieren</B></a></td>
+</tr>
+
+<tr> <!-- RULE -->
+<td colspan="2" background="liteblue.gif" height="12"> &nbsp;</td>
+</tr>
+
+<tr>
+<td colspan="2"><input type="checkbox" name="bwEnable" value="1"><a href="javascript:loadhelp('QOS_main','qos')" tabindex="-1"> <b>Bandbreitenkontrolle aktivieren</b></a></td>
+</tr>
+
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Uplink-Bandbreite:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Maximum	
+<input type="text" name="bandwidth" size="6" maxlength="4" value="">
+<select name="rate" size=1>
+<option value="1000">Kbps</option>
+<option value="1000000">Mbps</option>
+</select>
+</td>
+</tr>
+
+<!--
+<tr>
+    <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Aktuelle Internet Uplink-Bandbreite prüfen&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<input type="button" name="check_bw" size="6" maxlength="4" value="Prüfen" disabled=true>
+</td>
+</tr>
+-->
+
+<tr> <!-- RULE -->
+<td colspan="2" background="liteblue.gif" height="12">&nbsp; </td>
+</tr>
+<tr>
+<td colspan="2">
+<tr>
+<td><b>Liste der QoS-Prioritätsregeln</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<input type="submit" name="setup_qos_rule" value=" QoS-Regel erstellen ">
+</td>
+</tr>
+
+<tr> <!-- RULE -->
+<td colspan="2" background="liteblue.gif" height="12"> &nbsp;</td>
+</tr>
+
+<tr>
+<td colspan="2" align="center">
+<input type="submit" name="apply" value="Übernehmen">
+<input type="button" name="cancel" value="Abbrechen" onclick="loadSettings();"></td>
+</tr>
+<tr>
+<input type="hidden" name="select" value="-1">
+<input type="hidden" name="priority_sel" value="-1">
+<INPUT type="hidden" name=WMM_value value="<%430%>">
+<input type="hidden" name="qos_enable" value="<%431%>">
+<input type="hidden" name="qos_bw_enable" value="<%432%>">
+<input type="hidden" name="uplink_bw" value="<%433%>">
+<input type="hidden" name="repeater" value="<%175%>">
+</tr>
+</table>
+
+</form>
+</body>
+</html>
+
+
+

@@ -1,0 +1,78 @@
+<html>
+<head>
+<%0%>
+<title>Sichern</title> 
+<link rel="stylesheet" href="form.css">
+<%13%>
+<script language="javascript" type="text/javascript">
+<!--
+function check_restore()
+{
+	if(document.forms[0].mtenRestoreCfg.value.length == 0)
+	{
+		alert("Der Dateiname darf nicht leer sein.");
+		return false;
+	}
+	if(confirm('Warnung!\nDurch das Wiederherstellen der Einstellungen aus einer Konfigurationsdatei gehen alle aktuellen Einstellungen verloren.\nMöchten Sie den Vorgang wirklich fortsetzen?'))
+		return true;
+	else
+		return false;
+}
+//-->
+</script> 
+</head>
+<body bgcolor="#ffffff" onload="loadhelp('BAK_backup');document.forms[0].elements[0].focus()">
+<form method="POST" action="backup.cgi" ENCTYPE="multipart/form-data">
+<table border="0" cellpadding="0" cellspacing="3" width="100%">
+<tr>
+<td colspan="2">
+<h1>Einstellungen sichern</h1> 
+</td>
+</tr>
+<tr> <!-- RULE -->
+ <td colspan="2" background="liteblue.gif" height="12"> &nbsp;</td>
+</tr>
+<tr>
+	<td colspan="2"><a href="javascript:loadhelp('BAK_backup','save')" tabindex="-1"><b>Kopie der aktuellen Einstellungen speichern</b></a></td>
+</tr>
+<tr>
+	<td colspan="2" align="center">
+	<input type="BUTTON" name="Backup" value=" Sichern " onclick="window.location.href = 'NETGEAR_WNR834Bv2.cfg';"> 
+	</td>
+</tr>
+<tr> <!-- RULE -->
+ <td colspan="2" background="liteblue.gif" height="12"> &nbsp;</td>
+</tr>
+<tr>
+	<td colspan="2"><a href="javascript:loadhelp('BAK_backup','restore')" tabindex="-1"><b>Gespeicherte Einstellungen aus einer Datei wiederherstellen</b></a></td>
+</tr>
+<tr>
+	<td colspan="2" align="left"><input type="FILE" name="mtenRestoreCfg" value="" size="40" maxlength="1024"></td>
+</tr>
+<tr>
+	<td colspan="2" align="center"><INPUT TYPE="submit" name="mtenRestore" value=" Wiederherstellen " onClick="if(!check_restore()) return false;"></td>
+</tr>
+<tr> <!-- RULE -->
+ <td colspan="2" background="liteblue.gif" height="12"> &nbsp;</td>
+</tr>
+</table>
+</form>
+<form method="POST" action="backup.cgi">
+<table border="0" cellpadding="0" cellspacing="3" width="100%">
+<tr>
+	<td nowrap colspan="2"><a href="javascript:loadhelp('BAK_backup','revert')" tabindex="-1"><b>Auf Werkseinstellungen zurücksetzen</b></a></td>
+
+</tr>
+<tr>
+	<td colspan="2" align="center"><input type="button" name="defaults" value=" Löschen " onClick="location.href='BAK_cfm.htm'"></td>
+</tr>
+<tr> <!-- RULE -->
+ <td colspan="2" background="liteblue.gif" height="12"> &nbsp;</td>
+</tr>
+</table>
+</form>
+<p>
+</p>
+</body>
+</html>
+

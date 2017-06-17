@@ -1,0 +1,1 @@
+#undef  CONFIG_WL_USE_APSTA_ONCHIP_G

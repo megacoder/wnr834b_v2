@@ -1,0 +1,76 @@
+<html>
+<head>
+<%0%>
+<title>Konfigurationsassistent</title>
+<link rel="stylesheet" type="text/css" href="style.css">
+<script type="text/javascript">
+<!-- hide script from old browsers
+function selectSecurity(value)
+{
+	if (value == 0)
+	    document.forms[0].security.value = 0;
+	else if (value == 1)
+		document.forms[0].security.value = 1;
+	else if (value == 2)
+		document.forms[0].security.value = 2;
+	else if (value == 3)
+		document.forms[0].security.value = 3;
+}
+// -->
+</script>
+</head>
+
+<body bgcolor="#ffffff" leftmargin="0" marginwidth="0" topmargin="0" marginheight="0">
+<form name="wsw_option" action="wsw_option.cgi" method="post">
+<p>
+<table BORDER="0" CELLSPACING="0" CELLPADDING="5" width="100%">
+  <tr>
+   <td valign="top">
+     <h1><BR>&nbsp;&nbsp;Welche Wireless-Sicherheitsfunktionen möchten Sie verwenden? </h1>
+     </P><p>&nbsp;&nbsp;Durch die Einrichtung von Sicherheitsfunktionen schützen Sie Ihr WLAN vor unbefugtem Zugriff. </p>
+     <table width="600" border="2" cellpadding="2" cellspacing="0" bordercolor="#FFFFFF" bgcolor="#E6E6E6">
+       <tr>
+         <td align="center" valign="middle"><label>
+           <input name="sec_type" type="radio" value="wpa2" onclick="selectSecurity(3);" checked>
+           </label>
+         </td>
+         <td valign="middle" class="InductiveOptions">Ich möchte den besten und benutzerfreundlichsten Sicherheitsstandard verwenden: <B>WPA-PSK (TKIP)</B> + <B>WPA2-PSK (AES)</B>, auch als gemischter Modus bezeichnet. Dies ist die bestmögliche Sicherheitsoption für RangeMax Next Wireless-Adapter, aber möglicherweise nicht zu älteren Adaptern kompatibel.</td>
+       </tr>
+<!--       <tr>
+         <td width="35" align="center" valign="middle"><label>
+           <input name="sec_type" type="radio" value="wpa" onclick="selectSecurity(0);" >
+           </label>         </td>
+           <td width="549" valign="middle" class="InductiveOptions">I want to use <b>WPA-PSK</b>, because this is the highest standard supported by my equipment. I understand that my new router will operate at a slower speed.</td>
+       </tr>
+       <tr>
+         <td align="center" valign="middle"><input name="sec_type" type="radio" value="wep" onclick="selectSecurity(1);" ></td>
+         <td valign="middle" class="InductiveOptions">I want to use <b>WEP</b>, because my equipment supports this standard. I understand that this will cause my router to operate at a slower speed. </td>
+     </tr>-->
+       <tr>
+         <td align="center" valign="middle"><input name="sec_type" type="radio" value="no" onclick="selectSecurity(2);" ></td>
+         <td valign="middle" class="InductiveOptions">Ich möchte die Sicherheitsfunktionen später einrichten. (nicht empfohlen) </td>
+       </tr>
+     </table>
+     <p>&nbsp;</p>
+     
+      <p>&nbsp;</p>
+     <p>&nbsp;</p>
+   </td>
+   <td><img src="spacer.gif" width="1" height="18" border="0" alt="" /></td>
+  </tr>
+ 
+ <tr>
+    <td>&nbsp;&nbsp;
+    <input type="button" name="Next" value=" Weiter &gt; " onClick="this.form.submit()">
+    <BR><BR>
+    </td>
+ </tr> 
+
+</table>
+<input type="hidden" name="security" value="3"> 
+</form>
+</BODY>
+
+</HTML>
+
+

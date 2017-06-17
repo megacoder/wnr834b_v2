@@ -1,0 +1,97 @@
+<html>
+<head>
+<title>Configuration Assistant</title>
+<link rel="stylesheet" type="text/css" href="style.css">
+<%11%>
+<script type="text/javascript">
+<!-- hide script from old browsers
+function checkData()
+{
+	var cf = document.forms[0];
+	var msg = "";
+
+	if(checkIP(cf.WPethr1,cf.WPethr2,cf.WPethr3,cf.WPethr4,254)||(parseInt(cf.WPethr4.value)==0))
+		msg+= "Invalid IP Address, please enter again!\n";
+	if(checkIP(cf.WMask1,cf.WMask2,cf.WMask3,cf.WMask4,255))
+		msg+= "Invalid Subnet Mask, please enter again!\n";
+	if(checkIP(cf.WGateway1,cf.WGateway2,cf.WGateway3,cf.WGateway4,254)||(parseInt(cf.WGateway4.value)==0))
+		msg+= "Invalid Gateway Address, please enter again!\n";
+	if(checkIP(cf.DAddr1,cf.DAddr2,cf.DAddr3,cf.DAddr4,254)||(parseInt(cf.DAddr4.value)==0))
+		msg+= "Invalid Primary DNS Address, please enter again!\n";
+	if(cf.PDAddr1.value.length>0)
+	    if(checkIP(cf.PDAddr1,cf.PDAddr2,cf.PDAddr3,cf.PDAddr4,254)||(parseInt(cf.PDAddr4.value)==0))
+		msg+= "Invalid Secondary DNS Address, please enter again!\n";
+                
+	if (msg.length > 1)
+	{
+		alert(msg);
+		return false;
+	}
+
+	cf.wan_ipaddr.value = cf.WPethr1.value+'.'+cf.WPethr2.value+'.'+cf.WPethr3.value+'.'+cf.WPethr4.value;
+	cf.wan_netmask.value = cf.WMask1.value+'.'+cf.WMask2.value+'.'+cf.WMask3.value+'.'+cf.WMask4.value;
+	cf.wan_gateway.value = cf.WGateway1.value+'.'+cf.WGateway2.value+'.'+cf.WGateway3.value+'.'+cf.WGateway4.value;
+	cf.wan_dns1_pri.value = cf.DAddr1.value+'.'+cf.DAddr2.value+'.'+cf.DAddr3.value+'.'+cf.DAddr4.value;
+	cf.wan_dns1_sec.value = cf.PDAddr1.value+'.'+cf.PDAddr2.value+'.'+cf.PDAddr3.value+'.'+cf.PDAddr4.value;        
+        
+	return true;
+}
+
+//-->
+</script>
+</head>
+<body bgcolor="#ffffff" onload="document.forms[0].elements[0].focus();">
+<form name="formname" method="POST" action="bsw_fix.cgi"> 
+<p></p>
+
+<table border="0" cellpadding="0" cellspacing="3" width="99%">
+     <h1>&nbsp;&nbsp;Enter your static IP connection details. </h1>
+     <p>&nbsp;&nbsp;Your Internet service provider gives you these settings. </p>
+<tr>
+	<td colspan="2" nowrap><b>&nbsp;&nbsp;Internet IP Address</b></a></td>
+</tr>
+<tr>
+	<TD NOWRAP>&nbsp;&nbsp;IP Address</td>
+	<TD class="num"><img src="spacer.gif" width="200" height="1" border=0><br>
+ <input type="text" name="WPethr1" class="num" size="4" maxlength="3">.<input type="text" name="WPethr2" class="num" size="4" maxlength="3">.<input type="text" name="WPethr3" class="num" size="4" maxlength="3">.<input type="text" name="WPethr4" class="num" size="4" maxlength="3"></td>
+</tr>
+<tr>
+	<TD NOWRAP>&nbsp;&nbsp;IP Subnet Mask</td>
+	<TD class="num"><input type="text" name="WMask1" class="num" size="4" maxlength="3">.<input type="text" name="WMask2" class="num" size="4" maxlength="3">.<input type="text" name="WMask3" class="num" size="4" maxlength="3">.<input type="text" name="WMask4" class="num" size="4" maxlength="3"></td>
+</tr>
+<tr>
+	<TD NOWRAP>&nbsp;&nbsp;Gateway IP Address</td>
+	<TD class="num"><input type="text" name="WGateway1" class="num" size="4" maxlength="3">.<input type="text" name="WGateway2" class="num" size="4" maxlength="3">.<input type="text" name="WGateway3" class="num" size="4" maxlength="3">.<input type="text" name="WGateway4" class="num" size="4" maxlength="3"></td>
+</tr>
+<tr> 
+ <TD NOWRAP colspan="2" background="spacer.gif" height="12"> &nbsp;</td>
+</tr>
+<tr>
+	<TD NOWRAP colspan="2"><b>&nbsp;&nbsp;Domain Name Server (DNS) Address </b></a></td>
+</tr>
+<tr>
+	<TD NOWRAP>&nbsp;&nbsp;Primary DNS</td>
+	<TD class="num"><input type="text" name="DAddr1" class="num" size="4" maxlength="3">.<input type="text" name="DAddr2" class="num" size="4" maxlength="3">.<input type="text" name="DAddr3" class="num" size="4" maxlength="3">.<input type="text" name="DAddr4" class="num" size="4" maxlength="3"></td>
+</tr>
+<tr>
+	<TD NOWRAP>&nbsp;&nbsp;Secondary DNS</td>
+	<TD class="num"><input type="text" name="PDAddr1" class="num" size="4" maxlength="3">.<input type="text" name="PDAddr2" class="num" size="4" maxlength="3">.<input type="text" name="PDAddr3" class="num" size="4" maxlength="3">.<input type="text" name="PDAddr4" class="num" size="4" maxlength="3"></td>
+</tr>
+<tr> 
+ <td colspan="2" background="spacer.gif" height="12"> &nbsp;</td>
+</tr>
+<tr>
+	<td colspan="2" align="center">&nbsp;&nbsp;
+	<input type="SUBMIT" name="Next" value=" Next> " onClick="return checkData()">
+	</td></tr>
+</table>
+  <INPUT name=wan_ipaddr type=hidden value= "">
+  <INPUT name=wan_netmask type=hidden value= "">
+  <INPUT name=wan_gateway type=hidden value= "">
+  <INPUT name=wan_dns1_pri type=hidden value= "">
+  <INPUT name=wan_dns1_sec type=hidden value= "">
+  <INPUT name=DNSAssign type=hidden value= "1">
+</form>
+<p></p>
+</body>
+</html>

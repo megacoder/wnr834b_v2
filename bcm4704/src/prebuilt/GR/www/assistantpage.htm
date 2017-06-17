@@ -1,0 +1,91 @@
+<html>
+<head>
+<%0%>
+<title>Setup-Assistent</title>
+<link rel="stylesheet" type="text/css" href="form.css">
+<script type="text/javascript">
+<!-- hide script from old browsers
+function selectEdit(value)
+{
+	if (value == 0)
+	    document.forms[0].select.value = 0;
+	else if (value == 1)
+		document.forms[0].select.value = 1;
+}
+function do_submit()
+{
+    document.forms[0].submit();
+}
+function CloseWindow()
+{
+ top.window.opener=null;
+ top.window.close();
+}
+function msg_close()
+{
+ setTimeout('do_submit()',3000);
+ alert("Schließen Sie dieses Fenster. Die meisten Browser werden geschlossen, wenn Sie auf 'OK' klicken. \nBefolgen Sie ggf. die Anweisungen zum Schließen des Browsers.");
+ CloseWindow();
+}
+// -->
+</script>
+<style type="text/css">
+TD {FONT-SIZE: 10pt; FONT-FAMILY: Arial, Helvetica, Geneva, Swiss, SunSans-Regular, sans-serif}
+H1 {FONT-WEIGHT: bold; FONT-SIZE: 18pt; BACKGROUND: white; COLOR: #09c; FONT-FAMILY: Arial, Helvetica, Geneva, Swiss, SunSans-Regular, sans-serif}
+P { FONT-SIZE: 10pt; FONT-FAMILY: Arial, Helvetica, Geneva, Swiss, SunSans-Regular, sans-serif }
+.prgbar { font-family:Arial; padding:0px; height: 20px; width: 200px; font-weight: bolder; font-size: 10pt; border: 1px solid; border-color: #09c; color: #0000FF}
+</style>
+</head>
+
+<body bgcolor="#ffffff" leftmargin="0" marginwidth="0" topmargin="0" marginheight="0">
+<form name="ca_hiddenpage" action="ca_hiddenpage.cgi" method="post">
+<p>
+<div align="center">
+
+<table BORDER="0" CELLSPACING="1" CELLPADDING="0" width="100%">
+
+ <tr>
+    <td align="center"><b>KA-Version: <%393%></b>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br><br><br></td>
+ </tr>
+ 
+ <tr>
+    <td align="center"><h1>Status des Konfigurationsassistenten</h1></td>
+ </tr>
+
+ <tr> 
+    <td background="liteblue.gif" height="12">&nbsp;</td>
+ </tr>
+
+ <tr>
+    <td align="center" >
+    <br>
+    <input type="radio" name="CA_ON" value="1" <%394%> onClick="selectEdit(0)" ><b> Konfigurationsassistenten aktivieren 
+    </b><br><br></td>
+ </tr>
+ 
+ <tr>
+    <td align="center">
+    <input type="radio" name="CA_ON" value="1" <%395%> onClick="selectEdit(1)" ><B> Konfigurationsassistenten deaktivieren</B>
+    <br><br></td>
+ </tr>
+
+ <tr> 
+    <td background="liteblue.gif" height="12">&nbsp;</td>
+ </tr>  
+ 
+ <tr>
+    <td align="center">
+    <input type="button" name="Apply" value="  Übernehmen  " onClick="this.form.submit();msg_close();"></td>
+ </tr> 
+ 
+</table>
+</div>
+<input type="hidden" name="select" value="<%396%><%397%>"> 
+</form>
+</BODY>
+</HTML>

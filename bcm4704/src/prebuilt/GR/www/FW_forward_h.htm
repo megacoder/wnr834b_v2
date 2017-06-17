@@ -1,0 +1,67 @@
+<html>
+<head>
+<%0%>
+<title> Hilfe </title>
+<link rel="stylesheet" href="help.css">
+</head>
+<body bgcolor="#0099cc" >
+<h1> Hilfe: Portweiterleitung und Port-Triggering </h1>
+<p> Das Port-Triggering ist ein erweitertes Merkmal für Spiele und andere Internetanwendungen. Die Portweiterleitung ist von ihren Funktionen her mit dem Port-Triggering vergleichbar; sie ist jedoch statisch und unterliegt gewissen Einschränkungen. </p>
+<p> Beim Port-Triggering wird ein Port vorübergehend für ankommenden Datenverkehr geöffnet; hierbei braucht die IP-Adresse nicht vom Server im Internet verfolgt zu werden, wenn diese beispielsweise per DHCP geändert wird. </p>
+<p> Beim Port-Triggering wird der abgehende Datenverkehr überwacht. Wenn einer der Computer in Ihrem Netzwerk über einen Ausgangs-Port Daten sendet, speichert der Router dessen IP-Adresse und „triggert?den entsprechenden Eingangs-Port. Am getriggerten Port eintreffende Daten werden dann an den Computer weitergeleitet, von dem auch die abgehenden Daten für diesen Port stammen. </p>
+<p> Mit den Einstellungen auf der Seite <I>Portweiterleitung/Port-Triggering</I> können Sie die Nutzung von verschiedenen Diensten (z.&nbsp;B. FTP und HTTP), Online-Spielen (wie Quake III) und Internetanwendungen (wie CUseeMe) durch lokale Computer und Server ermöglichen. </p>
+<p> Die Portweiterleitung eignet sich für servergestützte Dienste wie FTP und HTTP. Anforderungen aus dem Internet werden an den Server übermittelt, für den eine Weiterleitung des jeweiligen Ports eingerichtet wurde. </p>
+<p> Beim Port-Triggering werden hingegen Anforderungen aus dem Internet nur dann weitergeleitet, wenn der entsprechende Port zuvor „getriggert?wurde. Das Port-Triggering eignet sich beispielsweise für die Nutzung von Chatforen und Online-Spielen. </p>
+<hr>
+
+<p><B>Portweiterleitung</B></p>
+<p> Bei Diensten, Anwendungen und Spielen, für die vorgegebene Einträge in der Liste existieren, brauchen Sie lediglich die IP-Adresse des Computers anzugeben, an den der zugehörige Datenverkehr weitergeleitet werden soll. Darüber hinaus können Sie auch eigene Portweiterleitungen einrichten, indem Sie auf die Schaltfläche <B>Benutzerdefinierten Dienst hinzufügen</B> klicken und anschließend die Portnummer und die IP-Adresse des Computers angeben. </p>
+
+
+<p><B> Portzuweisungen </B></p>
+<p>Sie können bis zu 20 Portzuweisungen für Dienste, Anwendungen und Spiele einrichten. In der Liste <B>Dienstname</B> haben Sie die Möglichkeit, Dienste, Anwendungen oder Spiele auszuwählen. Wenn noch kein entsprechender Listeneintrag vorhanden ist, müssen Sie die Portzuweisung selbst definieren. Dazu benötigen Sie die Nummer des verwendeten Ports, die Sie vom Hersteller der verwendeten Software oder des verwendeten Online-Spiels erfahren. </P><p><B> Für Internetdienste </B></p>
+<p> Ermitteln Sie zunächst, welche Dienste Sie bereitstellen möchten und wie die IP-Adresse des Computers lautet, der diese Dienste bereitstellen soll. Die gängigsten Dienste sind HTTP (für Webserver) und FTP (für Dateitransfer).</p>
+
+<a name="setup"></a>
+<p>So richten Sie einen Computer oder Server für die Bereitstellung eines Internetdienstes ein: <ol>
+
+	<li> Wählen Sie in der Liste <B>Dienstname</B> den gewünschten Internetdienst aus. </li>
+	<li> Geben Sie im Feld<B> IP-Adresse des Servers </B>die IP-Adresse des Computers ein. </li>
+	<li> Klicken Sie auf <B>Hinzufügen</B>. </li>
+</ol>
+</P><p>
+	<B> Hinweis: </B>Sie können auf einem Computer oder Server auch mehrere Dienste gleichzeitig bereitstellen. Wählen Sie dazu einfach weitere Dienste aus der Liste aus, und geben Sie jeweils dieselbe IP-Adresse ein. </p>
+<p><B> Portzuordnungstabelle für Port-Triggering </B></p>
+<p> Zunächst müssen Sie wissen, welchen Dienst, welche Anwendung oder welches Spiel Sie konfigurieren möchten. Außerdem benötigen Sie die IP-Adresse des verwendeten Computers. </p>
+
+<p> So richten Sie einen Computer für die Nutzung von Online-Spielen oder einer Internetanwendung ein: <ol>
+
+	<li> Wählen Sie die gewünschte Internetanwendung oder das gewünschte Online-Spiel aus der entsprechenden Liste aus. <BR>In die Felder <B>Erster Port</B> und <B>Letzter Port</B> werden automatisch die entsprechenden Portnummern eingetragen. <BR><B>Hinweis:</B> Wenn das gewünschte Spiel oder die gewünschte Anwendung nicht in der Liste enthalten ist, klicken Sie auf die Schaltfläche <B>Benutzerdefinierten Dienst hinzufügen.</B> Geben Sie anschließend den <B>Dienstnamen</B>, den <B>Ersten Port</B>, den <B>Letzten Port</B> und die <B>IP-Adresse des Servers</B> in die entsprechenden Felder ein. </li>
+	<li> Geben Sie die IP-Adresse des Computers in das Feld <B>IP-Adresse des Servers</B> ein. </li>
+	<li> Klicken Sie auf <B>Hinzufügen</B>. </li>
+</ol>
+</P><p> So richten Sie einen weiteren Computer für die Nutzung von Spielen wie beispielsweise Hexen II oder KALI ein: <ol>
+	<li> Klicken Sie auf die Schaltfläche <B>Benutzerdefinierten Dienst hinzufügen</B>. </li>
+	<li> Geben Sie den <B>Dienstnamen </B>in das entsprechende Feld ein. </li>
+	<li> Geben Sie die Nummer des ersten Ports im Portbereich in das Feld<B> Erster Port </B>ein. <BR> Erhöhen Sie bei den genannten Spielen die Portnummer bei jedem zusätzlichen Computer jeweils um eins. Wenn Sie beispielsweise bereits einen Computer für die Nutzung von Hexen II über Port 26900 eingerichtet haben, weisen Sie dem zweiten Computer die Portnummer 26901 und dem dritten Computer die Portnummer 26902 zu. </li>
+	<li> Geben Sie dieselbe Portnummer in das Feld<B> Letzter Port </B>ein. </li>
+	<li> Geben Sie im Feld<B> IP-Adresse des Servers </B>die IP-Adresse des Computers ein. </li>
+	<li> Klicken Sie auf<B> Übernehmen</B>. </li>
+</ol>
+
+</P><p>So passen Sie einen Dienst aus der Liste an: <ol>
+	<li> Aktivieren Sie die Optionsschaltfläche des betreffenden Dienstes in der Tabelle. </li>
+	<li> Klicken Sie auf <B>Dienst bearbeiten.</B>
+	</li>
+	<li> Passen Sie die Angaben in den Feldern <B>Dienstname</B>, <B>Erster Port</B>, <B>Letzter Port</B> und <B>IP-Adresse des Servers</B> an. </li>
+	<li> Klicken Sie auf<B> Übernehmen</B>. </li>
+</ol>
+
+</P><p>So löschen Sie einen Dienst aus der Liste: <ol>
+	<li> Aktivieren Sie die Optionsschaltfläche des betreffenden Dienstes in der Tabelle. </li>
+	<li> Klicken Sie auf<B> Dienst löschen</B>. </li>
+</ol>
+
+</body>
+</html>
+

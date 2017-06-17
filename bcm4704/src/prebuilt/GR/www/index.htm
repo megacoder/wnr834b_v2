@@ -1,0 +1,36 @@
+<html><head>
+<%0%>
+<title>Setup für NETGEAR-Router</title>
+<script language="javascript" type="text/javascript">
+function loadnext() {
+	var showit=(document.layers)?"show":"block";
+	var hideit=(document.layers)?"hide":"none";
+	var el = "alltext";
+
+	if (document.all)
+		document.all(el).style.display = hideit ;
+	else if (document.getElementById)
+		document.getElementById(el).style.display = hideit ;
+	else if (document.layers)
+		document.layers[el].visibility = hideit ;
+
+    if("<%1%>" == "1")
+        location.replace("http://www.routerlogin.com/welcome.htm");
+    else if ("<%2%>" == "1")
+        location.replace("http://www.routerlogin.com/start.htm");
+    else if ("<%3%>" == "1" || "<%4%>" == "3")
+        location.replace("http://www.routerlogin.com/traffic_start_update.htm");
+    else
+        location.replace("start.htm"); 
+}
+</script></head>
+<body bgcolor="#ffffff" text="#666666" onload="loadnext()"> 
+<div ID="alltext" STYLE="position:absolute;left:50px;top:200px;">
+<font face="Arial,Helvetica">
+<h4>JavaScript-Unterstützung wird überprüft</h4>
+<p>Die komfortable Web-Oberfläche für die Konfiguration des Routers funktioniert nur, wenn JavaScript unterstützt wird. </P><P>Wenn diese Seite längere Zeit angezeigt wird, unterstützt Ihr Webbrowser JavaScript NICHT. </P><P>Bitte aktivieren Sie JavaScript in Ihrem Browser oder verwenden Sie einen anderen Browser.</p>
+</font>
+</div>
+</body>
+</html>
+

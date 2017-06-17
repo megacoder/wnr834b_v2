@@ -1,0 +1,47 @@
+<html>
+<head>
+<%2%>
+<title>router form</title>
+<link rel="stylesheet" href="form.css">
+<%11%>
+<script language="javascript" type="text/javascript">
+<!-- 
+function goipfixed() {
+ location.href="<%300%>"
+	}
+function goSelect() {
+ location.href="WIZ_sel.htm"
+	}
+//-->
+</script>
+</head>
+
+<body bgcolor="#ffffff" onLoad="loadhelp('WIZ_sel');document.forms[0].next.focus()">
+<form name="formname" method="POST" action="wiz_rst.cgi"> 
+<table border="0" cellpadding="0" cellspacing="3" width="100%">
+<tr>
+	<td colspan="2" align="center">
+	<h1><%301%></H1>
+	</td>
+</tr>
+<%298%>
+            <tr><td colspan="2" align="center">Successfully detected the type of Internet connection you have.</td></tr>
+<%299%>
+
+<tr> <!-- RULE -->
+ <td colspan="2" background="liteblue.gif" height="12"> &nbsp;</td>
+</tr>
+
+<tr>
+<td colspan="2" align="center">
+<%24%>
+<input type="Button" name="back" value="Back" onClick="goSelect()">
+<%25%>
+<input type="Button" name="next" value="Next" onClick="goipfixed()"></td>
+</tr>
+</table>
+</form>
+<p></p>
+</body>
+
+</html>

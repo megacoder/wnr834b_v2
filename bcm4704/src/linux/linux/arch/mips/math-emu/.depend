@@ -1,0 +1,135 @@
+cp1emu.o: cp1emu.c \
+   /home/aspen/WNR834Bv2-V2.1.13_2.1.13/bcm4704/src/linux/linux/include/asm/inst.h \
+   /home/aspen/WNR834Bv2-V2.1.13_2.1.13/bcm4704/src/linux/linux/include/asm/bootinfo.h \
+   /home/aspen/WNR834Bv2-V2.1.13_2.1.13/bcm4704/src/linux/linux/include/asm/cpu.h \
+   /home/aspen/WNR834Bv2-V2.1.13_2.1.13/bcm4704/src/linux/linux/include/asm/processor.h \
+   /home/aspen/WNR834Bv2-V2.1.13_2.1.13/bcm4704/src/linux/linux/include/asm/ptrace.h \
+   /home/aspen/WNR834Bv2-V2.1.13_2.1.13/bcm4704/src/linux/linux/include/asm/signal.h \
+   /home/aspen/WNR834Bv2-V2.1.13_2.1.13/bcm4704/src/linux/linux/include/asm/mipsregs.h \
+   /home/aspen/WNR834Bv2-V2.1.13_2.1.13/bcm4704/src/linux/linux/include/asm/fpu_emulator.h \
+   /home/aspen/WNR834Bv2-V2.1.13_2.1.13/bcm4704/src/linux/linux/include/asm/uaccess.h \
+   /home/aspen/WNR834Bv2-V2.1.13_2.1.13/bcm4704/src/linux/linux/include/asm/branch.h \
+   ieee754.h \
+   dsemul.h
+dp_add.o: dp_add.c \
+   ieee754dp.h
+dp_cmp.o: dp_cmp.c \
+   ieee754dp.h
+dp_div.o: dp_div.c \
+   ieee754dp.h
+dp_fint.o: dp_fint.c \
+   ieee754dp.h
+dp_flong.o: dp_flong.c \
+   ieee754dp.h
+dp_frexp.o: dp_frexp.c \
+   ieee754dp.h
+dp_fsp.o: dp_fsp.c \
+   ieee754dp.h
+dp_logb.o: dp_logb.c \
+   ieee754dp.h
+dp_modf.o: dp_modf.c \
+   ieee754dp.h
+dp_mul.o: dp_mul.c \
+   ieee754dp.h
+dp_scalb.o: dp_scalb.c \
+   ieee754dp.h
+dp_simple.o: dp_simple.c \
+   ieee754dp.h
+dp_sqrt.o: dp_sqrt.c \
+   ieee754dp.h
+dp_sub.o: dp_sub.c \
+   ieee754dp.h
+dp_tint.o: dp_tint.c \
+   /home/aspen/WNR834Bv2-V2.1.13_2.1.13/bcm4704/src/linux/linux/include/linux/kernel.h \
+   ieee754dp.h
+dp_tlong.o: dp_tlong.c \
+   ieee754dp.h
+dsemul.o: dsemul.c \
+   /home/aspen/WNR834Bv2-V2.1.13_2.1.13/bcm4704/src/linux/linux/include/linux/compiler.h \
+   /home/aspen/WNR834Bv2-V2.1.13_2.1.13/bcm4704/src/linux/linux/include/linux/mm.h \
+   /home/aspen/WNR834Bv2-V2.1.13_2.1.13/bcm4704/src/linux/linux/include/linux/signal.h \
+   /home/aspen/WNR834Bv2-V2.1.13_2.1.13/bcm4704/src/linux/linux/include/linux/smp.h \
+   /home/aspen/WNR834Bv2-V2.1.13_2.1.13/bcm4704/src/linux/linux/include/linux/smp_lock.h \
+   /home/aspen/WNR834Bv2-V2.1.13_2.1.13/bcm4704/src/linux/linux/include/asm/asm.h \
+   /home/aspen/WNR834Bv2-V2.1.13_2.1.13/bcm4704/src/linux/linux/include/asm/bootinfo.h \
+   /home/aspen/WNR834Bv2-V2.1.13_2.1.13/bcm4704/src/linux/linux/include/asm/byteorder.h \
+   /home/aspen/WNR834Bv2-V2.1.13_2.1.13/bcm4704/src/linux/linux/include/asm/cpu.h \
+   /home/aspen/WNR834Bv2-V2.1.13_2.1.13/bcm4704/src/linux/linux/include/asm/inst.h \
+   /home/aspen/WNR834Bv2-V2.1.13_2.1.13/bcm4704/src/linux/linux/include/asm/processor.h \
+   /home/aspen/WNR834Bv2-V2.1.13_2.1.13/bcm4704/src/linux/linux/include/asm/uaccess.h \
+   /home/aspen/WNR834Bv2-V2.1.13_2.1.13/bcm4704/src/linux/linux/include/asm/branch.h \
+   /home/aspen/WNR834Bv2-V2.1.13_2.1.13/bcm4704/src/linux/linux/include/asm/mipsregs.h \
+   /home/aspen/WNR834Bv2-V2.1.13_2.1.13/bcm4704/src/linux/linux/include/asm/system.h \
+   /home/aspen/WNR834Bv2-V2.1.13_2.1.13/bcm4704/src/linux/linux/include/asm/pgtable.h \
+   /home/aspen/WNR834Bv2-V2.1.13_2.1.13/bcm4704/src/linux/linux/include/asm/fpu_emulator.h \
+   ieee754.h \
+   dsemul.h
+ieee754.o: ieee754.c \
+   ieee754int.h
+ieee754d.o: ieee754d.c \
+   /home/aspen/WNR834Bv2-V2.1.13_2.1.13/bcm4704/src/linux/linux/include/linux/kernel.h \
+   ieee754.h
+ieee754dp.o: ieee754dp.c \
+   ieee754dp.h
+ieee754dp.h: \
+   ieee754int.h
+	@touch ieee754dp.h
+ieee754.h: \
+   /home/aspen/WNR834Bv2-V2.1.13_2.1.13/bcm4704/src/linux/linux/include/linux/types.h
+	@touch ieee754.h
+ieee754int.h: \
+   ieee754.h
+	@touch ieee754int.h
+ieee754m.o: ieee754m.c \
+   ieee754.h
+ieee754sp.o: ieee754sp.c \
+   ieee754sp.h
+ieee754sp.h: \
+   ieee754int.h
+	@touch ieee754sp.h
+ieee754xcpt.o: ieee754xcpt.c \
+   ieee754.h
+kernel_linkage.o: kernel_linkage.c \
+   /home/aspen/WNR834Bv2-V2.1.13_2.1.13/bcm4704/src/linux/linux/include/linux/sched.h \
+   /home/aspen/WNR834Bv2-V2.1.13_2.1.13/bcm4704/src/linux/linux/include/asm/processor.h \
+   /home/aspen/WNR834Bv2-V2.1.13_2.1.13/bcm4704/src/linux/linux/include/asm/signal.h \
+   /home/aspen/WNR834Bv2-V2.1.13_2.1.13/bcm4704/src/linux/linux/include/asm/uaccess.h \
+   /home/aspen/WNR834Bv2-V2.1.13_2.1.13/bcm4704/src/linux/linux/include/asm/fpu_emulator.h
+sp_add.o: sp_add.c \
+   ieee754sp.h
+sp_cmp.o: sp_cmp.c \
+   ieee754sp.h
+sp_div.o: sp_div.c \
+   ieee754sp.h
+sp_fdp.o: sp_fdp.c \
+   ieee754sp.h
+sp_fint.o: sp_fint.c \
+   ieee754sp.h
+sp_flong.o: sp_flong.c \
+   ieee754sp.h
+sp_frexp.o: sp_frexp.c \
+   ieee754sp.h
+sp_logb.o: sp_logb.c \
+   ieee754sp.h
+sp_modf.o: sp_modf.c \
+   ieee754sp.h
+sp_mul.o: sp_mul.c \
+   ieee754sp.h
+sp_scalb.o: sp_scalb.c \
+   ieee754sp.h
+sp_simple.o: sp_simple.c \
+   ieee754sp.h
+sp_sqrt.o: sp_sqrt.c \
+   ieee754sp.h
+sp_sub.o: sp_sub.c \
+   ieee754sp.h
+sp_tint.o: sp_tint.c \
+   /home/aspen/WNR834Bv2-V2.1.13_2.1.13/bcm4704/src/linux/linux/include/linux/kernel.h \
+   ieee754sp.h
+sp_tlong.o: sp_tlong.c \
+   ieee754sp.h
+.PRECIOUS:	ieee754dp.h \
+	ieee754.h \
+	ieee754int.h \
+	ieee754sp.h \
+

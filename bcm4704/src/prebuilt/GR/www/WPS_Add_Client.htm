@@ -1,0 +1,94 @@
+<html>
+<head>
+<%0%>
+<title>Add a Wireless Client</title> 
+<script type="text/javascript">
+<!--
+var pchar = "|"; // progress char
+var maxchars = 61; 
+var delay_time = 100; // msecs
+var charcount = 0; 
+
+function makeStr(strsize, fillchar)
+{
+	var temp = "";
+	for (i=0; i < strsize ; i ++)
+		temp = temp + fillchar + fillchar;
+	return temp;
+}
+function updateProgress()
+{
+	var cf = document.forms[0];
+	if (charcount < maxchars)
+	{
+		charcount ++;
+		cf.progress.value = makeStr(charcount,pchar);
+		setTimeout("updateProgress()",delay_time);
+	}
+	else
+	{ 
+		window.location.href='WPS_ADd_Client_OK.htm';
+	}
+}
+//-->
+</script>
+<style type="text/css">
+TD {
+	FONT-SIZE: 12px; FONT-FAMILY: Arial, Helvetica, Geneva, Swiss, SunSans-Regular, sans-serif
+}
+H1 {
+	FONT-WEIGHT: bold; FONT-SIZE: 16px; BACKGROUND: white; COLOR: #09c; FONT-FAMILY: Arial, Helvetica, Geneva, Swiss, SunSans-Regular, sans-serif
+}
+.prgbar { font-family:Arial; padding:0px; height: 20px; width: 280px; font-weight: bolder; font-size: 10pt; color: #0000FF}
+</style>
+</head>
+<link rel="stylesheet" href="form.css">
+<body bgcolor="#ffffff" onLoad="updateProgress()">
+<form name="update" action="update.cgi" method="post" onSubmit="return false">
+<table border="0">
+
+
+
+	<TR><TD nowrap>
+	<H1>Connecting to New Wireless Client</H1>
+        </TD>
+
+ <tr> <!-- RULE -->
+ <td background="liteblue.gif" height="9"> &nbsp;</td>
+</tr>
+
+	<TR><TD>Please start WPS procedure on the client...
+	<TD></TR>
+
+         <TR><TD nowrap><input type="text" name="progress" class="prgbar" value=""></TD></TR>
+            <TD WIDTH=50> </TD>
+	</TD>
+
+<TR>
+	<TD ALIGN=center>
+
+                  <INPUT TYPE="BUTTON" NAME="Cancel" VALUE="Cancel" onclick="location.href='WPS_Add_Client_Fail_Cancel.htm'">
+	</TD></TR>
+</tr>
+
+</table>
+
+</form>
+
+
+
+<tr><td>
+<a href="WPS_Add_Client_OK.htm"><font size="3" color="#FF0000"><u><b>OK (No Change)</u></font></b></a><br>
+<a href="WPS_Add_Client_OK_Change.htm"><font size="3" color="#FF0000"><u><b>OK (Change)</u></font></b></a><br>
+<a href="WPS_Add_Client_FAIL_Cancel.htm"><font size="3" color="#FF0000"><u><b>Fail - Cancel (No Change)</u></font></b></a><br>
+<a href="WPS_Add_Client_FAIL_Cancel_Change.htm"><font size="3" color="#FF0000"><u><b>Fail - Cancel (Change)</u></font></b></a><br>
+<a href="WPS_Add_Client_FAIL_PIN.htm"><font size="3" color="#FF0000"><u><b>Fail - PIN (No Change)</u></font></b></a><br>
+<a href="WPS_Add_Client_FAIL_PIN_Change.htm"><font size="3" color="#FF0000"><u><b>Fail - PIN (Change)</u></font></b></a><br>
+<a href="WPS_Add_Client_FAIL_Timeout.htm"><font size="3" color="#FF0000"><u><b>Fail - Timeout (No Change)</u></font></b></a><br>
+<a href="WPS_Add_Client_FAIL_Timeout_Change.htm"><font size="3" color="#FF0000"><u><b>Fail - Timeout (Change)</u></font></b></a><br>
+</td></tr>
+
+
+</body>
+</html>
+

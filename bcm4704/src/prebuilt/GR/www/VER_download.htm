@@ -1,0 +1,65 @@
+<html>
+<head>
+<%0%>
+<title>Routerformular</title>
+<link rel="stylesheet" href="form.css">
+<script language="javascript" type="text/javascript">
+<!-- hide script from old browsers
+function loadhelp(fname,anchname) {
+
+if ((loadhelp.arguments.length == 1 ) || (anchname == "" ))
+	top.helpframe.location.href=fname+"_h.htm";
+else
+	top.helpframe.location.href=fname+"_h.htm#" + anchname;
+}
+function goHome(){
+	window.location.href="BAS_basic.htm";
+}
+function do_submit(){
+	document.forms[0].submit();
+}
+function wait1()
+{
+	setTimeout('do_submit()',2000);
+}
+function stop1()
+{
+	document.forms[0].stop.value = "yes";
+}
+//-->
+</script>
+</head>
+<body bgcolor="#ffffff" onLoad="wait1();">
+<form name="formname" method="POST" action="ver_download.cgi"> 
+<table border="0" cellpadding="0" cellspacing="3" width="100%">
+<tr>
+<td colspan="2">
+	<h1>Assistent für die Aktualisierung der Firmware</H1>
+</td>
+</tr>
+
+<tr> <!-- RULE -->
+ <td colspan="2" background="liteblue.gif" height="12"> &nbsp;</td>
+</tr>
+
+<tr>
+    <td colspan="2" align="center"><B>Die aktualisierte Firmware wird an den Router übertragen. Bitte haben Sie etwas Geduld.</B></td>
+</tr>
+</tr>
+<tr>
+</tr>
+
+<tr> <!-- RULE -->
+ <td colspan="2" background="liteblue.gif" height="12"> &nbsp;</td>
+</tr>
+<tr>
+	<td colspan="2" align="center">
+		<input type="SUBMIT" name="Cancel" value=" Abbrechen " onClick="stop1();">
+	</td></tr>
+</table>
+<input type="hidden" name="stop" value="no">    
+</form>
+<p></p>
+</body>
+</html>
+

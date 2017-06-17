@@ -1,0 +1,67 @@
+<html>
+<head>
+<%2%>
+<title>Configuration Assistant</title>
+<link rel="stylesheet" type="text/css" href="style.css">
+<script type="text/javascript">
+<!-- Start Script
+function gotonextpage()
+{
+    location.href=document.forms[0].next_page.value;
+}
+
+function selectEdit(value)
+{
+	if (value == 0)
+	    document.forms[0].next_page.value = "BSW_wsw_manual_wep.htm";
+	else if (value == 1)
+		document.forms[0].next_page.value = "BSW_wsw_wep.htm";
+}
+// End Script -->
+</script>
+</head>
+
+<body bgcolor="#ffffff" leftmargin="0" marginwidth="0" topmargin="0" marginheight="0">
+<form name="wsw_setup" action="" method="post">
+<p>
+<div align="center">
+
+<table BORDER="0" CELLSPACING="0" CELLPADDING="5" width="100%">
+
+  <tr>
+   <td valign="top">
+     <h1><br>&nbsp;&nbsp;There was a problem with your WEP key.   </h1>
+     <p>&nbsp;&nbsp;The WEP key that you entered is not valid. </p>
+     <p>&nbsp;</p>
+     <table width="600" border="2" cellpadding="2" cellspacing="0" bordercolor="#FFFFFF" bgcolor="#E6E6E6">
+       <tr>
+         <td width="35" align="center" valign="middle"><label>
+           <input name="radiobutton" type="radio" value="radiobutton" onclick="selectEdit(0)" checked>
+           </label>         </td>
+         <td width="549" valign="middle" class="InductiveOptions">I want to re-try to enter my WEP key. </td>
+       </tr>
+       <tr>
+         <td align="center" valign="middle"><input name="radiobutton" type="radio" value="radiobutton" onclick="selectEdit(1)" /></td>
+         <td valign="middle" class="InductiveOptions">I want to create a new key. </td>
+       </tr>
+     </table>
+     <p>&nbsp;</p>
+     <p>&nbsp;</p>
+     <p>&nbsp;</p>
+   </td>
+   <td><img src="spacer.gif" width="1" height="18" border="0" alt="" /></td>
+  </tr>
+
+ <tr>
+    <td>
+    <input type="button" name="Back" value="  Back  " onclick="gotonextpage();">
+	<br><br>
+	</td>
+ </tr>
+</table>
+<input type="hidden" name="next_page" value="BSW_wsw_ask_wep.htm"> 
+</div>
+</form>
+</BODY>
+</HTML>
+

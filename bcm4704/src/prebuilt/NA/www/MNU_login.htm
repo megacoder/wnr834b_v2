@@ -1,0 +1,60 @@
+<html>
+<head>
+<%2%>
+<title>NETGEAR Router</title> 
+<link rel="stylesheet" href="form.css">
+<script language="javascript" type="text/javascript">
+<!-- hide script from old browsers
+function enableFwCheck()
+{
+	var cf = document.forms[0];
+	if (cf.enable.checked)
+		cf.logo_enable.value = 0;
+	else
+		cf.logo_enable.value = 1;
+}    
+//-->
+</script>
+</head>
+<body bgcolor="#ffffff">
+
+<form method="POST" action="login.cgi">
+<table border="0" cellpadding="0" cellspacing="3" width="100%">
+<tr> <!-- RULE -->
+ <td colspan="2" background="liteblue.gif" height="12"> &nbsp;</td>
+</tr>
+<tr>
+    <td colspan="2" align="left" tabindex="-1">
+    <span>
+        Thank you for purchasing NETGEAR's WNR834Bv2 RangeMax&#08482 NEXT Wireless Router. Be sure to use the Firmware Upgrade Assistant periodically to take advantage of improvements and feature additions NETGEAR offered for this product.
+    </span>
+    </td>
+</tr>
+<tr>
+</tr>
+<tr>
+    <td colspan="2" align="left" tabindex="-1">
+        To take advantage of RangeMax&#08482 feature offered by the WNR834Bv2 router, use a wireless adapter with this logo.
+    </td>
+</tr>
+<tr>
+</tr>
+<tr>
+</tr>
+<tr><td align="center"><img src="mimo_logo.jpg"></td></tr>
+<tr></tr>
+<tr>
+    <td><input type="checkbox" name="enable" value="1" <%189%> onclick="enableFwCheck();submit();">Do Not Display This Message Again</td></tr>
+<tr></tr>
+<tr> <!-- RULE -->
+ <td colspan="2" background="liteblue.gif" height="12"> &nbsp;</td>
+</tr>
+ <tr>
+ <td colspan="2" align="center">
+ <input type=button name="close" value="Close Window" onclick="self.close()"></td>
+</tr>
+</table>
+<input type="hidden" name="logo_enable" value="1">
+</form>
+</body>
+</html>

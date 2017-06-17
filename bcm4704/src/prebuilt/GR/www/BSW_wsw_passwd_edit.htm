@@ -1,0 +1,78 @@
+<html>
+<head>
+<%0%>
+<title>Konfigurationsassistent</title>
+<link rel="stylesheet" type="text/css" href="style.css">
+<script type="text/javascript">
+<!--
+function checkData()
+{
+	var cf = document.forms[0];
+	var msg = "";
+	if(cf.sysNewPasswd.value.length >= 1 || cf.sysConfirmPasswd.value.length >= 1)
+	{
+		if (cf.sysNewPasswd.value.length == 31 || cf.sysConfirmPasswd.value.length == 31)
+		{
+			alert("Das Passwort darf höchstens 30 Zeichen lang sein.");
+			return false;
+		}
+		if(cf.sysNewPasswd.value != cf.sysConfirmPasswd.value)
+		{
+			msg+= "Das eingegebene Passwort ist falsch. Bitte wiederholen Sie die Eingabe."
+			cf.sysConfirmPasswd.focus();
+		}
+	}    
+	if (msg.length > 1)
+	{
+		alert(msg);
+		return false;
+	}
+	cf.select.value = 1;
+	return true;
+}
+//-->
+</script>
+</head>
+
+<body bgcolor="#ffffff" leftmargin="0" marginwidth="0" topmargin="0" marginheight="0">
+<form name="wsw_passwd_edit" action="wsw_passwd_edit.cgi" method="post">
+<p>
+<div align="center">
+
+<table BORDER="0" CELLSPACING="0" CELLPADDING="5" width="100%">
+
+  <tr>
+   <td valign="top">
+     <h1><BR>&nbsp;&nbsp;Geben Sie Ihr neues Passwort ein.</h1>
+     <p>&nbsp;&nbsp;Hinweis: Beim Passwort wird zwischen Gro? und Kleinschreibung unterschieden. So ist beispielsweise PASSWORD nicht gleichbedeutend mit passWORD. </p>
+     <p>&nbsp;</p>
+     <table border="0">
+       <tr>
+         <td><strong>&nbsp;&nbsp;Passwort:</strong></td>
+         <td><input type="password" name="sysNewPasswd" size="18" maxlength="31"></td>
+        </tr>
+       <tr>
+         <td><strong>&nbsp;&nbsp;Passwort erneut eingeben:</strong> </td>
+         <td><input type="password" name="sysConfirmPasswd" size="18" maxlength="31"></td>
+        </tr>
+     </table>
+     <p>&nbsp;</p>
+     <p>&nbsp;</p>
+     <p>&nbsp;</p>
+   </td>
+   <td><img src="spacer.gif" width="1" height="18" border="0" alt="" /></td>
+  </tr>
+
+ <tr>
+    <td>&nbsp;&nbsp;
+	<input type="submit" name="Next>" value="  Weiter &gt;  " onclick="return checkData()">
+	<BR><BR>
+	</td>
+ </tr>
+</table>
+<input type="hidden" name="select" value="0">
+</div>
+</form>
+</BODY>
+</HTML>
+

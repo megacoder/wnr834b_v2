@@ -1,0 +1,63 @@
+<html>
+<head>
+<%0%>
+<link rel="stylesheet" type="text/css" href="style.css">
+<title>Konfigurationsassistent</title>
+<script type="text/javascript">
+<!--
+var pchar = "|"; // progress char
+var maxchars = 50; 
+var delay_time = 900; // msecs
+var charcount = 0; 
+
+function makeStr(strSize, fillChar)
+{
+	var temp = "";
+	for (i=0; i < strSize ; i ++)
+		temp = temp + fillChar;
+	return temp;
+}
+function updateProgress()
+{
+	var cf = document.forms[0];
+	
+	if (charcount < maxchars)
+	{
+		charcount ++;
+		cf.progress.value = makeStr(charcount,pchar);
+		setTimeout("updateProgress()",delay_time);
+		
+		if(charcount == (maxchars/5) *3 )
+		    cf.submit();
+	}
+}
+//-->
+</script>
+</head>
+<body bgcolor="#ffffff" leftmargin="0" topmargin="0" marginwidth="0" marginheight="0" onLoad="updateProgress()">
+<form name="update" action="blkGetInternetResult.cgi" method="post">
+
+<table border="0" cellpadding="0" cellspacing="3" width="100%">
+<tr>
+   <td valign="top">
+     <h1>&nbsp;&nbsp;Einstellungen werden aktualisiert&nbsp;?</h1>
+     <p>&nbsp;</p>
+     <p>&nbsp;</p>
+   </td>
+</tr>
+<tr>   
+   <td>
+   <font size="big"><strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Status:</font></strong><br>
+   &nbsp;&nbsp;<input type="text" name="progress" class="prgbar" value=""><br>
+   <font size="small">0%&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;100%</font><br>
+   <font size="5pt">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font>
+   <font size="2pt"><b>Bitte haben Sie etwas Geduld.</b></font>
+   </td>
+     <p>&nbsp;</p>
+ <td> &nbsp; </td>
+ <td> &nbsp; </td>
+</tr>
+</table>
+</form>
+</BODY>
+</html>

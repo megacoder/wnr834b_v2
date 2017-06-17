@@ -1,0 +1,1 @@
+#define CONFIG_ACOSNAT 1

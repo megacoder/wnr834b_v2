@@ -1,0 +1,111 @@
+<html>
+<head>
+<%0%>
+<title>WPS Wizard</title>
+<link rel=Stylesheet href=form.css>
+<script language="javascript" type="text/javascript" src="func.js"></script>
+<script language="javascript" type="text/javascript">
+<!--
+function check_pin()
+{
+	var cf = document.forms[0];
+	var lpin = cf.PIN.value;
+	var accum = 0;
+
+	if (lpin.length != 4 && lpin.length != 8) {
+		alert("Die PIN ist eine Folge von 4 oder 8 Zeichen.");
+		return false;
+	}
+
+	lpin = parseInt(cf.PIN.value);
+	if (isNaN(lpin)) {
+		alert("Die PIN ist eine Folge von 4 oder 8 Zeichen.");
+		return false;
+	}
+
+	if (lpin.length == 8) {
+		lpin = parseFloat(cf.PIN.value);
+		accum += 3 * parseInt(lpin / 10000000) % 10;
+		accum += 1 * parseInt(lpin / 1000000) % 10;
+		accum += 3 * parseInt(lpin / 100000) % 10;
+		accum += 1 * parseInt(lpin / 10000) % 10;
+		accum += 3 * parseInt(lpin / 1000) % 10;
+		accum += 1 * parseInt(lpin / 100) % 10;
+		accum += 3 * parseInt(lpin / 10) % 10;
+		accum += 1 * parseInt(lpin / 1) % 10;
+
+		if (0 != (accum % 10)) {
+			alert("Die Prüfsumme der PIN stimmt nicht. Bitte prüfen Sie die PIN.\n");
+			return false;
+		}
+	}
+
+	cf.Next.disabled = true;
+	cf.WPS_type[0].disabled = true;
+	cf.WPS_type[1].disabled = true;
+	//top.contents.location.href="MNU_menu_no_link.htm";
+	return true;
+}
+//-->
+</script>
+</head>
+
+<body bgcolor="#ffffff" onload="loadhelp('WPS');document.forms[0].elements[0].focus();">
+<form method=post action="wps_pin.cgi" onSubmit="if (!check_pin()) return false;">
+
+<table class=MsoNormalTable border=0 cellspacing=3 cellpadding=0 width="100%"
+ style='width:100.0%;mso-cellspacing:2.2pt;mso-padding-alt:0cm 0cm 0cm 0cm'>
+ <tr style='mso-yfti-irow:0;mso-yfti-firstrow:yes'>
+  <td colspan=2 style='padding:0cm 0cm 0cm 0cm'>
+  <h1><st1:place w:st="on"><span lang=EN-US style='mso-fareast-font-family:
+   "Times New Roman"'>WPS-Client hinzufügen<o:p></o:p></span></h1>
+  </td>
+ </tr>
+
+ <tr style='mso-yfti-irow:3;height:9.0pt'>
+  <td colspan=3 style='padding:0cm 0cm 0cm 0cm;height:9.0pt'
+  background=liteblue.gif>
+  <p class=MsoNormal style='margin:0cm;margin-bottom:.0001pt'><span lang=EN-US
+  style='font-size:9.0pt;font-family:Arial'><o:p>&nbsp;</o:p></span></p>
+  </td>
+ </tr>
+
+ <tr></tr>
+ <tr style='mso-yfti-irow:4'>
+  <p class=MsoNormal style='margin:0cm;margin-bottom:.0001pt'><span lang=EN-US
+  style='font-size:9.0pt;font-family:Arial'>
+  <td colspan=3><b>Einrichtungsmethode auswählen:</b></td>
+  <o:p></o:p></span></p>
+ </tr>
+
+ <tr>
+   <td colspan="3"><input type="radio" name="WPS_type" value="Push Button" onClick="location.href='WPS.htm'">Schaltfläche/Taste (empfohlen)</td></tr>
+ <tr>
+    <td colspan="3"><input type="radio" name="WPS_type" value="PIN Number" checked>PIN (Personliche Identifizierungs-Nummer)</td></tr>
+ <tr>
+    <td colspan="3"><p style='margin-left:15pt'>Security-PIN des WPS-Clients. Beim Verbindungsaufbau senden WPS-fahige Adapter einen zufallig erzeugten Security-PIN-Code.</p></td></tr>
+	<TR>
+	<TD><p style='margin-left:15pt'>Client-PIN eingeben:</p></TD>
+        <TD nowrap><INPUT TYPE="TEXT" NAME="PIN" SIZE="8" MAXLENGTH="8" VALUE="" align="left"></TD>
+	<TD>
+  		<p class=MsoNormal align=center style='margin:0cm;margin-bottom:.0001pt;
+  		text-align:center'><span lang=EN-US style='font-size:9.0pt;font-family:Arial'>
+            <INPUT TYPE="submit" VALUE="Weiter" NAME="Next">&nbsp;&nbsp;
+  		<o:p></o:p></span></p></TD>
+        </TR>
+
+
+ <tr style='mso-yfti-irow:6;height:9.0pt'>
+  <td colspan="3" style='padding:0cm 0cm 0cm 0cm;height:9.0pt'
+  background=liteblue.gif>
+  <p class=MsoNormal style='margin:0cm;margin-bottom:.0001pt'><span lang=EN-US
+  style='font-size:9.0pt;font-family:Arial'><o:p>&nbsp;</o:p></span></p>
+  </td>
+ </tr>
+
+
+ <tr></tr>
+</table>
+</form>
+</body>
+</html>

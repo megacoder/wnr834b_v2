@@ -1,0 +1,119 @@
+<HTML>
+<head>
+<%0%>
+ <TITLE>Datenverkehrsstatus</TITLE>
+<link rel="stylesheet" href="form.css">
+<SCRIPT LANGUAGE="JavaScript" type="text/javascript">
+<!-- hide script from old browsers
+var defaultInterval = 10;
+var interval = 10;
+
+function loadInterval()
+{
+    intervalId = setInterval("getStatisticPage()", interval * 1000);
+    intervalId2 = setInterval("setDefaultInterval()", 20);
+}
+
+function setDefaultInterval()
+{
+    document.SetIntervalForm.interval.value = defaultInterval ;
+    clearInterval(intervalId2) ;
+}
+
+
+function resetInterval(newInterval)
+{
+    interval = parseInt(newInterval);
+    if ( isNaN(interval) || interval < 0)
+    {
+        interval = defaultInterval
+    }
+    document.SetIntervalForm.interval.value = interval;
+    clearInterval(intervalId) ;
+    intervalId = setInterval("getStatisticPage()", interval * 1000);
+}
+
+function stopInterval() 
+{
+    clearInterval(intervalId) ;
+    document.SetIntervalForm.interval.value = "" ;
+}
+
+function getStatisticPage()
+{
+    myTitle = "PNC Statistic " ;
+    parent.StatTable.location.href = "traffic_stattbl.htm" ;
+}
+
+submitflag = false;
+function showWarningMsg()
+{
+    var cf = document.forms[0];
+    var msg = "";
+
+    if (cf.traffic_on.value == "0")
+        return true;
+    if (cf.contrl_type.value == "0")
+        if (cf.contrl_dir.value == "0")
+            return true;
+    
+    submitflag = false;
+    if (cf.warning_state.value == "1")
+    {
+        if (cf.watermark.value == "0")
+            return true;
+        
+        msg+="In ";
+        if (cf.contrl_type.value == "1")
+            msg+=cf.watermark.value + " Minuten ";
+        else
+            msg+=cf.watermark.value + " MB ";
+
+        msg+="erreicht Ihr Datenverkehrszähler das monatliche Limit. ";
+        msg+=cf.warning_time.value;
+        submitflag = true;
+    }
+    else if (cf.warning_state.value == "3")
+    {
+        msg+="Das monatliche Limit für den Datenverkehrszähler – (";
+        if (cf.contrl_type.value == "1")
+            msg+= cf.cntime_limit.value + " Stunden) ";
+        else
+            msg+=cf.volume_limit.value + " MB) ";
+        msg+="ist erreicht. ";
+        msg+=cf.warning_time.value;
+    }
+    
+    if (msg.length > 1)
+		alert(msg);
+    if (submitflag)
+        cf.submit();
+        
+    return true;
+}
+//-->
+</script>
+</HEAD>
+
+<BODY BGCOLOR="#FFFFFF" onLoad="loadInterval();document.forms[0].elements[1].focus();">
+<FORM method="POST" NAME="SetIntervalForm" action="traffic_status.cgi" onSubmit="resetInterval(document.SetIntervalForm.interval.value);return false;">
+<div align="CENTER">
+<TABLE BORDER=0 WIDTH=400 HEIGHT=34 VALIGN=top>
+<tr>
+    <td><B>Abfrageintervall:</B><INPUT TYPE="TEXT" NAME="interval" SIZE="4" MAXLENGTH="4" VALUE=" "> (Sekunden)</td>
+    <td><INPUT TYPE="BUTTON" NAME="SetIntvl" VALUE="Intervall festlegen" WIDTH="80" onClick="resetInterval(document.SetIntervalForm.interval.value)"></td>
+</tr>
+</TABLE>
+</div>
+<input type="hidden" name="Button" value="Apply">
+<input name=traffic_on type=hidden value= "<%454%>">
+<input name=contrl_type type=hidden value= "<%455%>">
+<input name=contrl_dir type=hidden value= "<%456%>">
+<input name=volume_limit type=hidden value= "<%457%>">
+<input name=cntime_limit type=hidden value= "<%458%>">
+<input name=watermark type=hidden value= "<%459%>">
+<input name=warning_state type=hidden value= "<%193%>">
+<input name=warning_time type=hidden value= "<%460%>">
+</FORM>
+</BODY>
+</HTML>

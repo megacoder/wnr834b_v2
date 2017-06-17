@@ -1,0 +1,43 @@
+<html>
+<head>
+<%0%>
+<title> Hilfe </title> 
+<link rel="stylesheet" href="help.css">
+
+</head>
+<body bgcolor="#0099cc" >
+
+<h1>Hilfe: WAN-Konfiguration </h1> 
+<p>Auf dieser Seite können Sie einen DMZ-Standardserver einrichten und den Router so konfigurieren, dass er auf Ping-Anforderungen aus dem Internet reagiert. Diese Optionen können zu Sicherheitsproblemen führen und sollten nur aktiviert werden, wenn dies wirklich notwendig ist. </p>
+
+<a name="spi"></a>
+<p><B>SPI-Firewall deaktivieren:</B> Die SPI-Firewall (Stateful Packet Inspection) schützt das LAN vor Denial-of-Service-Angriffen. Diese Option sollte nur deaktiviert werden, wenn dies aus gegebenem Anlass erforderlich ist.</p>
+
+<a name="dmz"></a>
+<p><B> DMZ-Standardserver </B>
+</P><p>Durch die Angabe eines DMZ-Standardservers können Sie einen Computer oder Server einrichten, der für jeden Benutzer im Internet für nicht von Ihnen definierte Dienste zugänglich ist. Dies ist mit einem gewissen Sicherheitsrisiko verbunden. Verwenden Sie diese Option daher nur, wenn Sie sich der Gefahren eines offenen Zugangs bewusst sind. Wenn Sie keinen DMZ-Standardserver definieren, weist der Router alle Anforderungen nicht definierter Dienste zurück. </P><p> So richten Sie einen Computer oder Server als DMZ-Server ein: <ol>
+<li>Klicken Sie auf das Kontrollkästchen <I>DMZ-Standardserver</I>.</li>  <li>Geben Sie die IP-Adresse des Servers ein. </li>
+<li>Klicken Sie auf<B> Übernehmen</B>. </li>
+</ol>
+
+<hr>
+
+<a name="ping"></a>
+</P><p><B> Auf Ping-Anforderungen am Internet-Port reagieren </B>
+</P><p> Aktivieren Sie dieses Kontrollkästchen, wenn der Router auf Ping-Anforderungen aus dem Internet reagieren soll. Diese Option lässt sich für Diagnosezwecke verwenden. Genau wie die Angabe eines DMZ-Standardservers ist sie jedoch mit gewissen Sicherheitsrisiken verbunden. Aktivieren Sie diese Option daher nur, wenn Sie sie wirklich benötigen. </p>
+
+<a name="mtu"></a>
+<p><B>MTU-Größe</B>
+</P><p>Der MTU-Wert (Maximum Transmit Unit) beträgt normalerweise 1500 Byte für lokale Netzwerke, 1492 Byte für PPPoE-Verbindungen und 1436 für PPTP-Verbindungen. Bei einigen Internet-Serviceprovidern muss ein niedrigerer MTU-Wert eingestellt werden. Das ist jedoch nur in seltenen Fällen notwendig. Verwenden Sie diese Option daher nur, wenn Ihr Internetzugang eine abweichende Einstellung erfordert.</p>
+
+<a name="nat"></a>
+<p><B>NAT Filterung</B>
+<p>Diese Option bestimmt wie der Router mit eingehendem Verkehr umgeht. Die sichere Option bietet den Schutz der Firewall um LAN Computer vor Angriffen aus dem Internet zu schützen. Dies könnte auch einen Einfluss auf Online-Spiele, Punkt-zu-Punkt Verbindungen oder Multimedia Anwendungen haben. Die offene Option bietet eine weniger schützende Firewall um alle gängigen Internet Anwendungen zu unterstützen.</p>
+
+<p>
+&nbsp;
+</p>
+
+</body>
+</html>
+

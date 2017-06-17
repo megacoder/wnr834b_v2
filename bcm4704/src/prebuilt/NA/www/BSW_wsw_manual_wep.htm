@@ -1,0 +1,42 @@
+<html>
+<head>
+<%2%>
+<title>Configuration Assistant</title>
+<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+
+<body bgcolor="#ffffff" leftmargin="0" marginwidth="0" topmargin="0" marginheight="0">
+<form name="wsw_passwd_edit" action="wsw_manual_wep.cgi" method="post">
+<p>
+<div align="center">
+
+<table BORDER="0" CELLSPACING="0" CELLPADDING="5" width="100%">
+
+  <tr>
+   <td valign="top">
+     <h1><br>&nbsp;&nbsp;Enter your existing WEP key: </h1>
+     <p>&nbsp;&nbsp;Be sure that you enter the same key for all your wireless devices on this network.</p>
+     <p>&nbsp; </p>
+     <p> <strong>&nbsp;&nbsp;WEP key:</strong>
+       <input type="text" name="KEY1" size="28" maxlength="26">
+     </p>
+     <p>&nbsp;</p>
+     <p>&nbsp;</p>
+     <p>&nbsp;</p>
+   </td>
+   <td><img src="spacer.gif" width="1" height="18" border="0" alt="" /></td>
+  </tr>
+ <tr>
+    <td>&nbsp;&nbsp;
+	<input type="button" name="Back" value="  <Back  " onclick="location.href='BSW_wsw_ask_wep.htm'">
+	<input type="submit" name="Next" value="  Next>  " onclick="this.form.submit()">
+	<br><br>
+	</td>
+ </tr>
+</table>
+<input type="hidden" name="KEY1" value="0">
+</div>
+</form>
+</BODY>
+</HTML>
+

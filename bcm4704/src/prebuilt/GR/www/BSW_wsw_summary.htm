@@ -1,0 +1,101 @@
+<html>
+<head>
+<%0%>
+<title>Konfigurationsassistent</title>
+<link rel="stylesheet" type="text/css" href="style.css">
+<script type="text/javascript">
+<!-- hide script from old browsers
+function selectEdit(value)
+{
+	if (value == 0)
+	    document.forms[0].select.value = 0;
+	else if (value == 1)
+		document.forms[0].select.value = 1;
+	else if (value == 2)
+		document.forms[0].select.value = 2;		
+}
+
+function printPage()
+{
+    if (window.print)
+        window.print();
+    else
+        alert("Ihr Browser unterstützt die Druckfunktion nicht.");
+}
+// -->
+</script>
+</head>
+
+<body bgcolor="#ffffff" leftmargin="0" marginwidth="0" topmargin="0" marginheight="0">
+<form name="wsw_summary" action="wsw_summary.cgi" method="post">
+
+<table BORDER="0" CELLSPACING="0" CELLPADDING="5" width="100%">
+  <tr>
+   <td valign="top">
+     <h1><BR>&nbsp;&nbsp;Überprüfen Sie die Netzwerkeinstellungen. </h1>
+     <p>&nbsp;&nbsp;Hinweis: Jede dieser Einstellungen kann geändert werden, indem Sie sich an Ihrem Router unter www.routerlogin.com anmelden.</p>
+     <p>&nbsp;</p>
+     <table border="0" cellpadding="2">
+ 
+<tr>
+	<td width="50%"><B>&nbsp;&nbsp;Verbindungstyp:</B></td>
+	<td width="50%"><%14%></td>
+</tr>    
+<tr>
+	<td width="50%"><B>&nbsp;&nbsp;Land:</B></td>
+	<td width="50%"><%402%></td>
+</tr>
+<tr>
+	<td width="50%"><B>&nbsp;&nbsp;Wireless Netzwerkname (SSID):</B></td>
+	<td width="50%"><%403%></td>
+</tr>
+<tr>
+	<td width="50%"><B>&nbsp;&nbsp;Funkkanal:</B></td>
+	<td width="50%"><%404%></td>
+</tr>
+<tr>
+	<td width="50%"><b>&nbsp;&nbsp;WLAN-Übertragungsmodus:</b></td>
+	<td width="50%"><%405%></td>
+</tr>
+<tr>
+	<td width="50%"><B>&nbsp;&nbsp;Sicherheitsstandard:</B></td>
+	<td width="50%"><%406%></td>
+</tr>
+	<%407%>
+	<%408%>
+    <%409%>
+<!-- CA1.63_3.4
+<tr>
+	<td width="50%"><b>&nbsp;&nbsp;Admin Username(case sensitive):</b></td>
+	<td width="50%">admin</td>
+</tr> 
+<tr>
+	<td width="50%"><b>&nbsp;&nbsp;Admin Password(case sensitive):</b></td>
+	<td width="50%"><%410%></td>
+</tr> 
+-->
+     </table>
+     <p>&nbsp;</p>
+     <p>&nbsp;&nbsp;Hinweis: Durch Klicken auf die Schaltfläche Weiter werden die neuen WLAN-Einstellungen übernommen.<br>
+     &nbsp;&nbsp;Der Wireless-Adapter muss mit denselben Einstellungen konfiguriert sein.</p>
+     <p>&nbsp;</p>
+     <p>&nbsp;</p>
+   <td><img src="spacer.gif" width="1" height="18" border="0" alt="" /></td>
+  </tr>
+
+ <tr>
+ <td>&nbsp;&nbsp;
+ <input type="submit" name="Back" value="  &lt; Zurück  " onClick="selectEdit(1)">
+ <input type="button" name="Print" value="  Drucken  " onClick="printPage()">
+ <input type="submit" name="Next" value="  Weiter &gt;  " onClick="selectEdit(2)">
+ </td>
+ </tr> 
+ 
+</table> 
+
+<input type="hidden" name="select" value="0"> 
+</form>
+</BODY>
+
+</HTML>
+

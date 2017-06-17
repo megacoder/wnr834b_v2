@@ -1,0 +1,170 @@
+<html>
+<head>
+<%0%>
+<title>Konfigurationsassistent</title>
+<link rel="stylesheet" type="text/css" href="style.css">
+<%13%>
+<script type="text/javascript">
+<!-- 
+var DisableFixedIP = false;
+var DisableFixedDNS = false;
+
+function loadcheck()
+{
+    var cf = document.forms[0];
+    var wan_dns_sel = cf.wan_dns_sel.value;
+    cf.DNSAssign[0].checked = true;
+	setDNS();
+}
+
+function setIP()
+{
+	var cf = document.forms[0];
+	var dflag = cf.WANAssign[0].checked;
+	setDisabled(dflag,cf.WPethr1,cf.WPethr2,cf.WPethr3,cf.WPethr4);
+	DisableFixedIP = dflag;
+}
+function setDNS()
+{
+	var cf = document.forms[0];
+	var dflag = cf.DNSAssign[0].checked;
+	setDisabled(dflag,cf.DAddr1,cf.DAddr2,cf.DAddr3,cf.DAddr4,cf.PDAddr1,cf.PDAddr2,cf.PDAddr3,cf.PDAddr4);
+	DisableFixedDNS = dflag;
+}
+function checkData()
+{
+	var cf = document.forms[0];
+	var msg = "";
+	
+	msg+= checkBlank(cf.pppoe_username, "Benutzername");
+	if(cf.pppoe_idletime.value.length<=0)
+		msg+= "Bitte geben Sie die Leerlaufzeit ein.\n";
+	else if(!_isNumeric(cf.pppoe_idletime.value))
+		msg+= "Ungültige Leerlaufzeit. Bitte geben Sie eine gültige Zahl ein.\n";
+
+	if(cf.WANAssign[1].checked)
+	{
+		if(checkIP(cf.WPethr1,cf.WPethr2,cf.WPethr3,cf.WPethr4,254)||(parseInt(cf.WPethr4.value)==0))
+			msg+= "Ungültige statische IP-Adresse.\n";
+		cf.pppoe_localip.value = cf.WPethr1.value+'.'+cf.WPethr2.value+'.'+cf.WPethr3.value+'.'+cf.WPethr4.value;
+	}
+	else    
+		cf.pppoe_localip.value = "0.0.0.0";
+
+	if(cf.DNSAssign[1].checked)
+	{
+		if(checkIP(cf.DAddr1,cf.DAddr2,cf.DAddr3,cf.DAddr4,254)||(parseInt(cf.DAddr4.value)==0))
+			msg+= "Ungültige primäre DNS-Adresse. Bitte wiederholen Sie die Eingabe.\n";
+		if(cf.PDAddr1.value.length>0)
+			if(checkIP(cf.PDAddr1,cf.PDAddr2,cf.PDAddr3,cf.PDAddr4,254)||(parseInt(cf.PDAddr4.value)==0))
+				msg+= "Ungültige sekundäre DNS-Adresse. Bitte wiederholen Sie die Eingabe.\n";
+	}
+	if (msg.length > 1)
+	{
+		alert(msg);
+		return false;
+	}
+	
+	cf.wan_dns1_pri.value = cf.DAddr1.value+'.'+cf.DAddr2.value+'.'+cf.DAddr3.value+'.'+cf.DAddr4.value;
+	cf.wan_dns1_sec.value = cf.PDAddr1.value+'.'+cf.PDAddr2.value+'.'+cf.PDAddr3.value+'.'+cf.PDAddr4.value;
+
+	return true;
+}
+
+//-->
+</script>
+</head>
+
+<body bgcolor="#ffffff" onload="loadcheck();document.forms[0].elements[0].focus();">
+<form name="formname" method="POST" action="bsw_pppoe.cgi"> 
+<table border="0" cellpadding="0" cellspacing="3" width="99%">
+<tr>
+     <h1><BR>&nbsp;&nbsp;Geben Sie die Daten für Ihre PPPoE-Verbindung ein. </h1>
+</tr>
+
+<tr>
+    <td><strong>&nbsp;&nbsp;Anmeldedaten für PPPoE </strong></td>
+</tr>
+<tr>
+	<td>&nbsp;&nbsp;&nbsp;&nbsp;Benutzername</td>
+	<td><input type="text" name="pppoe_username" size="15" maxlength="64" value="guest"></td>
+</tr>
+<tr>
+	<td>&nbsp;&nbsp;&nbsp;&nbsp;Passwort</td>
+	<td><input type="password" name="pppoe_passwd" size="15" maxlength="64" value=""></td>
+</tr>
+
+<tr>
+	<td nowrap>&nbsp;&nbsp;&nbsp;&nbsp;Dienstname (falls erforderlich) &nbsp;</td>
+	<td><input type="text" name="pppoe_servicename" maxlength="50" size="15" value=""></td>
+</tr>
+
+<tr>
+	<td nowrap>&nbsp;&nbsp;&nbsp;&nbsp;Leerlaufzeit (Minuten)</td>
+	<td><input type="text" class="num" name="pppoe_idletime" size="3" maxlength="3" value="5"></td>
+</tr>
+<tr>
+  <td colspan="2" background="spacer.gif" height="12"> &nbsp;</td>
+</tr>
+<tr>
+	<td colspan="2"><B>&nbsp;&nbsp;Internet-IP-Adresse</B></td>
+</tr>
+<tr>
+	<td colspan="2">&nbsp;&nbsp;&nbsp;&nbsp;<input type="radio" name="WANAssign" value="Dynamic" onClick="setIP()" checked>Dynamische Adresse des Internet-Providers verwenden</td>
+</tr>
+<tr>
+	<td nowrap>&nbsp;&nbsp;&nbsp;&nbsp;<input type="radio" name="WANAssign" value="Fixed" onClick="setIP()">Statische IP-Adresse verwenden</td>
+	<td class="num">
+	<input type="text" name="WPethr1" class="num" size="4" maxlength="3" onFocus="if(DisableFixedIP) this.blur()">.
+	<input type="text" name="WPethr2" class="num" size="4" maxlength="3" onFocus="if(DisableFixedIP) this.blur()">.
+	<input type="text" name="WPethr3" class="num" size="4" maxlength="3" onFocus="if(DisableFixedIP) this.blur()">.
+	<input type="text" name="WPethr4" class="num" size="4" maxlength="3" onFocus="if(DisableFixedIP) this.blur()"></td>
+</tr>
+
+<tr>
+  <td colspan="2" background="spacer.gif" height="12"> &nbsp;</td>
+</tr>
+<tr>
+	<td colspan="2"><b>&nbsp;&nbsp;DNS-Server (Domain Name Service) </b></td>
+</tr>
+
+<tr>
+	<td colspan="2">&nbsp;&nbsp;&nbsp;&nbsp;<input type="radio" name="DNSAssign" value="0" onClick="setDNS()"> Automatisch vom Internet-Provider abrufen</td>
+</tr>
+
+<tr>
+	<td nowrap>&nbsp;&nbsp;&nbsp;&nbsp;<input type="radio" name="DNSAssign" value="1" onClick="setDNS()"> Diese DNS-Server verwenden</td>
+</tr>
+
+<tr>
+	<td nowrap><img src="spacer.gif" width="20" height="12" border="0">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Primärer DNS-Server</td>
+	<td class="num">
+	<input type="text" name="DAddr1" class="num" size="4" maxlength="3">.
+	<input type="text" name="DAddr2" class="num" size="4" maxlength="3">.
+	<input type="text" name="DAddr3" class="num" size="4" maxlength="3">.
+	<input type="text" name="DAddr4" class="num" size="4" maxlength="3"></td>
+</tr>
+<tr>
+	<td nowrap><img src="spacer.gif" width="20" height="12" border="0">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Sekundärer DNS-Server</td>
+	<td class="num">
+	<input type="text" name="PDAddr1" class="num" size="4" maxlength="3">.
+	<input type="text" name="PDAddr2" class="num" size="4" maxlength="3">.
+	<input type="text" name="PDAddr3" class="num" size="4" maxlength="3">.
+	<input type="text" name="PDAddr4" class="num" size="4" maxlength="3"></td>
+</tr>
+
+
+<tr>
+	<td><BR><BR>&nbsp;&nbsp;
+	<input type="SUBMIT" name="Next" value=" Weiter &gt; " onClick="return checkData()">
+	</td></tr>
+</table>
+<INPUT name=pppoe_localip type=hidden value= "<%46%>">
+  <INPUT name=wan_dns_sel type=hidden value= "<%32%>">
+  <INPUT name=wan_dns1_pri type=hidden value= "<%33%>">
+  <INPUT name=wan_dns1_sec type=hidden value= "<%34%>">
+</form>
+<p></p>
+</body>
+
+</html>

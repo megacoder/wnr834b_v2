@@ -1,0 +1,80 @@
+<html>
+<head>
+<%0%>
+<title>Konfigurationsassistent</title>
+<link rel="stylesheet" type="text/css" href="style.css">
+<script type="text/javascript">
+<!-- Start Script
+function checkData()
+{
+    var msg = "";
+    var cf = document.forms[0];
+    
+    if(cf.passphrase.value.length < 8)
+    {
+        msg += "Die eingegebene Passphrase ist zu kurz (mindestens acht Zeichen).";
+    }
+    if(cf.passphrase.value.length > 63)
+    {
+        msg += "Die eingegebene Passphrase ist zu lang (höchstens 63 Zeichen).";
+        cf.passphrase.value = "";
+    }
+    if(msg.length > 1)
+    {
+        alert(msg);
+        return false;
+    }
+    
+    cf.select.value = 1;
+    return true;
+}
+
+function printPage()
+{
+    if (window.print)
+        window.print();
+    else
+        alert("Ihr Browser unterstützt die Druckfunktion nicht.");
+}
+// End Script -->
+</script>
+</head>
+
+<body bgcolor="#ffffff" leftmargin="0" marginwidth="0" topmargin="0" marginheight="0">
+<form name="wsw_wpapsk" action="wsw_wpapsk.cgi" method="post">
+<P>
+<div align="center">
+
+<table BORDER="0" CELLSPACING="0" CELLPADDING="5" width="100%">
+  <tr>
+   <td valign="top">
+       <h1><br>&nbsp;&nbsp;Erstellen einer Passphrase für <%400%><%401%>-Sicherheit im drahtlosen Netzwerk </h1>
+     <p>&nbsp;&nbsp;Geben Sie eine Passphrase ein, die Sie sich gut merken können. Bei der Passphrase wird zwischen Gro? und Kleinschreibung unterschieden. So ist beispielsweise PASSword nicht gleichbedeutend mit passWord.</p>
+     <p>&nbsp;</p>
+     <p> <strong>&nbsp;&nbsp;<%400%><%401%>-Passphrase:</strong>
+       <input type="text" name="passphrase" size=20 maxLength=64 value="" > (8 bis 63 Zeichen) </p>
+     <p>&nbsp;</p>
+     <p>&nbsp;</p>
+     <p>&nbsp;</p>
+   </td>
+   <td><img src="spacer.gif" width="1" height="18" border="0" alt="" /></td>
+  </tr>
+  
+ <tr>
+ <td>&nbsp;&nbsp;
+    <!--<input type="button" name="Print" value="&nbsp; Drucken &nbsp;" onclick="printPage()">-->
+    <input type="submit" name="Back" value="&nbsp; &lt; Zurück &nbsp;">
+	<input type="submit" name="Next" value="&nbsp; Weiter &gt; &nbsp;" onclick="return checkData()">
+	<BR><BR>
+	</td>
+ </tr>
+ 
+</table>
+
+</div>
+<input type="hidden" name="pfChanged" value="0">
+<input type="hidden" name="select" value="0">
+</form>
+</BODY>
+</HTML>
+

@@ -1,0 +1,81 @@
+<html>
+<head>
+<%2%>
+<title>Configuration Assistant</title>
+<link rel="stylesheet" type="text/css" href="style.css">
+<script type="text/javascript">
+<!-- Start Script
+function checkData()
+{
+    var msg = "";
+    var cf = document.forms[0];
+    
+    if(cf.passphrase.value.length < 8)
+    {
+        msg += "Insufficient passphrase length, should be minimum of 8 characters long.";
+    }
+    if(cf.passphrase.value.length > 63)
+    {
+        msg += "Passphrase length too long, should be maxinum of 63 characters long.";
+        cf.passphrase.value = "";
+    }
+    if(msg.length > 1)
+    {
+        alert(msg);
+        return false;
+    }
+    
+    cf.select.value = 1;
+    return true;
+}
+
+function printPage()
+{
+    if (window.print)
+        window.print();
+    else
+        alert("Your browser doesn't support print function!");
+}
+// End Script -->
+</script>
+</head>
+
+<body bgcolor="#ffffff" leftmargin="0" marginwidth="0" topmargin="0" marginheight="0">
+<form name="wsw_wpapsk" action="wsw_wpapsk.cgi" method="post">
+<P>
+<div align="center">
+
+<table BORDER="0" CELLSPACING="0" CELLPADDING="5" width="100%">
+  <tr>
+   <td valign="top">
+       <h1><br>&nbsp;&nbsp;Create a passphrase for <%396%><%397%> wireless security </h1>
+     <p>&nbsp;&nbsp;Select a passphrase that you can remember easily. The passphrase is case sensitive. For example, PASSword is not the same as passWord.</p>
+     <p>&nbsp;</p>
+     <p> <strong>&nbsp;&nbsp;<%396%><%397%> passphrase:</strong>
+       <input type="text" name="passphrase" size=20 maxLength=64 value="" >
+      (8 to 63 characters) </p>
+     <p>&nbsp;</p>
+     <p>&nbsp;</p>
+     <p>&nbsp;</p>
+   </td>
+   <td><img src="spacer.gif" width="1" height="18" border="0" alt="" /></td>
+  </tr>
+  
+ <tr>
+ <td>&nbsp;&nbsp;
+<!--    <input type="button" name="Print" value="  Print  " onclick="printPage()">-->
+    <input type="submit" name="Back" value="  <Back  ">
+	<input type="submit" name="Next" value="  Next>  " onclick="return checkData()">
+	<br><br>
+	</td>
+ </tr>
+ 
+</table>
+
+</div>
+<input type="hidden" name="pfChanged" value="0">
+<input type="hidden" name="select" value="0">
+</form>
+</BODY>
+</HTML>
+

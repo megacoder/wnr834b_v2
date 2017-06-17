@@ -1,0 +1,227 @@
+<html>
+<head>
+<%0%>
+<title>Routerstatus</title> 
+<link rel="stylesheet" href="form.css">
+<%13%>
+<script language="javascript" type="text/javascript">
+<!--
+function openStatWindow() {
+ window.open(this.form.stat_page.value, '','width=380,height=350,status=yes');
+ return ture;
+}
+function openStatusWindow()
+{
+	var conn = document.forms[0].wantype.value;
+	var winoptions;
+	if (conn == "dhcp" || conn == "pppoe")
+		winoptions = "width=400,height=360,status=yes,resizable=yes";
+	else
+		winoptions = "width=400,height=260,status=yes,resizable=yes";
+	openDataSubWin('RST_wanstat.htm',winoptions);
+}
+
+//-->
+</script> 
+</head>
+<body bgcolor="#ffffff" onload="loadhelp('RST_status');" onUnload="closeWin(datSubWinVar);">
+<form method="POST" action="s_status.cgi">
+<table border="0" cellpadding="0" cellspacing="3" width="100%">
+<tr>
+	<td colspan="2"><h1>Routerstatus</h1></td>
+</tr>
+
+<tr> 
+	<td colspan="2" background="liteblue.gif" height="12"> &nbsp;</td>
+</tr>
+
+<tr>
+	<td width="50%"><B>Kontoname</B></td>
+	<td width="50%"><%24%></td>
+</tr>
+
+<tr>
+	<td width="50%"><B>Hardwareversion</B></td>
+	<td width="50%">V2</td>
+</tr>
+
+<tr>
+	<td width="50%"><B>Firmwareversion </B></td>
+	<td width="50%"><%196%></td>
+</tr>
+
+<tr>
+	<td colspan="2" background="liteblue.gif" height="12"> &nbsp;</td>
+</tr>
+<%184%>
+<tr>
+	<td colspan="2"><a href="javascript:loadhelp('RST_status','internet_port')" tabindex="-1">
+	<span class="subhead">Internet-Port </span> </a>
+</td>
+</tr>
+
+<tr>
+	<td width="50%"><B>MAC-Adresse </B></td>
+        <td width="50%"><%36%></td>
+</tr>
+
+<tr>
+	<td width="50%"><B>IP-Adresse </B></td>
+	<td width="50%"><%197%></td>
+</tr>
+
+<tr>
+	<td width="50%"><B>DHCP </B></td>
+	<td width="50%"><%198%><%199%><%200%><%201%><%202%></td>
+</tr>
+
+<tr>
+	<td width="50%"><B>IP-Subnetzmaske </B></td>
+	<td width="50%"><%203%></td>
+</tr>
+
+<tr>
+	<td nowrap width="50%"><b>DNS-Server<!><br></b></td>
+	<td nowrap width="50%"><%204%></td>
+
+<tr> 
+ <td colspan="2" background="liteblue.gif" height="12"> &nbsp;</td>
+</tr>
+<%185%>
+
+<tr>
+	<td colspan="2"><a href="javascript:loadhelp('RST_status','lan_port')" tabindex="-1"><span class="subhead">LAN-Port</span></a></td>
+</tr>
+
+<tr>
+	<td width="50%"><B>MAC-Adresse </B></td>
+	<td width="50%"><%205%></td>
+</tr>
+
+<tr>
+	<td width="50%"><B>IP-Adresse </B></td>
+	<td width="50%"><%39%></td>
+</tr>
+
+<%184%>
+<tr>
+	<td width="50%"><B>DHCP </B></td>
+	<td width="50%"><%206%><%207%></td>
+</tr>
+<tr>
+	<td width="50%"><B>IP-Subnetzmaske </B></td>
+	<td width="50%"><%40%></td>
+</tr>
+<%185%>
+
+<tr> 
+	<td colspan="2" background="liteblue.gif" height="12"> &nbsp;</td>
+</tr>
+
+<tr>
+	<td colspan="2"><a href="javascript:loadhelp('RST_status','wireless_port')" tabindex="-1">
+	<span class="subhead">Access Point </span> </a>
+</td>
+</tr>
+<tr>
+	<td width="50%"><B>Netzwerkname (SSID)</B></td>
+	<td width="50%"><%208%></td>
+</tr>
+<tr>
+	<td width="50%"><B>Region</B></td>
+	<td width="50%"><%209%></td>
+</tr>
+<tr>
+	<td width="50%"><B>Kanal</B></td>
+	<td width="50%"><%210%></td>
+</tr>
+<tr>
+	<td width="50%"><B>Modus</B></td>
+	<td width="50%"><%211%></td>
+</tr>
+<tr>
+	<td width="50%"><B>WLAN-AP</B></td>
+	<td width="50%"><%212%></td>
+</tr>
+<tr>
+	<td width="50%"><B>Broadcast für Netzwerknamen</B></td>
+	<td width="50%"><%213%></td>
+</tr>
+<tr> <!-- RULE -->
+	<td colspan="2" background="liteblue.gif" height="12"> &nbsp;</td>
+</tr>
+
+<%214%>
+<tr>
+	<td colspan="2" tabindex="-1"><span class="subhead">WLAN-Repeating</span></td>
+</tr>
+<%215%>
+
+<%216%>
+<tr>
+	<td width="50%"><b>Übertragungsrate </b></td>
+    <td width="50%"><%217%></td>
+</tr>
+<tr>
+	<td width="50%"><b>Signalstärke </b></td>
+    <td width="50%"><%218%></td>
+</tr>
+
+<tr> 
+	<td colspan="2" background="liteblue.gif" height="12"> &nbsp;</td>
+</tr>
+<%219%>
+
+<%220%>
+<tr>
+	<td width="50%"><b>Repeater-MAC-Adresse 1</b></td>
+    <td width="50%"><%221%></td>
+</tr>
+<tr>
+	<td width="50%"><b>Übertragungsrate</b></td>
+    <td width="50%"><%222%></td>
+</tr>
+
+<tr>
+	<td width="50%"><b>Repeater-MAC-Adresse 2</b></td>
+    <td width="50%"><%223%></td>
+</tr>
+<tr>
+	<td width="50%"><b>Übertragungsrate</b></td>
+    <td width="50%"><%224%></td>
+</tr>
+<tr>
+	<td width="50%"><b>Repeater-MAC-Adresse 3</b></td>
+    <td width="50%"><%225%></td>
+</tr>
+<tr>
+	<td width="50%"><b>Übertragungsrate</b></td>
+    <td width="50%"><%226%></td>
+</tr>
+<tr>
+	<td width="50%"><b>Repeater-MAC-Adresse 4</b></td>
+    <td width="50%"><%227%></td>
+</tr>
+<tr>
+	<td width="50%"><b>Übertragungsrate</b></td>
+    <td width="50%"><%228%></td>
+</tr>
+
+<tr> 
+	<td colspan="2" background="liteblue.gif" height="12"> &nbsp;</td>
+</tr>
+<%229%>
+
+<tr>
+	<td nowrap colspan="2" align="center"><input type="BUTTON" name="system"
+    value="Statistik anzeigen" onclick="openDataSubWin('RST_statistics.htm','width=900,height=280,status=yes,resizable=yes');">
+<INPUT type="button" name="StPoE" value="Verbindungsstatus" onclick="openStatusWindow()"></TD>
+</tr>
+</table>
+
+<input type="hidden" name="wantype" value="<%14%>">
+
+</form>
+</body>
+</html>
+

@@ -1,0 +1,118 @@
+cfm.o: cfm.c \
+   h/types.h \
+   h/fddi.h \
+   h/smc.h \
+   h/smtstate.h
+drvfbi.o: drvfbi.c \
+   h/types.h \
+   h/fddi.h \
+   h/smc.h \
+   h/supern_2.h \
+   h/skfbiinc.h
+ecm.o: ecm.c \
+   h/types.h \
+   h/fddi.h \
+   h/smc.h \
+   h/smtstate.h
+ess.o: ess.c \
+   h/types.h \
+   h/fddi.h \
+   h/smc.h \
+   h/smt_p.h
+fplustm.o: fplustm.c \
+   h/types.h \
+   h/fddi.h \
+   h/smc.h \
+   h/supern_2.h \
+   can.c
+hwmtm.o: hwmtm.c \
+   h/types.h \
+   h/fddi.h \
+   h/smc.h \
+   h/supern_2.h \
+   h/skfbiinc.h
+hwt.o: hwt.c \
+   h/types.h \
+   h/fddi.h \
+   h/smc.h
+lnkstat.o: lnkstat.c \
+   h/types.h \
+   h/fddi.h \
+   h/smc.h \
+   h/lnkstat.h
+pcmplc.o: pcmplc.c \
+   h/types.h \
+   h/fddi.h \
+   h/smc.h \
+   h/supern_2.h \
+   h/smtstate.h
+pmf.o: pmf.c \
+   h/types.h \
+   h/fddi.h \
+   h/smc.h \
+   h/smt_p.h \
+   h/smtstate.h
+queue.o: queue.c \
+   h/types.h \
+   h/fddi.h \
+   h/smc.h
+rmt.o: rmt.c \
+   h/types.h \
+   h/fddi.h \
+   h/smc.h \
+   h/smtstate.h
+skfddi.o: skfddi.c \
+   /home/aspen/WNR834Bv2-V2.1.13_2.1.13/bcm4704/src/linux/linux/include/linux/module.h \
+   /home/aspen/WNR834Bv2-V2.1.13_2.1.13/bcm4704/src/linux/linux/include/linux/kernel.h \
+   /home/aspen/WNR834Bv2-V2.1.13_2.1.13/bcm4704/src/linux/linux/include/linux/sched.h \
+   /home/aspen/WNR834Bv2-V2.1.13_2.1.13/bcm4704/src/linux/linux/include/linux/string.h \
+   /home/aspen/WNR834Bv2-V2.1.13_2.1.13/bcm4704/src/linux/linux/include/linux/ptrace.h \
+   /home/aspen/WNR834Bv2-V2.1.13_2.1.13/bcm4704/src/linux/linux/include/linux/errno.h \
+   /home/aspen/WNR834Bv2-V2.1.13_2.1.13/bcm4704/src/linux/linux/include/linux/ioport.h \
+   /home/aspen/WNR834Bv2-V2.1.13_2.1.13/bcm4704/src/linux/linux/include/linux/slab.h \
+   /home/aspen/WNR834Bv2-V2.1.13_2.1.13/bcm4704/src/linux/linux/include/linux/interrupt.h \
+   /home/aspen/WNR834Bv2-V2.1.13_2.1.13/bcm4704/src/linux/linux/include/linux/pci.h \
+   /home/aspen/WNR834Bv2-V2.1.13_2.1.13/bcm4704/src/linux/linux/include/linux/delay.h \
+   /home/aspen/WNR834Bv2-V2.1.13_2.1.13/bcm4704/src/linux/linux/include/asm/byteorder.h \
+   /home/aspen/WNR834Bv2-V2.1.13_2.1.13/bcm4704/src/linux/linux/include/asm/bitops.h \
+   /home/aspen/WNR834Bv2-V2.1.13_2.1.13/bcm4704/src/linux/linux/include/asm/io.h \
+   /home/aspen/WNR834Bv2-V2.1.13_2.1.13/bcm4704/src/linux/linux/include/asm/uaccess.h \
+   /home/aspen/WNR834Bv2-V2.1.13_2.1.13/bcm4704/src/linux/linux/include/linux/ctype.h \
+   /home/aspen/WNR834Bv2-V2.1.13_2.1.13/bcm4704/src/linux/linux/include/linux/netdevice.h \
+   /home/aspen/WNR834Bv2-V2.1.13_2.1.13/bcm4704/src/linux/linux/include/linux/fddidevice.h \
+   /home/aspen/WNR834Bv2-V2.1.13_2.1.13/bcm4704/src/linux/linux/include/linux/skbuff.h \
+   h/types.h \
+   h/skfbi.h \
+   h/fddi.h \
+   h/smc.h \
+   h/smtstate.h
+smt.o: smt.c \
+   h/types.h \
+   h/fddi.h \
+   h/smc.h \
+   h/smt_p.h \
+   h/smtstate.h
+smtdef.o: smtdef.c \
+   h/types.h \
+   h/fddi.h \
+   h/smc.h
+smtinit.o: smtinit.c \
+   h/types.h \
+   h/fddi.h \
+   h/smc.h
+smtparse.o: smtparse.c \
+   h/types.h \
+   h/fddi.h \
+   h/smc.h \
+   h/smt_p.h \
+   h/smtstate.h
+smttimer.o: smttimer.c \
+   h/types.h \
+   h/fddi.h \
+   h/smc.h
+srf.o: srf.c \
+   h/types.h \
+   h/fddi.h \
+   h/smc.h \
+   h/smt_p.h \
+   h/smtstate.h

@@ -1,0 +1,27 @@
+/bootparam.h/1.1.1.1/Fri Mar  5 07:31:00 2010//
+/bootparam_prot.x/1.1.1.1/Fri Mar  5 07:31:00 2010//
+/key_prot.x/1.1.1.1/Fri Mar  5 07:31:00 2010//
+/klm_prot.x/1.1.1.1/Fri Mar  5 07:31:00 2010//
+/mount.x/1.1.1.1/Fri Mar  5 07:31:00 2010//
+/nfs_prot.x/1.1.1.1/Fri Mar  5 07:31:00 2010//
+/nis.h/1.1.1.1/Fri Mar  5 07:31:00 2010//
+/nis.x/1.1.1.1/Fri Mar  5 07:31:00 2010//
+/nis_callback.h/1.1.1.1/Fri Mar  5 07:31:00 2010//
+/nis_callback.x/1.1.1.1/Fri Mar  5 07:31:00 2010//
+/nis_object.x/1.1.1.1/Fri Mar  5 07:31:00 2010//
+/nis_tags.h/1.1.1.1/Fri Mar  5 07:31:00 2010//
+/nislib.h/1.1.1.1/Fri Mar  5 07:31:00 2010//
+/nlm_prot.x/1.1.1.1/Fri Mar  5 07:31:00 2010//
+/rex.x/1.1.1.1/Fri Mar  5 07:31:00 2010//
+/rquota.x/1.1.1.1/Fri Mar  5 07:31:00 2010//
+/rstat.x/1.1.1.1/Fri Mar  5 07:31:00 2010//
+/rusers.x/1.1.1.1/Fri Mar  5 07:31:00 2010//
+/sm_inter.x/1.1.1.1/Fri Mar  5 07:31:00 2010//
+/spray.x/1.1.1.1/Fri Mar  5 07:31:00 2010//
+/yp.h/1.1.1.1/Fri Mar  5 07:31:00 2010//
+/yp.x/1.1.1.1/Fri Mar  5 07:31:00 2010//
+/yp_prot.h/1.1.1.1/Fri Mar  5 07:31:00 2010//
+/ypclnt.h/1.1.1.1/Fri Mar  5 07:31:00 2010//
+/yppasswd.x/1.1.1.1/Fri Mar  5 07:31:00 2010//
+/ypupd.h/1.1.1.1/Fri Mar  5 07:31:00 2010//
+D

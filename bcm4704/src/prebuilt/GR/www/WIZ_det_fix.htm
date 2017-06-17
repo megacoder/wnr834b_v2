@@ -1,0 +1,55 @@
+<html>
+<head>
+<%0%>
+<title></title>
+
+<link rel="stylesheet" href="form.css">
+<%13%>
+<script language="javascript" type="text/javascript">
+<!-- hide script from old browsers
+function goipfixed() {
+ location="WIZ_fix.htm";
+	}
+function change_this_goipfixed() {
+ location="BAS_basic.htm";
+	}
+//-->
+</script>
+</head>
+
+<body bgcolor="#ffffff" leftmargin="0" topmargin="0" marginwidth="0" marginheight="0" onLoad="loadhelp('WIZ_det_fix')">
+<form name="formname" action="wiz_fix1.cgi" method="POST" > 
+<input type="hidden" name="Load" value="W">
+<table border="0" cellpadding="0" cellspacing="3" width="100%">
+<tr>
+<td colspan="2" align="center" nowrap>
+					<H1>Feste IP-Adresse erkannt <BR> oder <BR> Spezielle Konfiguration erforderlich</H1>
+</td>
+</tr>
+
+<tr>
+<td colspan="2" align="center"><B>Wurde Ihnen vom Internet-Provider eine feste oder statische IP-Adresse zugewiesen?</B>
+
+
+</td>
+</tr>
+
+
+<tr> <!-- RULE -->
+ <td colspan="2" background="liteblue.gif" height="12"> &nbsp;</td>
+</tr>
+
+</tr>
+<tr>
+<td colspan="2" align="center" nowrap>
+
+			<input type="Button" name="Button" value="Ja" onClick="goipfixed()">
+			<input type="Button" name="Not_sure" value="Ich wei?nicht" onClick="change_this_goipfixed()">
+</td></tr>
+
+</table>
+</form>
+<p></p>
+</body>
+</html>
+

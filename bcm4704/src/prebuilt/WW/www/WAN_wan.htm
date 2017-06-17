@@ -1,0 +1,179 @@
+<html>
+<head>
+<%2%>
+<title>WAN Setup</title> 
+<link rel="stylesheet" href="form.css">
+<STYLE TYPE="text/javascript">
+	classes.num.all.fontFamily = "Courier";
+	classes.num.all.fontSize = "10pt" ;
+</style>
+<%11%>
+<script language="javascript" type="text/javascript">
+<!--
+function check_data()
+{
+ var cf = document.forms[0];
+ var msg = "";
+	if (cf.dmz_enable.checked)
+	{
+	 msg += checkInt(cf.dmzip1, "DMZ IP", 1, 254, true);
+		msg += checkInt(cf.dmzip2, "DMZ IP", 0, 255, true);
+		msg += checkInt(cf.dmzip3, "DMZ IP", 0, 255, true);
+		msg += checkInt(cf.dmzip4, "DMZ IP", 1, 254, true);
+	}
+	msg+= checkInt(cf.wan_mtu, "MTU value", 1, parseInt(cf.wan_way.value), true);
+
+	if((parseInt(cf.wan_mtu.value)>parseInt(cf.wan_way.value))
+	            ||(parseInt(cf.wan_mtu.value)<616))
+	    msg += "Invalid MTU value, valid range is 616 to "+cf.wan_way.value+"\n"; 
+
+	if (msg.length > 1)
+	{
+		alert(msg);
+		return false;
+	}
+	return true;	
+}
+function disa_dmz()
+{
+ var cf = document.forms[0];
+ cf.dmzip1.disabled = true;
+ cf.dmzip2.disabled = true;
+ cf.dmzip3.disabled = true;
+}
+
+function loadSettings()
+{
+	var cf = document.forms[0];
+	var spiEnable = "<%291%>";
+	var dmzEnable = "<%292%>";
+	var lanIpAddr = "<%37%>";
+	var lanIp = lanIpAddr.split(".");
+	var resp2ping = "<%293%>";
+	var nat_inbound_filtering = cf.nat_inbound_filtering.value;
+
+	if (nat_inbound_filtering == "1")
+		cf.NatInboundFiltering[0].checked = true;
+	else
+		cf.NatInboundFiltering[1].checked = true;
+
+	if (spiEnable == "1")
+		cf.disable_spi.checked = false;
+	else
+		cf.disable_spi.checked = true;
+
+	cf.dmzip1.value = lanIp[0];
+	cf.dmzip2.value = lanIp[1];
+	cf.dmzip3.value = lanIp[2];
+	if (dmzEnable == "1")
+	{
+		cf.dmz_enable.checked = true;
+		cf.dmzip4.value = "<%294%>";
+	}
+	else
+	{
+		cf.dmz_enable.checked = false;
+		cf.dmzip4.value = "0";
+	}
+
+	if (resp2ping == "1")
+		cf.rspToPing.checked = true;
+	else
+		cf.rspToPing.checked = false;
+
+    if (cf.wan_proto.value == "pppoe")
+        cf.wan_way.value = 1492;
+    else if (cf.wan_proto.value == "pptp")
+        cf.wan_way.value = 1436;
+    else
+        cf.wan_way.value = 1500;
+
+    if (parseInt(cf.nvram_mtu.value) >= parseInt(cf.wan_way.value) )
+        cf.wan_mtu.value = cf.wan_way.value;
+    else
+        cf.wan_mtu.value = cf.nvram_mtu.value;
+}
+
+//-->
+</script> 
+</head>
+<body bgcolor="#ffffff" onload="loadSettings();loadhelp('WAN_wan');disa_dmz();document.forms[0].elements[0].focus();">
+<form name="frmRules" method="POST" action="security.cgi">
+<table border="0" cellpadding="0" cellspacing="3" width="100%">
+<tr>
+	<td colspan="2"><h1>WAN Setup</h1></td>
+</tr>
+
+<tr> <!-- RULE -->
+ <td colspan="2" background="liteblue.gif" height="12"> &nbsp;</td>
+</tr>
+
+<tr>
+ <td colspan="2"><input type="checkbox"  name="disable_spi" value="disable_spi"><a href="javascript:loadhelp('WAN_wan','spi')" tabindex="-1"> <b>Disable SPI Firewall</b></a></td>
+</tr>
+
+<tr> <!-- RULE -->
+ <td colspan="2" background="liteblue.gif" height="12"> &nbsp;</td>
+</tr>
+
+
+<tr>
+	<td nowrap align="left" width="50%"><input type="checkbox"  name="dmz_enable" value="dmz_enable">
+	<a href="javascript:loadhelp('WAN_wan','dmz')" tabindex="-1"><b>Default DMZ Server</b></a></td>
+<td nowrap align="right"><span class="num"><input type="text" name="dmzip1" class="num" size="4" maxlength="3" onFocus="this.blur()">.<input type="text" name="dmzip2" class="num" size="4" maxlength="3" onFocus="this.blur()">.<input type="text" name="dmzip3" class="num" size="4" maxlength="3" onFocus="this.blur()">.<input type="text" name="dmzip4" class="num" size="4" maxlength="3"></span></td>
+</tr>
+
+<tr> <!-- RULE -->
+ <td colspan="2" background="liteblue.gif" height="12"> &nbsp;</td>
+</tr>
+
+
+<tr>
+<td colspan="2"><input type="checkbox" name="rspToPing" value="rspToPing"><a href="javascript:loadhelp('WAN_wan','ping')" tabindex="-1"> <b>Respond to Ping on Internet Port</b></a></td>
+</tr>
+
+<tr> <!-- RULE -->
+ <td colspan="2" background="liteblue.gif" height="12"> &nbsp;</td>
+</tr>
+
+<tr>
+	<td>&nbsp;<a href="javascript:loadhelp('WAN_wan','mtu')" tabindex="-1"><b>MTU Size</b> (in bytes)</a></td>
+	<td align="right" class="num"><input type="text" name="wan_mtu" size="5" maxlength="4"></td>
+</tr>
+
+
+<tr> <!-- RULE -->
+ <td colspan="2" background="liteblue.gif" height="12"> &nbsp;</td>
+</tr>
+
+<tr>
+	<td>&nbsp;<a href="javascript:loadhelp('WAN_wan','nat')" tabindex="-1"><b>NAT Filtering</b></a></td>
+	<td align="right">
+	    <input type="radio" name="NatInboundFiltering" value="Secured">Secured
+	    <input type="radio" name="NatInboundFiltering" value="Open">Open
+    </td>
+</tr>
+
+
+<tr> <!-- RULE -->
+ <td colspan="2" background="liteblue.gif" height="12"> &nbsp;</td>
+</tr>
+
+<tr>
+ <td colspan="2" align="center">
+ <input type="submit" name="apply" value="Apply" onClick="return check_data()">
+ <input type="button" name="cancel" value="Cancel" onclick="loadSettings();"></td>
+</tr>
+<tr>
+ <input type="hidden" name="wan_way" value="1500">
+ <INPUT name="nat_inbound_filtering" type=hidden value= "<%295%>">
+ <input type="hidden" name="wan_proto" value= "<%12%>">
+ <input type="hidden" name="nvram_mtu" value= "<%296%>">
+</tr>
+</table>
+
+</form>
+</body>
+</html>
+
+

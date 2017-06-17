@@ -1,0 +1,60 @@
+<html>
+<head>
+<%0%>
+<title> Hilfe </title>
+<link rel="stylesheet" href="help.css">
+</head>
+<body bgcolor="#0099cc" >
+<h1> Hilfe: Portweiterleitung und Port-Triggering </h1>
+<p> Das Port-Triggering ist ein erweitertes Merkmal für Spiele und andere Internetanwendungen. Die Portweiterleitung ist von ihren Funktionen her mit dem Port-Triggering vergleichbar; sie ist jedoch statisch und unterliegt gewissen Einschränkungen. </p>
+<p> Beim Port-Triggering wird ein Port vorübergehend für ankommenden Datenverkehr geöffnet; hierbei braucht die IP-Adresse nicht vom Server im Internet verfolgt zu werden, wenn diese beispielsweise per DHCP geändert wird. </p>
+<p> Beim Port-Triggering wird der abgehende Datenverkehr überwacht. Wenn einer der Computer in Ihrem Netzwerk über einen Ausgangs-Port Daten sendet, speichert der Router dessen IP-Adresse und „triggert?den entsprechenden Eingangs-Port. Am getriggerten Port eintreffende Daten werden dann an den Computer weitergeleitet, von dem auch die abgehenden Daten für diesen Port stammen. </p>
+
+<p> Mit den Einstellungen auf der Seite <I>Portweiterleitung/Port-Triggering</I> können Sie die Nutzung von verschiedenen Diensten (z.&nbsp;B. FTP und HTTP), Online-Spielen (wie Quake III) und Internetanwendungen (wie CUseeMe) durch lokale Computer und Server ermöglichen. </p>
+
+<p> Die Portweiterleitung eignet sich für servergestützte Dienste wie FTP und HTTP. Anforderungen aus dem Internet werden an den Server übermittelt, für den eine Weiterleitung des jeweiligen Ports eingerichtet wurde. Beim Port-Triggering hingegen werden Anforderungen aus dem Internet nur dann weitergeleitet, wenn der entsprechende Port zuvor „getriggert?wurde. Das Port-Triggering eignet sich beispielsweise für die Nutzung von Chatforen und Online-Spielen. </p>
+<hr>
+
+<p><B>Port-Triggering</B></p>
+<p> Hinweis: Wenn Sie das Kontrollkästchen <B>Port-Triggering deaktivieren</B> markieren, werden <B>sämtliche</B> Funktionen für das Port-Triggering abgeschaltet; die zugehörigen Konfigurationsdaten bleiben jedoch im Router gespeichert. </p>
+
+<p><a name="pt_timeout"><B>Leerlaufzeit für Port-Triggering</B></p>
+<p> Geben Sie einen Wert von bis zu 9999&nbsp;Minuten ein. Der Wert unter <B>Leerlaufzeit für Port-Triggering</B> bestimmt, wie lange ein getriggerter Eingangs-Port geöffnet bleibt, wenn keine weiteren Daten über diesen Port übertragen werden. Wenn die Zeitspanne, in der keine Daten über den betreffenden Eingangs-Port mehr übertragen werden, die angegebene Leerlaufzeit erreicht, wird der Port geschlossen. </p>
+
+<p><B> Portzuordnungstabelle für Port-Triggering </B></p>
+<p> Zunächst müssen Sie wissen, welchen Dienst, welche Anwendung oder welches Spiel Sie konfigurieren möchten. Außerdem benötigen Sie die Adresse des Ausgangs-Ports (Triggering-Port), den das Spiel oder die Anwendung verwendet. </p>
+
+<p> So richten Sie einen Computer für die Nutzung von Online-Spielen oder Internetanwendungen ein: <ol>
+	<li> Klicken Sie auf die Schaltfläche <B>Dienst hinzufügen</B>. </li>
+
+	<li> Geben Sie den <B>Dienstnamen</B> in das entsprechende Feld ein. </li>
+
+	<li> Wählen Sie unter <B>Dienstbenutzer</B> die Option <B>Beliebig</B> (Standardeinstellung), wenn dieser Dienst allen Benutzern im Netzwerk zur Verfügung stehen soll. Wählen Sie ansonsten <B>Einzelne Adresse</B> und geben Sie die IP-Adresse des Computers ein, auf dem das Online-Spiel oder die Internetanwendung genutzt werden soll. </li>
+
+	<li> Wählen Sie <B>Diensttyp</B>. </li>
+
+	<li> Geben Sie im Feld <B>Triggering-Port</B> die Nummer des Ausgangs-Ports ein. </li>
+
+	<li> Füllen Sie die Felder <B>Verbindungstyp</B>, <B>Erster Port</B> und <B>Letzter Port</B> aus. Diese Angaben zum Spiel oder zur Anwendung finden Sie im Handbuch oder auf der Website des Herstellers oder Anbieters. </li>
+
+	<li> Klicken Sie auf die Schaltfläche <B>Übernehmen</B>. </li>
+</ol>
+
+</P><p>So passen Sie einen Dienst aus der Liste an: <ol>
+	<li> Aktivieren Sie die Optionsschaltfläche des betreffenden Dienstes in der Tabelle. </li>
+
+	<li> Klicken Sie auf <B>Dienst bearbeiten</B>. </li>
+
+	<li> Nehmen Sie die gewünschten Änderungen an den Einstellungen für den Dienst vor. </li>
+
+	<li> Klicken Sie auf die Schaltfläche <B>Übernehmen</B>. </li>
+</ol>
+
+</P><p>So löschen Sie einen Dienst aus der Liste: <ol>
+	<li> Aktivieren Sie die Optionsschaltfläche des betreffenden Dienstes in der Tabelle. </li>
+	<li> Klicken Sie auf die Schaltfläche<B> Dienst löschen</B>. </li>
+</ol>
+
+</body>
+</html>
+

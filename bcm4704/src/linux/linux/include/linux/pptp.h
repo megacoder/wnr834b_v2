@@ -1,0 +1,50 @@
+
+#include <linux/ppp_channel.h>
+#include <net/sock.h>
+
+#define uchar   unsigned char
+#define ushort  unsigned short
+#define ulong   unsigned long
+#define uint    unsigned int
+
+#define PPP_NETWORK_LAYER   0x3FFF
+
+struct pptp_info {
+    struct ppp_channel *pchan;
+};
+
+struct sock_info {
+    //struct socket *sock;
+    struct sock *sk;
+};
+
+#define ETH_MAC_LEN     6
+#define SEQ_PRESENT     0x01
+#define ACK_PRESENT     0x02
+
+#define PPP_PROTO_IP    0x0021  /* Internet Protocol */
+
+struct num_info {
+    unsigned char flag_a_s;     /* Flag for sequence & acknowledgement number */
+    unsigned long gre_seq;      /* Sequence number of GRE header */
+    unsigned long gre_ack;      /* Acknowledgement number of GRE header */
+};
+
+struct hdr_info {
+    unsigned char eth_smac[ETH_MAC_LEN];    /* Source MAC address */
+    unsigned char eth_dmac[ETH_MAC_LEN];    /* Destination MAC address */
+    unsigned long ip_saddr;     /* Source IP address */
+    unsigned long ip_daddr;     /* Destination IP address */
+    struct num_info seq_ack;
+};
+
+struct mac_hdr {
+    unsigned char smac[ETH_MAC_LEN];    /* Source MAC address */
+    unsigned char dmac[ETH_MAC_LEN];    /* Destination MAC address */
+    unsigned short type;
+};
+
+struct addr_info {
+    unsigned long src_addr;     /* Source IP address */
+    unsigned long dst_addr;     /* Destination IP address */
+};

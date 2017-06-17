@@ -1,0 +1,177 @@
+<html>
+<head>
+<%0%>
+<title>PPTP</title>
+<link rel="stylesheet" href="form.css">
+<STYLE TYPE="text/javascript">
+	classes.num.all.fontFamily = "Courier";
+	classes.num.all.fontSize = "10pt" ;
+</style>
+<%13%>
+<script language="javascript" type="text/javascript">
+<!-- 
+var DisableFixedDNS = false;
+var DisableFixedMAC = false;
+var MacAddress;
+var DodDisable = false;
+
+function goTestApply()
+{
+	var winoptions = "width=640,height=480,menubar=yes,toolbar=yes,status=yes,location=yes,resizable=yes";
+	if(document.forms[0].runtest.value == "yes")
+		window.open('BAS_wtest_l.htm','test_win',winoptions);
+}
+
+function loadcheck()
+{
+	var cf = document.forms[0];
+	if(isIE()){
+		cf.PPTPUserName.size="24";
+		cf.PPTPPasswd.size="24";
+	}
+	loadhelp('WIZ_pptp');
+}
+
+function loadhelp(fname,anchname) 
+{
+    if (top.helpframe != null)
+    {
+        if ((loadhelp.arguments.length == 1 ) || (anchname == "" ))
+        	top.helpframe.location.href=fname+"_h.htm";
+        else
+        	top.helpframe.location.href=fname+"_h.htm#" + anchname;
+    }
+}        
+
+function loadSettings()
+{
+	var cf = document.forms[0];
+	var pptp_user_ip = cf.pptp_user_ip.value.split(".");
+	var pptp_gateway = cf.pptp_gateway.value.split(".");
+
+	if (cf.pptp_user_ip.value != "")
+	{
+		cf.myip_1.value = pptp_user_ip[0];
+		cf.myip_2.value = pptp_user_ip[1];
+		cf.myip_3.value = pptp_user_ip[2];
+		cf.myip_4.value = pptp_user_ip[3];
+	}
+	
+	if (cf.pptp_gateway.value != "")
+	{
+		cf.mygw_1.value = pptp_gateway[0];
+		cf.mygw_2.value = pptp_gateway[1];
+		cf.mygw_3.value = pptp_gateway[2];
+		cf.mygw_4.value = pptp_gateway[3];
+	}
+}
+
+function checkData()
+{
+	var cf = document.forms[0];
+	var msg = "";
+	
+	msg+= checkBlank(cf.pptp_username, "Benutzername");
+	if(cf.pptp_idletime.value.length<=0)
+		msg+= "Bitte geben Sie die Leerlaufzeit ein.\n";
+	else if(!_isNumeric(cf.pptp_idletime.value))
+		msg+= "Ungültige Leerlaufzeit. Bitte geben Sie eine gültige Zahl ein.\n";
+	
+	if((cf.myip_1.value.length>0)||(cf.myip_2.value.length>0)||(cf.myip_3.value.length>0)||(cf.myip_4.value.length>0))
+		if(checkIP(cf.myip_1,cf.myip_2,cf.myip_3,cf.myip_4,254)||(parseInt(cf.myip_4.value)==0))
+			msg+= "Ungültige eigene IP-Adresse. Bitte wiederholen Sie die Eingabe oder lassen Sie das Feld frei.\n";
+
+	if((cf.mygw_1.value.length>0)||(cf.mygw_2.value.length>0)||(cf.mygw_3.value.length>0)||(cf.mygw_4.value.length>0))
+	    if(checkIP(cf.mygw_1,cf.mygw_2,cf.mygw_3,cf.mygw_4,254))
+		    msg+= "Ungültige Gateway-IP-Adresse. Bitte wiederholen Sie die Eingabe.\n";
+
+	if (msg.length > 1)
+	{
+		alert(msg);
+		return false;
+	}
+
+	cf.pptp_user_ip.value = cf.myip_1.value+'.'+cf.myip_2.value+'.'+cf.myip_3.value+'.'+cf.myip_4.value;
+    cf.pptp_gateway.value = cf.mygw_1.value+'.'+cf.mygw_2.value+'.'+cf.mygw_3.value+'.'+cf.mygw_4.value;
+
+	return true;
+}
+//-->
+</script>
+</head>
+
+<body bgcolor="#ffffff" onload="loadSettings();loadcheck();document.forms[0].elements[0].focus();goTestApply();">
+<%26%>
+<form name="formname" method="POST" action="wiz_pptp.cgi"> 
+<%27%>
+<%304%>
+<form name="formname" method="POST" action="bsw_pptp.cgi"> 
+<%305%>
+<table border="0" cellpadding="0" cellspacing="3" width="99%">
+<tr>
+	<td colspan="2"><h1>PPTP</h1></td>
+</tr>
+
+<%304%>
+<tr><td colspan="2">Beachten Sie die bei der Eingabe des Benutzernamens genau die Syntax, die Ihnen von Ihrem Provider mitgeteilt wurde. Beispiel: Benutzername@Provider.de Dies kann von Anbieter zu Anbieter sehr unterschiedlich aussehen. Details hierzu erfahren Sie in den Unterlagen Ihres Providers. <p> Das Passwort ist normalerweise das Passwort, das Sie zur Anmeldung beim Internetdienst verwenden. </P><p> Die Leerlaufzeit können Sie in den meisten Fällen ignorieren. </td></tr>
+<%305%>
+<tr>
+	<td colspan="2" background="liteblue.gif" height="12"> &nbsp;</td>
+</tr>
+
+<tr>
+	<td><a href="javascript:loadhelp('WIZ_pptp','login')" tabindex="-1"><B>Benutzername</B></a></td>
+	<td align="right"><input type="text" name="pptp_username" size="15" maxlength="60" value="<%48%>"></td>
+</tr>
+<tr>
+	<td><a href="javascript:loadhelp('WIZ_pptp','password')" tabindex="-1"><B>Passwort</B></a></td>
+	<td align="right"><input type="password" name="pptp_passwd" size="15" maxlength="50" value="<%49%>"></td>
+</tr>
+<tr>
+	<td nowrap><a href="javascript:loadhelp('WIZ_pptp','idletime')" tabindex="-1"><B>Leerlaufzeit</B></a> (Minuten)</td>
+	<td align="right"><input type="text" class="num" name="pptp_idletime" size="3" maxlength="3" value="<%50%>"></td>
+</tr>
+
+<tr> <!-- RULE -->
+ <td colspan="2" background="liteblue.gif" height="12">&nbsp;</td>
+</tr>
+
+<tr>
+ <TD NOWRAP><a href="javascript:loadhelp('WIZ_pptp','myip')" tabindex="-1"><B>Eigene IP-Adresse</B></a></td>
+ <TD NOWRAP align="right" class="num"><input type="text" name="myip_1" class="num" size="4" maxlength="3"> <input type="text" name="myip_2" class="num" size="4" maxlength="3"> <input type="text" name="myip_3" class="num" size="4" maxlength="3"> <input type="text" name="myip_4" class="num" size="4" maxlength="3"></td>
+</tr>
+
+<tr>
+ <TD NOWRAP><a href="javascript:loadhelp('WIZ_pptp','serverip')" tabindex="-1"><b>Server-Adresse</b></a></td>
+ <td align="right"><input type="text" name="pptp_serv_ip" size="24" maxlength="63" value="<%53%>"></td>
+</tr>
+
+<tr>
+ <td><a href="javascript:loadhelp('BAS_pptp','myip')" tabindex="-1"><b>Gateway-IP-Adresse</b></a></td>
+ <td align="right" class="num"><input type="text" name="mygw_1" class="num" size="4" maxlength="3"> <input type="text" name="mygw_2" class="num" size="4" maxlength="3"> <input type="text" name="mygw_3" class="num" size="4" maxlength="3"> <input type="text" name="mygw_4" class="num" size="4" maxlength="3"></td>
+</tr>
+
+<tr> <!-- RULE -->
+ <td colspan="2" background="liteblue.gif" height="12">&nbsp;</td>
+</tr>
+<tr>
+	<td colspan="2" align="center" nowrap><div ID="buttons" onmouseover="loadhelp('WIZ_pptp','buttons')">
+<%26%>
+	<input type="SUBMIT" name="apply" value="Übernehmen" onClick="return checkData()">
+	<input type="BUTTON" name="Cancel" value="Abbrechen" onClick="reset();loadSettings();">
+	<input type="SUBMIT" name="Test" value="Testen" onClick="return checkData()">
+<%27%>
+<%304%>
+	<input type="SUBMIT" name="Next" value=" Weiter " onClick="return checkData()">
+<%305%>
+</div></td></tr>
+</table>
+<input type="hidden" name="runtest" value="no">
+<INPUT name=pptp_user_ip type=hidden value= "<%52%>">
+<INPUT name=pptp_serv_ip type=hidden value= "<%53%>">
+<INPUT name=pptp_gateway type=hidden value="<%54%>">
+</form>
+<p></p>
+</body>
+
+</html>

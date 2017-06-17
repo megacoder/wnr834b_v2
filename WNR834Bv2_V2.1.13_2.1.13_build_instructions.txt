@@ -1,0 +1,63 @@
+========================================
+ WNR834Bv2 Build Instructions
+
+ Version: 1.4
+ Date   : 2007 Dec 27
+======================================== 
+
+Note: This package has been built successfully on Fedora Core 2.
+      Compiling this package on platforms other than Fedora Core 2
+      may have unexpected results.
+
+===================
+ Install toolchain
+===================
+
+1. Download the toolchain "hnd-tools-3.2.3.tgz"
+2. Put "hnd-tools-3.2.3.tgz" into "/opt/brcm"
+3. Run the following commands to extract the toolchain:
+
+        cd /opt/brcm
+        tar zxvf hnd-tools-3.2.3.tgz
+        ln -s hndtools-mipsel-uclibc-3.2.3 hndtools-mipseluclib
+
+===================
+ Build code
+===================
+
+1. Edit your user profile (On Fedora Core 2, the profile is ~/.bash_profile)
+   to include the toolchain paths:
+
+        PATH=/opt/brcm/hndtools-mipsel-linux-3.2.3/bin:/opt/brcm/hndtools-mipsel-uclibc-3.2.3/bin:$PATH:$HOME/bin
+
+2. Put the file "WNR834Bv2_V2.1.13_2.1.13_src.tar.zip" into a directory of your choice.
+   Unzip and untar it with the following command:
+        
+        unzip WNR834Bv2_V2.1.13_2.1.13_src.tar.zip
+        tar xvf WNR834Bv2_V2.1.13_2.1.13_src.tar
+
+3. Copy the "trx" program under "bcm4704/tools" to a location where the user can access, e.g. /usr/bin :
+
+        cp bcm4704/tools/trx /usr/bin
+
+4. Choose one of the following:
+   a. To build NA firmware, 
+
+        type "export FW_TYPE=NA"
+
+   b. Alternatively, to build WW firmware,
+
+        type "export FW_TYPE=WW"
+
+5. Run the following commands to build image
+
+        cd bcm4704/src/linux/linux
+        make dep
+        make
+        cd ../../router
+        make
+        make install
+
+6. The final image is "bcm4704/src/router/mipsel/kernel_image.chk". 
+   User may upgrade to this image using the WNR834Bv2 GUI "Router Upgrade" page.
+    

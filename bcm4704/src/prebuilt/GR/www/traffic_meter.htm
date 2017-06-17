@@ -1,0 +1,562 @@
+<html>
+<head>
+<%0%>
+<%453%>
+<title>Datenverkehrsanzeige</title> 
+<link rel="stylesheet" href="form.css">
+<script language="javascript" type="text/javascript" src="func.js"></script>
+<script language="javascript" type="text/javascript" src="msg.js"></script>
+<script language="javascript" type="text/javascript" src="utility.js"></script>
+<script language="javascript" type="text/javascript">
+<!-- hide script from old browsers
+function checkData()
+{
+ 	var cf = document.forms[0];
+	var msg = "";
+    
+    if (cf.tm_type[1].checked)
+    {
+        if(cf.conntime_monthly_limit.value.length > 0) 
+            if(isNumeric(cf.conntime_monthly_limit,99999))
+                msg+="Ungültiger numerischer Wert für das monatliche Limit.\n";
+    }
+    else
+    {
+        if(cf.volume_monthly_limit.value.length > 0) 
+            if(isNumeric(cf.volume_monthly_limit,99999))
+                msg+="Ungültiger numerischer Wert für das monatliche Limit.\n";
+        if(cf.round_up_volume.value.length > 0) 
+            if(isNumeric(cf.round_up_volume,99999))
+                msg+="Ungültiger numerischer Wert für das aufgerundete Datenvolumen.\n";
+            else
+            {
+                if(parseInt(cf.volume_monthly_limit.value) <= parseInt(cf.round_up_volume.value))
+                    msg+="Der aufgerundete Wert muss niedriger sein als das monatliche Limit.\n";
+            }
+    }
+    
+    if(cf.waterMark.value.length > 0) 
+        if(isNumeric(cf.waterMark,99999))
+            msg+="Ungültiger numerischer Wert für die Datenverkehrssteuerung.\n";
+        else
+        {
+            if (cf.tm_type[1].checked)
+            {
+                if(parseInt(cf.conntime_monthly_limit.value)*60 <= parseInt(cf.waterMark.value))
+                    msg+="Der Wert muss niedriger sein als das monatliche Limit.\n";
+            }
+            else
+            {
+                if(parseInt(cf.volume_monthly_limit.value) <= parseInt(cf.waterMark.value))
+                    msg+="Der Wert muss niedriger sein als das monatliche Limit.\n";
+            }
+        }
+
+    if(cf.hour.value.length > 0)
+        if(isNumeric(cf.hour,23))
+            msg+="Der Stundenwert für die Reset-Zeit des Datenzählers ist ungültig.\n";
+
+    if(cf.min.value.length > 0)
+        if(isNumeric(cf.min,59))
+            msg+="Der Minutenwert für die Reset-Zeit des Datenzählers ist ungültig.\n";
+	
+    if (msg.length > 1)
+	{
+		alert(msg);
+		return false;
+	}
+	
+    if (cf.tm_type[1].checked)
+        cf.contrl_type.value = 1;
+    else
+        cf.contrl_type.value = 0;
+
+    if (cf.traff_dir.selectedIndex == 0)
+        cf.contrl_dir.value = "0";
+    else if (cf.traff_dir.selectedIndex == 1)
+        cf.contrl_dir.value = "1";
+    else
+        cf.contrl_dir.value = "2";
+
+    if(cf.checkTraffic.checked)
+        cf.traffic_on.value = 1;
+    else
+        cf.traffic_on.value = 0;
+
+    cf.dayofmonth.value = cf.day.options[cf.day.selectedIndex].value;
+
+    if(cf.checkLed.checked)
+        cf.led_on.value = 1;
+    else
+        cf.led_on.value = 0;
+    
+    if(cf.checkBlock.checked)
+        cf.block_on.value = 1;
+    else
+        cf.block_on.value = 0;
+
+	return true;
+}
+
+function setCrtl()
+{
+    var cf = document.forms[0];
+    
+    if (cf.tm_type[1].checked)
+    {
+        cf.traff_dir.disabled = true;
+        cf.volume_monthly_limit.disabled = true;
+        cf.round_up_volume.disabled = true;
+        cf.conntime_monthly_limit.disabled = false;
+    }
+    else
+    {
+        cf.traff_dir.disabled = false;
+        cf.volume_monthly_limit.disabled = false;
+        cf.round_up_volume.disabled = false;
+        cf.conntime_monthly_limit.disabled = true;
+    }
+}
+
+function setGray()
+{
+    var cf = document.forms[0];
+
+    if(cf.checkTraffic.checked)
+    {
+        cf.tm_type[0].disabled = false;
+        cf.tm_type[1].disabled = false;
+        
+        if (cf.tm_type[1].checked)
+        {
+            cf.traff_dir.disabled = true;
+            cf.volume_monthly_limit.disabled = true;
+            cf.round_up_volume.disabled = true;
+            cf.conntime_monthly_limit.disabled = false;
+        }
+        else
+        {
+            cf.traff_dir.disabled = false;
+            cf.volume_monthly_limit.disabled = false;
+            cf.round_up_volume.disabled = false;
+            cf.conntime_monthly_limit.disabled = true;
+        }
+        
+        cf.hour.disabled = false;
+        cf.min.disabled = false;
+        cf.day.disabled = false;
+        cf.restartCounter.disabled = false;
+        cf.waterMark.disabled = false;
+        cf.checkLed.disabled = false;
+        cf.checkBlock.disabled = false;
+        cf.refresh.disabled = false;
+        cf.trafficStatus.disabled = false;
+    }
+    else
+    {
+        cf.tm_type[0].disabled = true;
+        cf.tm_type[1].disabled = true;
+        cf.traff_dir.disabled = true;
+        cf.volume_monthly_limit.disabled = true;
+        cf.round_up_volume.disabled = true;
+        cf.conntime_monthly_limit.disabled = true;
+        cf.hour.disabled = true;
+        cf.min.disabled = true;
+        cf.day.disabled = true;
+        cf.restartCounter.disabled = true;
+        cf.waterMark.disabled = true;
+        cf.checkLed.disabled = true;
+        cf.checkBlock.disabled = true;
+        cf.refresh.disabled = true;
+        cf.trafficStatus.disabled = true;
+    }
+}
+
+var tra_enable;
+
+function loadSettings()
+{
+    var cf = document.forms[0];
+    var wan_proto = cf.wan_proto.value;
+    
+    if (cf.contrl_type.value == "1")
+    {
+        cf.tm_type[1].checked = true;
+        cf.traff_dir.disabled = true;
+        cf.volume_monthly_limit.disabled = true;
+        cf.round_up_volume.disabled = true;
+    }
+    else
+    {
+        cf.tm_type[0].checked = true;
+        cf.conntime_monthly_limit.disabled = true;
+    }
+    
+    if (cf.contrl_dir.value == "0")
+        cf.traff_dir.selectedIndex = 0;
+    else if (cf.contrl_dir.value == "1")
+        cf.traff_dir.selectedIndex = 1;
+    else
+        cf.traff_dir.selectedIndex = 2;
+
+    if(parseInt(cf.dayofmonth.value) == 31)
+        cf.day.selectedIndex = 28;
+    else
+        cf.day.selectedIndex = parseInt(cf.dayofmonth.value) - 1;
+    
+    if (cf.led_on.value == "1")
+        cf.checkLed.checked = true;
+    else
+        cf.checkLed.checked = false;
+    
+    if (cf.block_on.value == "1")
+        cf.checkBlock.checked = true;
+    else
+        cf.checkBlock.checked = false;
+   
+    tra_enable = cf.traffic_on.value;
+    if ((cf.traffic_supported.value == "YES") && ((wan_proto == "pppoe") || (wan_proto == "pptp")))
+    {
+        if (cf.traffic_on.value == "1")
+    		cf.checkTraffic.checked = true;
+    	else
+    		cf.checkTraffic.checked = false;
+        cf.checkTraffic.disabled = false;
+        cf.apply.disabled = false;
+        cf.cancel.disabled = false;
+    }
+    else
+    {
+        cf.checkTraffic.checked = false;
+        cf.checkTraffic.disabled = true;
+        cf.apply.disabled = true;
+        cf.cancel.disabled = true;
+    }
+    
+    setGray();
+    
+    if (cf.traffic_supported.value == "NO")
+        alert("Diese Funktion wird nicht unterstützt.");
+        
+    if (cf.dorefresh.value == "1")
+        document.forms[0].elements[15].focus();
+    else
+        document.forms[0].elements[0].focus();
+}
+
+function loadhelp(fname,anchname)
+{
+    if ((loadhelp.arguments.length == 1 ) || (anchname == "" ))
+    	top.helpframe.location.href=fname+"_h.htm";
+    else
+    	top.helpframe.location.href=fname+"_h.htm#" + anchname;
+}
+
+var trStatusWinVar = null;
+
+function openTrStatusWin(filename,win_type)
+{
+//	closeWin(trStatusWinVar);
+//sailor del it,because if these netscape will work abnormal!
+	trStatusWinVar = window.open(filename,'trstatus_win',win_type);
+	if (trStatusWinVar.focus)
+		setTimeout('trStatusWinVar.focus()',200); 
+}
+
+function openStatusWindow()
+{
+    var cf = document.forms[0];
+    var wan_proto = cf.wan_proto.value;
+	var winoptions;
+
+    if ((cf.traffic_supported.value == "YES") && ((wan_proto == "pppoe") || (wan_proto == "pptp")))
+    {
+        if (tra_enable == "1")
+        {
+            winoptions = "width=400,height=350,status=yes,resizable=yes";
+            //openDataSubWin('traffic_status.htm',winoptions);
+            openTrStatusWin('traffic_status.htm',winoptions);
+        }
+    }
+}
+
+function showConfirmedPage()
+{
+    if (!confirm("Datenzähler jetzt neu starten?"))
+		return false;
+    return true;
+}
+//-->
+</script>
+</head>
+<body bgcolor="#ffffff" onload="loadhelp('traffic_meter');loadSettings();" >
+<form name="formname" method="POST" action="traffic.cgi">
+<table border="0" cellpadding="0" cellspacing="3" width="100%">
+<tr>
+    <td colspan="2"><h1>Datenverkehrsanzeige</h1></td>
+</tr>
+<tr>
+    <td colspan="2" background="liteblue.gif" height="12"> &nbsp;</td>
+</tr>
+<tr>
+	<td colspan="2"><a href="javascript:loadhelp('traffic_meter', 'internet')" tabindex="-1"><B>Internet-Datenverkehrsanzeige</B> </a></td>
+</tr>
+
+<tr>
+	<td colspan="2"><input type="checkbox" name="checkTraffic" value="Enable" onclick = "javascript:setGray();" > Datenverkehrsanzeige aktivieren</td>
+</tr>
+<tr>
+	<td nowrap colspan="2"><img src="spacer.gif" width="20" height="12" border="0"><input type="radio" name="tm_type" value="tvolume" onclick="setCrtl()" > Datenvolumen kontrollieren nach <select name="traff_dir" size="1" ><option>Keine Beschränkung</option><option>Nur Downloads</option><option >Beide Richtungen</option></select>  </td>
+</tr>
+<tr>
+	<td width="90%"><img src="spacer.gif" width="43" height="12" border="0">Monatliches Limit</td>
+	<td width="10%" align="right"><input type="text" name="volume_monthly_limit" value="<%457%>" size="5" maxlength="5" > (MB)</td>
+</tr>
+<tr>
+	<td nowrap width="90%"><img src="spacer.gif" width="43" height="12" border="0">Datenvolumen für jede Verbindung aufrunden auf</td>
+	<td width="10%" align="right"><input type="text" name="round_up_volume" value="<%461%>" size="5" maxlength="5" > (MB)</td>
+</tr>
+<tr>
+	<td nowrap colspan="2"><img src="spacer.gif" width="20" height="12" border="0"><input type="radio" name="tm_type" value="conntime" onclick="setCrtl()" > Kontrolle der Verbindungsdauer</td>
+</tr>
+<tr>
+	<td width="50%"><img src="spacer.gif" width="43" height="12" border="0">Monatliches Limit</td>
+	<td width="50%" align="right"><input type="text" name="conntime_monthly_limit" value="<%458%>" size="5" maxlength="5" > (Stunden)</td>
+</tr>
+<tr>
+  <td colspan="2" background="liteblue.gif" height="12"> &nbsp;</td>
+</tr>
+<tr>
+	<td colspan="2"><a href="javascript:loadhelp('traffic_meter', 'counter')" tabindex="-1"><B>Datenzähler</B> </a></td>
+</tr>
+		<tr>
+		<td nowrap colspan="2"> Datenzähler neu starten um <input type="text" class="num" name="hour" size=2 maxlength=2 value="<%462%>" >:<input type="text" class="num" name="min" size=2 maxlength=2 value="<%463%>" >
+        am <select name="day"><option value=1>1.</option><option value=2>2.</option><option value=3>3.</option><option value=4>4.</option><option value=5>5.</option><option value=6>6.</option><option value=7>7.</option><option value=8>8.</option><option value=9>9.</option><option value=10>10.</option><option value=11>11.</option><option value=12>12.</option><option value=13>13.</option><option value=14>14.</option><option value=15>15.</option><option value=16>16.</option><option value=17>17.</option><option value=18>18.</option><option value=19>19.</option><option value=20>20.</option><option value=21>21.</option><option value=22>22.</option><option value=23>23.</option><option value=24>24.</option><option value=25>25.</option><option value=26>26.</option><option value=27>27.</option><option value=28>28.</option><option value=31>letzten</option></select> Tag jedes Monats </td>
+	</tr>
+
+	<tr>
+	  <td colspan="2" align="right"><input type="submit" name="restartCounter" value="Datenzähler jetzt neu starten" onclick="return showConfirmedPage();"></td>
+	</tr>
+
+<tr>
+  <td colspan="2" background="liteblue.gif" height="12"> &nbsp;</td>
+</tr>
+   <tr>
+	<td colspan="2"><a href="javascript:loadhelp('traffic_meter', 'reached')" tabindex="-1"><B>Datenverkehrssteuerung</B> </a></td>
+		</tr>
+		<tr>
+			<td colspan="2"> Warnmeldung anzeigen </td>
+		</tr>
+		<tr>	
+			<td nowrap colspan="2"><img src="spacer.gif" width="24" height="12" border="0"><input type="text" name="waterMark" value="<%459%>" size="5" maxlength="5" > MB/Minuten vor Erreichen des monatlichen Limits</td>
+		</tr>
+		<tr>
+			<td> Wenn das monatliche Limit erreicht ist </td>
+		</tr>
+		<tr>
+			<td colspan="2"><img src="spacer.gif" width="20" height="12" border="0"><input type="checkbox" name="checkLed" > Internet-LED blinkt abwechselnd grün/gelb </td>
+		</tr>
+		<tr>
+			<td colspan="2"><img src="spacer.gif" width="20" height="12" border="0"><input type="checkbox" name="checkBlock" > Verbindung trennen und Internetverbindung deaktivieren</td>
+		</tr>
+<tr>
+  <td colspan="2" background="liteblue.gif" height="12"> &nbsp;</td>
+</tr>
+
+<tr>
+	<td colspan="2"><a href="javascript:loadhelp('traffic_meter', 'statistics')" tabindex="-1"><B>Statistiken zum Internet-Datenverkehr</B></a></td>
+</tr>
+
+    <tr>
+        <td colspan="2"> Startdatum/-zeit: <%464%></td>
+    </tr>
+    <tr>
+        <td colspan="2"> Aktuelle(s) Datum/Zeit: <%465%></td>
+    </tr>
+    <tr>
+        <td colspan="2"> Verbleibendes Datenvolumen: <%466%></td>
+    </tr>
+    <tr></tr>
+
+<!-- ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// -->
+<A NAME="stati"></A>
+<tr>
+  <td colspan="2">
+  <table border=1 cellspacing=0 cellpadding=0 width="100%">
+   <tr>
+    <td width="15%" style='width:15.88%;border:inset 1.0pt;border-bottom:none;
+    mso-border-top-alt:inset windowtext .75pt;mso-border-left-alt:inset windowtext .75pt;
+    mso-border-right-alt:inset windowtext .75pt;padding:0cm 0cm 0cm 0cm'>
+        <p align=center><span class="thead">Zeitraum</span></p>
+    </td>
+    <td width="23%" style='width:23.2%;border:inset 1.0pt;border-bottom:
+    none;mso-border-top-alt:inset windowtext .75pt;mso-border-left-alt:inset windowtext .75pt;
+    mso-border-right-alt:inset windowtext .75pt;padding:0cm 0cm 0cm 0cm'>
+        <p align=center><span class="thead">Verbindungsdauer</span></p>
+    </td>
+    <td width="60%" nowrap colspan=3 style='width:60.92%;border-top:inset 1.0pt;
+    border-left:inset 1.0pt;border-bottom:none;border-right:none;mso-border-top-alt:
+    inset windowtext .75pt;mso-border-left-alt:inset windowtext .75pt;
+    padding:0cm 0cm 0cm 0cm'>
+        <p align=center><span class="thead">Datenvolumen (MB)</span></p>
+    </td>
+   </tr>
+   <tr>
+    <td width="15%" style='width:15.88%;border:inset 1.0pt;border-top:none;
+    mso-border-left-alt:inset windowtext .75pt;mso-border-bottom-alt:inset windowtext .75pt;
+    mso-border-right-alt:inset windowtext .75pt;padding:0cm 0cm 0cm 0cm'>
+        <p align=center><span class=thead1>&nbsp;</span></p>
+    </td>
+    <td width="23%" nowrap style='width:23.2%;border:inset 1.0pt;border-top:
+    none;mso-border-left-alt:inset windowtext .75pt;mso-border-bottom-alt:inset windowtext .75pt;
+    mso-border-right-alt:inset windowtext .75pt;padding:0cm 0cm 0cm 0cm'>
+        <p align=center><span class="thead">(hh:mm)</span></p>
+    </td>
+    <td width="17%" nowrap style='width:17.28%;border:none;border-left:inset 1.0pt;border-bottom:inset 1.0pt;
+    mso-border-bottom-alt:inset windowtext .75pt;padding:0cm 0cm 0cm 0cm'>
+        <p align=center><span class="thead">Upload/Durchschn.</span></p>
+    </td>
+    <td width="20%" style='width:20.9%;border:none;border-bottom:inset 1.0pt;
+    mso-border-bottom-alt:inset windowtext .75pt;padding:0cm 0cm 0cm 0cm'>
+        <p align=center><span class="thead">Download/Durchschn.</span></p>
+    </td>
+    <td width="17%" style='width:17.74%;border:none;border-bottom:inset 1.0pt;
+    mso-border-bottom-alt:inset windowtext .75pt;padding:0cm 0cm 0cm 0cm'>
+        <p align=center><span class="thead">Insgesamt/Durchschn.</span></p>
+    </td>
+   </tr>
+   <tr>
+    <td width="15%" style='width:15.88%;padding:0cm 0cm 0cm 0cm'>
+        <p align=center><span class="thead">Heute</span></p>
+    </td>
+    <td width="23%" style='width:23.2%;padding:0cm 0cm 0cm 0cm'>
+        <p align=center><span class=ttext1><%467%></span></p>
+    </td>
+    <td width="17%" style='width:17.28%;padding:0cm 0cm 0cm 0cm'>
+        <p align=center><%468%></p>
+    </td>
+    <td width="20%" style='width:20.9%;padding:0cm 0cm 0cm 0cm'>
+        <p align=center><%469%></p>
+    </td>
+    <td width="17%" style='width:17.74%;padding:0cm 0cm 0cm 0cm'>
+        <p align=center><%470%></p>
+    </td>
+   </tr>
+   <tr>
+    <td width="15%" style='width:15.88%;padding:0cm 0cm 0cm 0cm'>
+        <p align=center><span class="thead">Gestern</span></p>
+    </td>
+    <td width="23%" style='width:23.2%;padding:0cm 0cm 0cm 0cm'>
+        <p align=center><span class=ttext1><%471%></span></p>
+    </td>
+    <td width="17%" style='width:17.28%;padding:0cm 0cm 0cm 0cm'>
+        <p align=center><%472%></p>
+    </td>
+    <td width="20%" style='width:20.9%;padding:0cm 0cm 0cm 0cm'>
+        <p align=center><%473%></p>
+    </td>
+    <td width="17%" style='width:17.74%;padding:0cm 0cm 0cm 0cm'>
+        <p align=center><%474%></p>
+    </td>
+   </tr>
+   <tr>
+    <td width="15%" style='width:15.88%;padding:0cm 0cm 0cm 0cm'>
+        <p align=center><span class="thead">Diese Woche</span></p>
+    </td>
+    <td width="23%" style='width:23.2%;padding:0cm 0cm 0cm 0cm'>
+        <p align=center><span class=ttext1><%475%></span></p>
+    </td>
+    <td width="17%" style='width:17.28%;padding:0cm 0cm 0cm 0cm'>
+        <p align=center style='margin:.01cm;margin-bottom:.01cm'><%476%> / </p>
+        <p align=center style='margin:.01cm;margin-bottom:.01cm'><%477%></p>
+    </td>
+    <td width="20%" style='width:20.9%;padding:0cm 0cm 0cm 0cm'>
+        <p align=center style='margin:.01cm;margin-bottom:.01cm'><%478%> / </p>
+        <p align=center style='margin:.01cm;margin-bottom:.01cm'><%479%></p>
+    </td>
+    <td width="17%" style='width:17.74%;padding:0cm 0cm 0cm 0cm'>
+        <p align=center style='margin:.01cm;margin-bottom:.01cm'><%480%> / </p>
+        <p align=center style='margin:.01cm;margin-bottom:.01cm'><%481%></p>
+    </td>
+   </tr>
+   <tr>
+    <td width="15%" style='width:15.88%;padding:0cm 0cm 0cm 0cm'>
+        <p align=center><span class="thead">Diesen Monat</span></p>
+    </td>
+    <td width="23%" style='width:23.2%;padding:0cm 0cm 0cm 0cm'>
+        <p align=center><span class=ttext1><%482%></span></p>
+    </td>
+    <td width="17%" style='width:17.28%;padding:0cm 0cm 0cm 0cm'>
+        <p align=center style='margin:.01cm;margin-bottom:.01cm'><%483%> / </p>
+        <p align=center style='margin:.01cm;margin-bottom:.01cm'><%484%></p>
+    </td>
+    <td width="20%" style='width:20.9%;padding:0cm 0cm 0cm 0cm'>
+        <p align=center style='margin:.01cm;margin-bottom:.01cm'><%485%> / </p>
+        <p align=center style='margin:.01cm;margin-bottom:.01cm'><%486%></p>
+    </td>
+    <td width="17%" style='width:17.74%;padding:0cm 0cm 0cm 0cm'>
+        <p align=center style='margin:.01cm;margin-bottom:.01cm'><%487%> / </p>
+        <p align=center style='margin:.01cm;margin-bottom:.01cm'><%488%></p>
+    </td>
+   </tr>
+   <tr>
+    <td width="15%" style='width:15.88%;padding:0cm 0cm 0cm 0cm'>
+        <p align=center><span class="thead">Letzten Monat</span></p>
+    </td>
+    <td width="23%"  style='width:23.2%;padding:0cm 0cm 0cm 0cm'>
+        <p align=center><span class=ttext1><%489%></span></p>
+    </td>
+
+    <td width="17%"  style='width:17.28%;padding:0cm 0cm 0cm 0cm'>
+        <p align=center style='margin:.01cm;margin-bottom:.01cm'><%490%> / </p>
+        <p align=center style='margin:.01cm;margin-bottom:.01cm'><%491%></p>
+    </td>
+    <td width="20%" style='width:20.9%;padding:0cm 0cm 0cm 0cm'>
+        <p align=center style='margin:.01cm;margin-bottom:.01cm'><%492%> / </p>
+        <p align=center style='margin:.01cm;margin-bottom:.01cm'><%493%></p>
+    </td>
+    <td width="17%" style='width:17.74%;padding:0cm 0cm 0cm 0cm'>
+        <p align=center style='margin:.01cm;margin-bottom:.01cm'><%494%> / </p>
+        <p align=center style='margin:.01cm;margin-bottom:.01cm'><%495%></p>
+    </td>
+   </tr>
+  </table>
+
+  </td>
+ </tr>
+<!-- ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// -->
+
+<tr>
+	<td colspan="2" align="center">
+	<input type="SUBMIT" name="refresh" value="Aktualisieren">
+	<input type="button" name="trafficStatus" value="Datenverkehrsstatus" onclick="openStatusWindow()">
+	</td>
+</tr>
+
+<tr>
+  <td colspan="2" background="liteblue.gif" height="12"> &nbsp;</td>
+</tr>
+		
+<tr>
+	<td colspan="2" align="center">
+	<input type="SUBMIT" name="apply" value="Übernehmen" onClick="return checkData();" >&nbsp;&nbsp;
+	<input type="button" name="cancel" value="Abbrechen" onClick="location.href='traffic_meter.htm'"> 
+	</td>
+</tr>
+</table>
+<input name=traffic_supported type=hidden value= "<%496%>">
+<input name=wan_proto type=hidden value= "<%14%>">
+<input name=traffic_on type=hidden value= "<%454%>">
+<input name=contrl_type type=hidden value= "<%455%>">
+<input name=contrl_dir type=hidden value= "<%456%>">
+<input name=ampm_sel type=hidden value= "<%497%>">
+<input name=dayofmonth type="hidden" value="<%498%>">
+<input name=led_on type=hidden value= "<%499%>">
+<input name=block_on type=hidden value= "<%500%>">
+<input name=dorefresh type=hidden value= "<%501%>">
+</form>
+<p>
+</p>
+</body>
+</html>
+

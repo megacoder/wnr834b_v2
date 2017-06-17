@@ -1,0 +1,1 @@
+#undef  CONFIG_WL_USE_AP_ONCHIP_G

@@ -1,0 +1,19 @@
+/ChangeLog/1.1.1.1/Fri Mar  5 07:30:14 2010//
+/Makefile.am/1.1.1.1/Fri Mar  5 07:30:14 2010//
+/Makefile.in/1.1.1.1/Fri Mar  5 07:30:14 2010//
+/_G_config.h/1.1.1.1/Fri Mar  5 07:30:14 2010//
+/filedoalloc.c/1.1.1.1/Fri Mar  5 07:30:14 2010//
+/fileops.c/1.1.1.1/Fri Mar  5 07:30:14 2010//
+/genops.c/1.1.1.1/Fri Mar  5 07:30:14 2010//
+/iofclose.c/1.1.1.1/Fri Mar  5 07:30:14 2010//
+/iofopen.c/1.1.1.1/Fri Mar  5 07:30:14 2010//
+/iofwide.c/1.1.1.1/Fri Mar  5 07:30:14 2010//
+/iolibio.h/1.1.1.1/Fri Mar  5 07:30:14 2010//
+/libio.h/1.1.1.1/Fri Mar  5 07:30:14 2010//
+/libioP.h/1.1.1.1/Fri Mar  5 07:30:14 2010//
+/stdfiles.c/1.1.1.1/Fri Mar  5 07:30:14 2010//
+/stdio.c/1.1.1.1/Fri Mar  5 07:30:14 2010//
+/wfiledoalloc.c/1.1.1.1/Fri Mar  5 07:30:14 2010//
+/wfileops.c/1.1.1.1/Fri Mar  5 07:30:14 2010//
+/wgenops.c/1.1.1.1/Fri Mar  5 07:30:14 2010//
+D

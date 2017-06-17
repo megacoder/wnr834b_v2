@@ -1,0 +1,89 @@
+<html>
+<head>
+<%0%>
+<title>WPS Wizard</title>
+<link rel=Stylesheet type="text/css" media=all href=form.css>
+<meta http-equiv=Pragma content=no-cache>
+<script language="javascript" type="text/javascript" src="func.js"></script>
+<script language="javascript" type="text/javascript">
+<!-- hide script from old browsers
+var submit_flag = false;    
+function do_submit()
+{
+	var cf = document.forms[0];
+	if (submit_flag)
+		return false;
+	submit_flag = true;
+	cf.WPS_type[0].disabled = true;
+	cf.WPS_type[1].disabled = true;
+	//top.contents.location.href="MNU_menu_no_link.htm";
+	cf.submit();
+	return true;
+}
+
+// -->
+</script>
+</head>
+
+<body bgcolor="#ffffff" onload="loadhelp('WPS');document.forms[0].elements[0].focus();">
+<div class=Section1>
+<form method=post action="wps_button.cgi">
+<table class=MsoNormalTable border=0 cellspacing=3 cellpadding=0 width="100%"
+ style='width:100.0%;mso-cellspacing:2.2pt;mso-padding-alt:0cm 0cm 0cm 0cm'>
+ <tr style='mso-yfti-irow:0;mso-yfti-firstrow:yes'>
+  <td colspan=3 style='padding:0cm 0cm 0cm 0cm'>
+  <h1><st1:place w:st="on"><span lang=EN-US style='mso-fareast-font-family:
+   "Times New Roman"'>WPS-Client hinzufügen<o:p></o:p></span></h1>
+  </td>
+ </tr>
+
+ <tr style='mso-yfti-irow:3;height:9.0pt'>
+  <td colspan=3 style='padding:0cm 0cm 0cm 0cm;height:9.0pt'
+  background=liteblue.gif>
+  <p class=MsoNormal style='margin:0cm;margin-bottom:.0001pt'><span lang=EN-US
+  style='font-size:9.0pt;font-family:Arial'><o:p>&nbsp;</o:p></span></p>
+  </td>
+ </tr>
+
+ <tr></tr>
+ <tr style='mso-yfti-irow:4'>
+  <p class=MsoNormal style='margin:0cm;margin-bottom:.0001pt'><span lang=EN-US
+  style='font-size:9.0pt;font-family:Arial'>
+  <td><b>Einrichtungsmethode auswählen:</b></td>
+  <o:p></o:p></span></p>
+ </tr>
+
+ <tr>
+   <td colspan="3"><input type="radio" name="WPS_type" value="Push Button" checked>Schaltfläche/Taste (empfohlen) 
+   </td></tr>
+   
+ <tr>
+ 	<TD colspan=3>
+  		<p class=MsoNormal align=center style='margin:0cm;margin-bottom:.0001pt;
+  		text-align:center'><span lang=EN-US style='font-size:9.0pt;font-family:Arial'>
+        <Button name="wps_button" onClick="do_submit();"><img src="wps_icon_on.bmp"> </Button>
+  		<o:p></o:p></span></p></TD></TR>
+ <tr>
+   <td colspan="3"><input type="radio" name="WPS_type" value="PIN Number" onClick="location.href='WPS_PIN.htm'" >PIN (Personliche Identifizierungs-Nummer)</td></tr>
+
+
+ <tr style='mso-yfti-irow:6;height:9.0pt'>
+  <td colspan=3 style='padding:0cm 0cm 0cm 0cm;height:9.0pt'
+  background=liteblue.gif>
+  <p class=MsoNormal style='margin:0cm;margin-bottom:.0001pt'><span lang=EN-US
+  style='font-size:9.0pt;font-family:Arial'><o:p>&nbsp;</o:p></span></p>
+  </td>
+ </tr>
+
+
+ <tr></tr>
+
+</table>
+<INPUT TYPE="hidden" NAME="wps_in_progress" VALUE="<%512%>">
+</form>
+
+</div>
+
+</body>
+
+</html>

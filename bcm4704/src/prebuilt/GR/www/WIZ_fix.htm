@@ -1,0 +1,185 @@
+<html>
+<head>
+<%0%>
+<title>Ethernet</title>
+<link rel="stylesheet" href="form.css">
+<STYLE TYPE="text/javascript">
+	classes.num.all.fontFamily = "Courier";
+	classes.num.all.fontSize = "10pt" ;
+</style>
+<%13%>
+<script language="javascript" type="text/javascript">
+<!--
+var DisableFixedIP = false;
+var DisableFixedDNS = false;
+
+function goTestApply()
+{
+	var winoptions = "width=640,height=480,menubar=yes,toolbar=yes,status=yes,location=yes,resizable=yes";
+	if(document.forms[0].runtest.value == "yes")
+		window.open('BAS_wtest_d.htm','test_win',winoptions);
+}
+
+function loadcheck(){
+    loadhelp('WIZ_fix');
+	if(isIE()){
+	}
+}
+
+function loadhelp(fname,anchname) 
+{
+    if (top.helpframe != null)
+    {
+        if ((loadhelp.arguments.length == 1 ) || (anchname == "" ))
+        	top.helpframe.location.href=fname+"_h.htm";
+        else
+        	top.helpframe.location.href=fname+"_h.htm#" + anchname;
+	}
+}
+
+function checkData()
+{
+	var cf = document.forms[0];
+	var msg = "";
+
+	if(checkIP(cf.WPethr1,cf.WPethr2,cf.WPethr3,cf.WPethr4,254)||(parseInt(cf.WPethr4.value)==0))
+		msg+= "Ungültige IP-Adresse. Bitte wiederholen Sie die Eingabe.\n";
+	if(checkIP(cf.WMask1,cf.WMask2,cf.WMask3,cf.WMask4,255))
+		msg+= "Ungültige Subnetzmaske. Bitte wiederholen Sie die Eingabe.\n";
+	if(checkIP(cf.WGateway1,cf.WGateway2,cf.WGateway3,cf.WGateway4,254)||(parseInt(cf.WGateway4.value)==0))
+		msg+= "Ungültige Gateway-Adresse. Bitte wiederholen Sie die Eingabe.\n";
+	if(checkIP(cf.DAddr1,cf.DAddr2,cf.DAddr3,cf.DAddr4,254)||(parseInt(cf.DAddr4.value)==0))
+		msg+= "Ungültige primäre DNS-Adresse. Bitte wiederholen Sie die Eingabe.\n";
+	if(cf.PDAddr1.value.length>0)
+	    if(checkIP(cf.PDAddr1,cf.PDAddr2,cf.PDAddr3,cf.PDAddr4,254)||(parseInt(cf.PDAddr4.value)==0))
+		msg+= "Ungültige sekundäre DNS-Adresse. Bitte wiederholen Sie die Eingabe.\n";
+                
+	if (msg.length > 1)
+	{
+		alert(msg);
+		return false;
+	}
+
+	cf.wan_ipaddr.value = cf.WPethr1.value+'.'+cf.WPethr2.value+'.'+cf.WPethr3.value+'.'+cf.WPethr4.value;
+	cf.wan_netmask.value = cf.WMask1.value+'.'+cf.WMask2.value+'.'+cf.WMask3.value+'.'+cf.WMask4.value;
+	cf.wan_gateway.value = cf.WGateway1.value+'.'+cf.WGateway2.value+'.'+cf.WGateway3.value+'.'+cf.WGateway4.value;
+	cf.wan_dns1_pri.value = cf.DAddr1.value+'.'+cf.DAddr2.value+'.'+cf.DAddr3.value+'.'+cf.DAddr4.value;
+	cf.wan_dns1_sec.value = cf.PDAddr1.value+'.'+cf.PDAddr2.value+'.'+cf.PDAddr3.value+'.'+cf.PDAddr4.value;        
+        
+	return true;
+}
+
+function loadSettings()
+{
+	var cf = document.forms[0];
+	var wan_ipaddr = cf.wan_ipaddr.value.split(".");
+	var wan_netmask = cf.wan_netmask.value.split(".");
+	var wan_gateway = cf.wan_gateway.value.split(".");
+	var wan_dns1_pri = cf.wan_dns1_pri.value.split(".");
+	var wan_dns1_sec = cf.wan_dns1_sec.value.split(".");
+
+	cf.WPethr1.value = wan_ipaddr[0];
+	cf.WPethr2.value = wan_ipaddr[1];
+	cf.WPethr3.value = wan_ipaddr[2];
+	cf.WPethr4.value = wan_ipaddr[3];
+	cf.WMask1.value = wan_netmask[0];
+	cf.WMask2.value = wan_netmask[1];
+	cf.WMask3.value = wan_netmask[2];
+	cf.WMask4.value = wan_netmask[3];
+	cf.WGateway1.value = wan_gateway[0];
+	cf.WGateway2.value = wan_gateway[1];
+	cf.WGateway3.value = wan_gateway[2];
+	cf.WGateway4.value = wan_gateway[3];
+
+	if (cf.wan_dns1_pri.value != "")
+	{
+	    cf.DAddr1.value = wan_dns1_pri[0];
+	    cf.DAddr2.value = wan_dns1_pri[1];
+	    cf.DAddr3.value = wan_dns1_pri[2];
+	    cf.DAddr4.value = wan_dns1_pri[3];
+	}
+	if (cf.wan_dns1_sec.value != "")
+	{
+	    cf.PDAddr1.value = wan_dns1_sec[0];
+	    cf.PDAddr2.value = wan_dns1_sec[1];
+	    cf.PDAddr3.value = wan_dns1_sec[2];
+	    cf.PDAddr4.value = wan_dns1_sec[3];
+	}
+}
+
+//-->
+</script>
+</head>
+<body bgcolor="#ffffff" onload="loadSettings();loadcheck();document.forms[0].elements[0].focus();goTestApply();">
+<%26%>
+<form name="formname" method="POST" action="wiz_fix2.cgi"> 
+<%27%>
+<%304%>
+<form name="formname" method="POST" action="bsw_fix.cgi"> 
+<%305%>
+<table border="0" cellpadding="0" cellspacing="3" width="99%">
+<tr>
+<td colspan="2"><h1>Feste (statische) IP-Adressen</h1></td>
+</tr>
+<%304%>
+<tr><td>Ihr Internet-Provider stellt die erforderlichen Daten zu den statischen (festen) IP-Adressen bereit. <p> Achten Sie bei festen IP-Adressen darauf, dass sie richtig eingegeben werden. Die IP-Adresse für den Gateway muss beispielsweise in die Gateway-Adressfelder eingegeben werden und die IP-Adresse in die IP-Adressfelder. Achten Sie darauf, dass Sie die Adressen nicht vertauschen. </td></tr>
+<%305%>
+<tr> <!-- RULE -->
+ <TD NOWRAP colspan="2" background="liteblue.gif" height="12"> &nbsp;</td>
+</tr>
+<tr>
+	<td colspan="2" nowrap><a href="javascript:loadhelp('WIZ_fix','InternetIP')" tabindex="-1"><B>Internet-IP-Adresse</B></a></td>
+</tr>
+<tr>
+	<TD NOWRAP>IP-Adresse</td>
+	<TD NOWRAP align="right" class="num"><img src="spacer.gif" width="200" height="1" border=0><BR>
+ <input type="text" name="WPethr1" class="num" size="4" maxlength="3" tabindex="7" onFocus="if(DisableFixedIP) this.blur()"> <input type="text" name="WPethr2" class="num" size="4" maxlength="3" tabindex="8" onFocus="if(DisableFixedIP) this.blur()"> <input type="text" name="WPethr3" class="num" size="4" maxlength="3" tabindex="9" onFocus="if(DisableFixedIP) this.blur()"> <input type="text" name="WPethr4" class="num" size="4" maxlength="3" tabindex="10" onFocus="if(DisableFixedIP) this.blur()"></td>
+</tr>
+<tr>
+	<TD NOWRAP>IP-Subnetzmaske</td>
+	<TD NOWRAP align="right" class="num"><input type="text" name="WMask1" class="num" size="4" maxlength="3" tabindex="11" onFocus="if(DisableFixedIP) this.blur()"> <input type="text" name="WMask2" class="num" size="4" maxlength="3" tabindex="12" onFocus="if(DisableFixedIP) this.blur()"> <input type="text" name="WMask3" class="num" size="4" maxlength="3" tabindex="13" onFocus="if(DisableFixedIP) this.blur()"> <input type="text" name="WMask4" class="num" size="4" maxlength="3" tabindex="14" onFocus="if(DisableFixedIP) this.blur()"></td>
+</tr>
+<tr>
+	<TD NOWRAP>Gateway-IP-Adresse</td>
+	<TD NOWRAP align="right" class="num"><input type="text" name="WGateway1" class="num" size="4" maxlength="3" tabindex="15" onFocus="if(DisableFixedIP) this.blur()"> <input type="text" name="WGateway2" class="num" size="4" maxlength="3" tabindex="16" onFocus="if(DisableFixedIP) this.blur()"> <input type="text" name="WGateway3" class="num" size="4" maxlength="3" tabindex="17" onFocus="if(DisableFixedIP) this.blur()"> <input type="text" name="WGateway4" class="num" size="4" maxlength="3" tabindex="18" onFocus="if(DisableFixedIP) this.blur()"></td>
+</tr>
+<tr> <!-- RULE -->
+ <TD NOWRAP colspan="2" background="liteblue.gif" height="12"> &nbsp;</td>
+</tr>
+<tr>
+	<TD NOWRAP colspan="2"><a href="javascript:loadhelp('WIZ_fix','DNSaddress')" tabindex="-1"><B>DNS-Server (Domain Name Service) </B></a></td>
+</tr>
+<tr>
+	<TD NOWRAP>Primärer DNS-Server</td>
+	<TD NOWRAP align="right" class="num"><input type="text" name="DAddr1" class="num" size="4" maxlength="3" tabindex="21" onFocus="if(DisableFixedDNS) this.blur()"> <input type="text" name="DAddr2" class="num" size="4" maxlength="3" tabindex="22" onFocus="if(DisableFixedDNS) this.blur()"> <input type="text" name="DAddr3" class="num" size="4" maxlength="3" tabindex="23" onFocus="if(DisableFixedDNS) this.blur()"> <input type="text" name="DAddr4" class="num" size="4" maxlength="3" tabindex="24" onFocus="if(DisableFixedDNS) this.blur()"></td>
+</tr>
+<tr>
+	<TD NOWRAP>Sekundärer DNS-Server</td>
+	<TD NOWRAP align="right" class="num"><input type="text" name="PDAddr1" class="num" size="4" maxlength="3" tabindex="25" onFocus="if(DisableFixedDNS) this.blur()"> <input type="text" name="PDAddr2" class="num" size="4" maxlength="3" tabindex="26" onFocus="if(DisableFixedDNS) this.blur()"> <input type="text" name="PDAddr3" class="num" size="4" maxlength="3" tabindex="27" onFocus="if(DisableFixedDNS) this.blur()"> <input type="text" name="PDAddr4" class="num" size="4" maxlength="3" tabindex="28" onFocus="if(DisableFixedDNS) this.blur()"></td>
+</tr>
+<tr> <!-- RULE -->
+ <td colspan="2" background="liteblue.gif" height="12"> &nbsp;</td>
+</tr>
+<tr>
+	<td colspan="2" align="center"><div ID="basbuttons" onmouseover="loadhelp('WIZ_fix','buttons')">
+<%26%>
+	<input type="SUBMIT" name="apply" value="Übernehmen" onClick="return checkData()" tabindex="31">
+	<input type="BUTTON" name="Cancel" value="Abbrechen" onClick="loadSettings();" tabindex="32">
+	<input type="SUBMIT" name="Test" value="Testen" onClick="return checkData()" tabindex="33"></div>
+<%27%>
+<%304%>
+	<input type="SUBMIT" name="Next" value=" Weiter " onClick="return checkData()">
+<%305%>    
+	</td></tr>
+</table>
+<input type="hidden" name="runtest" value="<%28%>">
+  <INPUT name=wan_ipaddr type=hidden value= "<%29%>">
+  <INPUT name=wan_netmask type=hidden value= "<%30%>">
+  <INPUT name=wan_gateway type=hidden value= "<%31%>">
+  <INPUT name=DNSAssign type=hidden value= "1">
+  <INPUT name=wan_dns1_pri type=hidden value= "<%33%>">
+  <INPUT name=wan_dns1_sec type=hidden value= "<%34%>">
+</form>
+<p></p>
+</body>
+</html>

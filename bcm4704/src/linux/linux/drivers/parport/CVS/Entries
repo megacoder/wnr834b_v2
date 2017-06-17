@@ -1,0 +1,24 @@
+/.depend/1.1.1.1/Fri Mar  5 07:31:29 2010//
+/BUGS-parport/1.1.1.1/Fri Mar  5 07:31:29 2010//
+/ChangeLog/1.1.1.1/Fri Mar  5 07:31:29 2010//
+/Config.in/1.1.1.1/Fri Mar  5 07:31:29 2010//
+/Makefile/1.1.1.1/Fri Mar  5 07:31:29 2010//
+/TODO-parport/1.1.1.1/Fri Mar  5 07:31:29 2010//
+/daisy.c/1.1.1.1/Fri Mar  5 07:31:29 2010//
+/ieee1284.c/1.1.1.1/Fri Mar  5 07:31:29 2010//
+/ieee1284_ops.c/1.1.1.1/Fri Mar  5 07:31:29 2010//
+/init.c/1.1.1.1/Fri Mar  5 07:31:29 2010//
+/multiface.h/1.1.1.1/Fri Mar  5 07:31:29 2010//
+/parport_amiga.c/1.1.1.1/Fri Mar  5 07:31:29 2010//
+/parport_arc.c/1.1.1.1/Fri Mar  5 07:31:29 2010//
+/parport_atari.c/1.1.1.1/Fri Mar  5 07:31:29 2010//
+/parport_cs.c/1.1.1.1/Fri Mar  5 07:31:29 2010//
+/parport_gsc.c/1.1.1.1/Fri Mar  5 07:31:29 2010//
+/parport_mfc3.c/1.1.1.1/Fri Mar  5 07:31:29 2010//
+/parport_pc.c/1.1.1.1/Fri Mar  5 07:31:29 2010//
+/parport_serial.c/1.1.1.1/Fri Mar  5 07:31:29 2010//
+/parport_sunbpp.c/1.1.1.1/Fri Mar  5 07:31:29 2010//
+/probe.c/1.1.1.1/Fri Mar  5 07:31:29 2010//
+/procfs.c/1.1.1.1/Fri Mar  5 07:31:29 2010//
+/share.c/1.1.1.1/Fri Mar  5 07:31:29 2010//
+D

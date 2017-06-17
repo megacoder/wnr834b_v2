@@ -1,0 +1,71 @@
+<html>
+<head>
+<%2%>
+<title>BPA Status</title>
+<link rel="stylesheet" href="form.css">
+<script language="javascript" type="text/javascript">
+<!--
+function refreshPage() {
+	if(document.forms[0].connect.value == 'Renew')
+		return true;
+	window.setTimeout('window.location.href = "RST_st_bpa.htm";',10000);
+}
+
+//-->
+</script>
+</head>
+<body bgcolor="#ffffff" onLoad="refreshPage()">
+<form name="bpa_st" method="post" action="st_bpa.cgi">
+
+<TABLE border=0 width="100%">
+ 
+ <TR>
+ <TD nowrap colspan="2" align="left"><h1>Connection Status </h1></TD>
+ </TR>
+ 
+</TABLE>
+
+<table border="0" cellpadding="0" cellspacing="3" width="100%">
+
+<tr> <!-- RULE -->
+ <td background="liteblue.gif" height="12"> &nbsp;</td>
+</tr>
+</table>
+
+
+<table width="100%" border=1 cellspacing=1 cellpadding=4>
+<tr>
+	<TD NOWRAP width="50%"><B>Connection Status</B></td>
+	<TD NOWRAP width="50%"><%268%></td>
+</tr>
+<tr>
+	<TD NOWRAP><B>Getting IP Address</B></td>
+	<TD NOWRAP><%27%></td>
+</tr>
+<tr>
+	<TD NOWRAP><B>Getting Network Mask</B></td>
+	<TD NOWRAP><%28%></td>
+</tr>
+</table>
+
+<table border="0" cellpadding="0" cellspacing="3" width="100%">
+ <TR>
+ <TD align="center" nowrap>
+<BR>
+<input type="submit" name="connect" value="Connect">
+<input type="submit" name="disconnect" value="Disconnect" onClick="alert('To re-establish the connection, please click the <Connect> button')"></TD>
+</TR>
+
+<tr> <!-- RULE -->
+ <td background="liteblue.gif" height="12"> &nbsp;</td>
+</tr>
+ <TR>
+ <TD align="center"><input type=button name="close" value="Close Window" onclick="self.close();"></TD>
+</TR>
+</TABLE>
+
+
+
+</form>
+</body>
+</html>

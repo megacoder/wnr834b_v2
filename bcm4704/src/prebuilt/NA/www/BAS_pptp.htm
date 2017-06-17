@@ -1,0 +1,349 @@
+<html>
+<head>
+<%2%>
+<title>PPTP</title>
+<link rel="stylesheet" href="form.css">
+<STYLE TYPE="text/javascript">
+	classes.num.all.fontFamily = "Courier";
+	classes.num.all.fontSize = "10pt" ;
+</style>
+<%11%>
+<script language="javascript" type="text/javascript">
+<!-- 
+var DisableFixedDNS = false;
+var DisableFixedMAC = false;
+var MacAddress;
+var DodDisable = false;
+
+function goTestApply()
+{
+	var winoptions = "width=640,height=480,menubar=yes,toolbar=yes,status=yes,location=yes,resizable=yes";
+	if(document.forms[0].runtest.value == "yes")
+		window.open('BAS_wtest_l.htm','test_win',winoptions);
+}
+
+function loadcheck()
+{
+	var cf = document.forms[0];
+	if(isIE()){
+		cf.pptp_username.size="24";
+		cf.pptp_passwd.size="24";
+	}
+ MacAddress=document.formname.Spoofmac.value;
+	loadhelp('BAS_pptp');
+	setDNS();
+	setMAC();
+	setServer();
+}
+
+function setDNS()
+{
+	var cf = document.forms[0];
+	var dflag = cf.DNSAssign[0].checked;
+	setDisabled(dflag,cf.DAddr1,cf.DAddr2,cf.DAddr3,cf.DAddr4,cf.PDAddr1,cf.PDAddr2,cf.PDAddr3,cf.PDAddr4);
+	DisableFixedDNS = dflag;
+}
+function setMAC()
+{
+	var cf = document.forms[0];
+
+	if (cf.MACAssign[0].checked)
+	    cf.Spoofmac.value = cf.wan_hwaddr_def.value;
+	else if(cf.MACAssign[1].checked)
+	    cf.Spoofmac.value = cf.wan_hwaddr_pc.value;
+	else if (cf.MACAssign[2].checked)
+	    cf.Spoofmac.value = cf.wan_hwaddr2.value;
+	    
+	if (cf.MACAssign[2].checked)
+		cf.Spoofmac.disabled = false;
+	else
+		cf.Spoofmac.disabled = true;
+	DisableFixedMAC = cf.Spoofmac.disabled;
+}
+
+function setServer()
+{
+	var cf = document.forms[0];
+	var stype = cf.login_type.selectedIndex;
+ if(stype==2) //pppoe
+ window.location.href="BAS_pppoe.htm";
+ else if(stype==1) //bpa
+ window.location.href="BAS_bpa.htm";
+}
+
+function setConnMode()
+{
+    var cf = document.forms[0];
+    var conn_mode = cf.pptp_dod.selectedIndex;
+
+    if(conn_mode == 1) // Dial on Demand
+        DodDisable = false;
+    else
+        DodDisable = true;
+    setDisabled(DodDisable,cf.pptp_idletime);
+}
+
+function checkData()
+{
+	var cf = document.forms[0];
+	var msg = "";
+	
+	msg+= checkBlank(cf.pptp_username, "User name");
+	if(cf.pptp_idletime.value.length<=0)
+	 msg+= "Please enter an idle time.\n";
+	else if(!_isNumeric(cf.pptp_idletime.value))
+	 msg+= "Invalid idle time, please enter again.\n";
+	
+	if((cf.myip_1.value.length>0)||(cf.myip_2.value.length>0)||(cf.myip_3.value.length>0)||(cf.myip_4.value.length>0))
+     if(checkIP(cf.myip_1,cf.myip_2,cf.myip_3,cf.myip_4,254)||(parseInt(cf.myip_4.value)==0))
+        msg+= "Invalid My IP Address, please enter again or leave blank.\n";
+
+	if((cf.mygw_1.value.length>0)||(cf.mygw_2.value.length>0)||(cf.mygw_3.value.length>0)||(cf.mygw_4.value.length>0))
+	    if(checkIP(cf.mygw_1,cf.mygw_2,cf.mygw_3,cf.mygw_4,254))
+		    msg+= "Invalid My Gateway Address, please enter again or leave blank.\n";
+
+	if((cf.myip_1.value.length>0)||(cf.myip_2.value.length>0)||(cf.myip_3.value.length>0)||(cf.myip_4.value.length>0))
+	{
+        var data;
+        data = cf.pptp_serv_ip.value.match(/^\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}$/);
+        if( !data ||  cf.pptp_serv_ip.value.length <0 )
+            msg+= "Invalid Server IP Address, please enter again.\n";
+    }
+    
+	if ( cf.pptp_serv_ip.value=="" ||
+		 cf.pptp_serv_ip.value== "0.0.0.0" || cf.pptp_serv_ip.value== "255.255.255.255")
+        msg+= "Invalid Server IP Address, please enter again.\n";
+
+	if(cf.DNSAssign[1].checked)
+	{	
+		if(checkIP(cf.DAddr1,cf.DAddr2,cf.DAddr3,cf.DAddr4,254)||(parseInt(cf.DAddr4.value)==0))
+			msg+= "Invalid Primary DNS Address, please enter again.\n";
+		if(cf.PDAddr1.value.length>0)
+			if(checkIP(cf.PDAddr1,cf.PDAddr2,cf.PDAddr3,cf.PDAddr4,254)||(parseInt(cf.PDAddr4.value)==0))
+				msg+= "Invalid Secondary DNS Address, please enter again.\n";
+	}
+	if (msg.length > 1)
+	{
+		alert(msg);
+		return false;
+	}
+
+	cf.pptp_user_ip.value = cf.myip_1.value+'.'+cf.myip_2.value+'.'+cf.myip_3.value+'.'+cf.myip_4.value;
+    cf.pptp_gateway.value = cf.mygw_1.value+'.'+cf.mygw_2.value+'.'+cf.mygw_3.value+'.'+cf.mygw_4.value;
+	cf.wan_dns1_pri.value = cf.DAddr1.value+'.'+cf.DAddr2.value+'.'+cf.DAddr3.value+'.'+cf.DAddr4.value;
+	cf.wan_dns1_sec.value = cf.PDAddr1.value+'.'+cf.PDAddr2.value+'.'+cf.PDAddr3.value+'.'+cf.PDAddr4.value;
+	cf.wan_hwaddr2.value = cf.Spoofmac.value;
+	
+	return sumvalue(cf);
+}
+
+function loadSettings()
+{
+	var cf = document.forms[0];
+	var pptp_user_ip = cf.pptp_user_ip.value.split(".");
+	var pptp_gateway = cf.pptp_gateway.value.split(".");
+
+	var wan_dns_sel = cf.wan_dns_sel.value;
+	var wan_dns1_pri = cf.wan_dns1_pri.value.split(".");
+	var wan_dns1_sec = cf.wan_dns1_sec.value.split(".");
+	var wan_hwaddr_sel = cf.wan_hwaddr_sel.value;
+
+    // Get pptp_dod (nvram)
+    cf.pptp_dod.selectedIndex = <%45%>;
+    if (cf.pptp_dod.selectedIndex == 1)
+        DodDisable = false;
+    else
+        DodDisable = true;
+    setDisabled(DodDisable,cf.pptp_idletime);
+
+	if (cf.pptp_user_ip.value != "")
+	{
+		cf.myip_1.value = pptp_user_ip[0];
+		cf.myip_2.value = pptp_user_ip[1];
+		cf.myip_3.value = pptp_user_ip[2];
+		cf.myip_4.value = pptp_user_ip[3];
+	}
+
+	if (cf.pptp_gateway.value != "")
+	{
+		cf.mygw_1.value = pptp_gateway[0];
+		cf.mygw_2.value = pptp_gateway[1];
+		cf.mygw_3.value = pptp_gateway[2];
+		cf.mygw_4.value = pptp_gateway[3];
+	}
+
+	if ( (cf.pptp_user_ip.value == "...") || (cf.pptp_user_ip.value == "") )
+	{
+	    setDisabled(true, cf.mygw_1, cf.mygw_2, cf.mygw_3, cf.mygw_4);
+	}
+
+	cf.DNSAssign[wan_dns_sel].checked = true;
+	if (cf.wan_dns1_pri.value != "")
+	{
+		cf.DAddr1.value = wan_dns1_pri[0];
+		cf.DAddr2.value = wan_dns1_pri[1];
+		cf.DAddr3.value = wan_dns1_pri[2];
+		cf.DAddr4.value = wan_dns1_pri[3];
+	}
+	if (cf.wan_dns1_sec.value != "")
+	{
+		cf.PDAddr1.value = wan_dns1_sec[0];
+		cf.PDAddr2.value = wan_dns1_sec[1];
+		cf.PDAddr3.value = wan_dns1_sec[2];
+		cf.PDAddr4.value = wan_dns1_sec[3];
+	}
+
+    if (wan_hwaddr_sel == 0)
+        cf.Spoofmac.value = cf.wan_hwaddr_def.value;
+    else if (wan_hwaddr_sel == 2)
+        cf.Spoofmac.value = cf.wan_hwaddr2.value;
+	cf.MACAssign[wan_hwaddr_sel].checked = true;
+	cf.pptp_serv_ip.value = cf.serv_ip.value;
+}
+
+function myip_update()
+{
+    var cf = document.forms[0];
+
+	if((cf.myip_1.value.length>0)&&(cf.myip_2.value.length>0)&&(cf.myip_3.value.length>0)&&(cf.myip_4.value.length>0))
+	{
+        setDisabled(false, cf.mygw_1, cf.mygw_2, cf.mygw_3, cf.mygw_4);
+    }
+    else
+    {
+        setDisabled(true, cf.mygw_1, cf.mygw_2, cf.mygw_3, cf.mygw_4);
+    } 
+}
+
+//-->
+</script>
+
+</head>
+
+<body bgcolor="#ffffff" onload="loadSettings();loadcheck();document.forms[0].elements[0].focus();goTestApply();">
+<form name="formname" method="POST" action="pptp.cgi" target="_parent"> 
+<table border="0" cellpadding="0" cellspacing="3" width="99%">
+<tr>
+ <td width="50%"><a href="javascript:loadhelp('BAS_pptp','isp')" tabindex="-1"><b>Internet Service Provider</b></a></td>
+ <td width="50%" align="right"><select name="login_type" onChange="setServer()"><option selected>PPTP</option><option>Telstra Bigpond</option><option>Other</option></select></td>
+</tr>
+
+<tr> <!-- RULE -->
+ <td colspan="2" background="liteblue.gif" height="12"> &nbsp;</td>
+</tr>
+
+<tr>
+	<td><a href="javascript:loadhelp('BAS_pptp','login')" tabindex="-1"><b>Login</b></a></td>
+	<td align="right"><input type="text" name="pptp_username" size="15" maxlength="60" value="<%46%>"></td>
+</tr>
+<tr>
+	<td><a href="javascript:loadhelp('BAS_pptp','password')" tabindex="-1"><b>Password</b></a></td>
+	<td align="right"><input type="password" name="pptp_passwd" size="15" maxlength="50" value="<%47%>"></td>
+</tr>
+<tr>
+<td width="50%" nowrap><a href="javascript:loadhelp('BAS_pptp','conn_mode')" tabindex="-1"><b>Connection Mode</b></a></td>
+<td width="50%" align="right">
+    <select name="pptp_dod" onChange="setConnMode()" size="1">
+        <option value=0>Always On</option>
+        <option value=1>Dial on Demand</option>
+        <option value=2>Manually Connect</option>
+    </select></td>
+</tr>
+<tr>
+	<td nowrap><a href="javascript:loadhelp('BAS_pptp','idletime')" tabindex="-1"><b>Idle Timeout</b></a> (In Minutes)</td>
+	<td align="right"><input type="text" class="num" name="pptp_idletime" size="3" maxlength="3" value="<%48%>"></td>
+</tr>
+
+<tr> <!-- RULE -->
+ <td colspan="2" background="liteblue.gif" height="12"> &nbsp;</td>
+</tr>
+
+<tr>
+ <td><a href="javascript:loadhelp('BAS_pptp','myip')" tabindex="-1"><b>My IP Address</b></a></td>
+ <td align="right" class="num">
+ <input type="text" name="myip_1" class="num" size="4" maxlength="3" onChange="myip_update()">.<input type="text" name="myip_2" class="num" size="4" maxlength="3" onChange="myip_update()">.<input type="text" name="myip_3" class="num" size="4" maxlength="3" onChange="myip_update()">.<input type="text" name="myip_4" class="num" size="4" maxlength="3" onChange="myip_update()"></td>
+</tr>
+<tr>
+ <td><a href="javascript:loadhelp('BAS_pptp','serverip')" tabindex="-1"><b>Server Address</b></a></td>
+ <td align="right"><input type="text" name="pptp_serv_ip" size="24" maxlength="63" value=""></td>
+</tr>
+
+<tr>
+ <td><a href="javascript:loadhelp('BAS_pptp','myip')" tabindex="-1"><b>Gateway IP Address</b></a></td>
+ <td align="right" class="num">
+ <input type="text" name="mygw_1" class="num" size="4" maxlength="3">.<input type="text" name="mygw_2" class="num" size="4" maxlength="3">.<input type="text" name="mygw_3" class="num" size="4" maxlength="3">.<input type="text" name="mygw_4" class="num" size="4" maxlength="3"></td>
+</tr>
+
+<tr>
+ <td><a href="javascript:loadhelp('BAS_pptp','id')" tabindex="-1"><b>Connection ID/Name</b></a></td>
+ <td align="right"><input type="text" name="pptp_conn_id" size="12" maxlength="63" value="<%49%>"></td>
+</tr>
+
+<tr> <!-- RULE -->
+ <td colspan="2" background="liteblue.gif" height="12"> &nbsp;</td>
+</tr>
+
+<tr>
+	<td colspan="2"><a href="javascript:loadhelp('BAS_pptp','DNSaddress')" tabindex="-1"><b>Domain Name Server (DNS) Address </b></a></td>
+</tr>
+
+<tr>
+	<td colspan="2"><input type="radio" name="DNSAssign" value="0" onClick="setDNS()"> Get Automatically From ISP</td>
+</tr>
+
+<tr>
+	<td colspan="2"><input type="radio" name="DNSAssign" value="1" onClick="setDNS()"> Use These DNS Servers</td>
+</tr>
+
+<tr>
+	<td><img src="spacer.gif" width="20" height="12" border="0">Primary DNS</td>
+	<td align="right" class="num"><input type="text" name="DAddr1" class="num" size="4" maxlength="3" onFocus="if(DisableFixedDNS) this.blur()">.<input type="text" name="DAddr2" class="num" size="4" maxlength="3" onFocus="if(DisableFixedDNS) this.blur()">.<input type="text" name="DAddr3" class="num" size="4" maxlength="3" onFocus="if(DisableFixedDNS) this.blur()">.<input type="text" name="DAddr4" class="num" size="4" maxlength="3" onFocus="if(DisableFixedDNS) this.blur()"></td>
+</tr>
+<tr>
+	<td><img src="spacer.gif" width="20" height="12" border="0"><a href="javascript:loadhelp('BAS_pptp','DNSaddress')" tabindex="-1">Secondary DNS</a></td>
+	<td align="right" class="num"><input type="text" name="PDAddr1" class="num" size="4" maxlength="3" onFocus="if(DisableFixedDNS) this.blur()">.<input type="text" name="PDAddr2" class="num" size="4" maxlength="3" onFocus="if(DisableFixedDNS) this.blur()">.<input type="text" name="PDAddr3" class="num" size="4" maxlength="3" onFocus="if(DisableFixedDNS) this.blur()">.<input type="text" name="PDAddr4" class="num" size="4" maxlength="3" onFocus="if(DisableFixedDNS) this.blur()"></td>
+</tr>
+<tr> <!-- RULE -->
+ <td colspan="2" background="liteblue.gif" height="12"> &nbsp;</td>
+</tr>
+
+<tr>
+	<td nowrap colspan="2"><a href="javascript:loadhelp('BAS_pptp','localaddress')" tabindex="-1"><b>Router MAC Address</b></a></td>
+</tr>
+<tr>
+	<td colspan="2" nowrap><input type="radio" name="MACAssign" value="0" onClick="setMAC()">Use Default Address</td>
+</tr>
+<tr>
+	<td nowrap colspan="2"><input type="radio" name="MACAssign" value="1" onClick="setMAC()">Use Computer MAC Address</td>
+</tr>
+<tr>
+	<td nowrap align="left"><input type="radio" name="MACAssign" value="2" onClick="setMAC()">Use This MAC Address</td>
+	<td align="right" class="num"><input type="text" class="num" name="Spoofmac" size="17" maxlength="17" onFocus="if(DisableFixedMAC) this.blur()"></td>
+</tr>
+
+<tr> <!-- RULE -->
+ <td colspan="2" background="liteblue.gif" height="12"> &nbsp;</td>
+</tr>
+
+<tr>
+	<td colspan="2" align="center"><div ID="buttons" onmouseover="loadhelp('BAS_pptp','buttons')">
+	<input type="SUBMIT" name="apply" value="Apply" onClick="return checkData()">
+	<input type="BUTTON" name="Cancel" value="Cancel" onClick="reset();loadSettings();">
+	<input type="SUBMIT" name="Test" value="Test" onClick="return checkData()">
+	</div></td></tr>
+</table>
+<input type="hidden" name="runtest" value="<%26%>">
+<INPUT name=pptp_user_ip type=hidden value= "<%50%>">
+<INPUT name=serv_ip type=hidden value= "<%51%>">
+<INPUT name=wan_dns_sel type=hidden value= "<%30%>">
+<INPUT name=wan_dns1_pri type=hidden value= "<%31%>">
+<INPUT name=wan_dns1_sec type=hidden value= "<%32%>">
+<INPUT name=wan_hwaddr_sel type=hidden value= "<%33%>">
+<INPUT name=wan_hwaddr_def type=hidden value= "<%34%>">
+<INPUT name=wan_hwaddr2 type=hidden value= "<%35%>">
+<INPUT name=wan_hwaddr_pc type=hidden value= "<%36%>">
+<INPUT name=pptp_gateway type=hidden value="<%52%>">
+</form>
+<p></p>
+</body>
+</html>

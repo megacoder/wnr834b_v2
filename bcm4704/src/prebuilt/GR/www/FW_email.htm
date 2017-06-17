@@ -1,0 +1,390 @@
+<html>
+<head>
+<%0%>
+<title>E-Mail</title>
+<link rel="stylesheet" href="form.css">
+<%13%>
+<script language="javascript" type="text/javascript">
+<!--
+var AlertTimeDisabled = false;
+var AlertHourDisabled = false;
+
+function OnAlertChange()
+{
+	var cf = document.forms[0];
+	var index = cf.cfAlert_Select.selectedIndex;
+	if ( (index == 0) || (index == 1) || (index == 4) )
+	{
+		cf.cfAlert_Day.selectedIndex = -1;
+		cf.cfAlert_Hour.selectedIndex= -1;
+		cf.cfAlert_Day.disabled = true;
+		cf.cfAlert_Hour.disabled = true;
+		AlertTimeDisabled = true;
+		AlertHourDisabled = true;
+	}
+	else if(index == 2) // daily
+	{
+		cf.cfAlert_Day.selectedIndex = -1;
+		cf.cfAlert_Day.disabled = true;
+		cf.cfAlert_Hour.disabled = false;
+		AlertTimeDisabled = true;
+		AlertHourDisabled = false;
+	}
+	else if(index == 3) // weekly
+	{
+		cf.cfAlert_Day.disabled = false;
+		cf.cfAlert_Hour.disabled = false;
+		AlertTimeDisabled = false;
+		AlertHourDisabled = false;
+	}
+}
+function checkData()
+{
+    var cf = document.forms[0];
+    cf.email_alert.value = "0";
+    cf.time_day.value = "";
+    cf.time_hour.value = "";
+    cf.time_type.value = "0";
+
+    if(!cf.email_notify.checked) cf.email_enable.value = 0;
+    else
+    {
+        cf.email_enable.value = 1;
+        var tmp=cf.email_smtp.value.split(".");
+        if(tmp.length < 3)
+        {
+            alert('Fehler: Ungültige Adresse für SMTP-Server!');
+            cf.email_smtp.focus();
+            return false;
+        }
+        if(cf.email_addr.value.indexOf("@", 0) == -1 ||
+           cf.email_addr.value.indexOf(".", 0) == -1)
+        {
+            alert('Fehler: Ungültige E-Mail-Adresse!');
+            cf.email_addr.focus();
+            return false;
+        }
+
+        if (cf.smtp_auth.checked)
+            cf.auth_enable.value = 1;
+        else
+            cf.auth_enable.value = 0;
+
+        if(cf.block_site.checked)
+            cf.email_alert.value = "1";
+
+        cf.time_type.value = cf.cfAlert_Select.options[cf.cfAlert_Select.selectedIndex].value;
+
+        if(cf.cfAlert_Select.selectedIndex == 2)// daily
+        {
+            if(cf.cfAlert_Hour.selectedIndex < 0)
+            {
+                alert('Bitte geben Sie den Uhrzeitbereich für den täglichen Zeitplan an.');
+                return false;
+            }
+            cf.time_hour.value = cf.cfAlert_Hour.options[cf.cfAlert_Hour.selectedIndex].value;
+        }
+
+        if(cf.cfAlert_Select.selectedIndex == 3) // weekly
+        {
+            if(cf.cfAlert_Day.selectedIndex < 0)
+            {
+                alert('Bitte geben Sie einen Wochentag für den wöchentlichen Zeitplan an.');
+                return false;
+            }
+            if(cf.cfAlert_Hour.selectedIndex < 0)
+            {
+                alert('Bitte geben Sie einen Uhrzeitbereich für den wöchentlichen Zeitplan an.');
+                return false;
+            }
+            cf.time_day.value = cf.cfAlert_Day.options[cf.cfAlert_Day.selectedIndex].value;
+            cf.time_hour.value = cf.cfAlert_Hour.options[cf.cfAlert_Hour.selectedIndex].value;
+        }
+    }
+    if (cf.adjust.checked)
+		cf.schedule_daylightadjust.value = 1;
+	else
+		cf.schedule_daylightadjust.value = 0;
+    return true;
+}
+
+function init()
+{
+    var cf = document.forms[0];
+    cf.email_notify.checked = false;
+    cf.smtp_auth.checked = false;    
+    cf.block_site.checked = false;
+    cf.cfAlert_Select.selectedIndex = -1;
+    cf.cfAlert_Day.selectedIndex = -1;
+    cf.cfAlert_Hour.selectedIndex = -1;
+    cf.adjust.checked = false;
+
+    if(cf.email_alert.value == "1")
+    {
+        cf.block_site.checked = true;
+    }
+
+    if(cf.time_type.value==1) cf.cfAlert_Select.selectedIndex=0;
+    else if(cf.time_type.value==2) cf.cfAlert_Select.selectedIndex=1;
+    else if(cf.time_type.value==3) cf.cfAlert_Select.selectedIndex=2;
+    else if(cf.time_type.value==4) cf.cfAlert_Select.selectedIndex=3;
+    else if(cf.time_type.value==0) cf.cfAlert_Select.selectedIndex=4;
+
+    if(cf.time_type.value == 0 || cf.time_type.value == 1 || cf.time_type.value == 2)
+    //none or when log full or hourly
+    {
+        cf.cfAlert_Day.disabled = true;
+        cf.cfAlert_Hour.disabled = true;
+    }
+    else if(cf.time_type.value == 3) //daily
+    {
+        cf.cfAlert_Day.disabled = true;
+        cf.cfAlert_Hour.selectedIndex = cf.time_hour.value;
+    }
+    else if(cf.time_type.value == 4) //weekly
+    {
+        cf.cfAlert_Day.selectedIndex = cf.time_day.value;
+        cf.cfAlert_Hour.selectedIndex = cf.time_hour.value;
+    }
+
+    if(cf.email_enable.value == 1) 
+    {
+        cf.email_notify.checked = true;
+        if (cf.auth_enable.value == 0)
+        {
+            cf.auth_user.disabled = true;
+            cf.auth_pwd.disabled = true;
+        }
+    }
+    else
+    {
+        cf.smtp_auth.disabled = true;
+        cf.block_site.disabled = true;
+        cf.email_smtp.disabled = true;
+        cf.email_addr.disabled = true;
+        cf.auth_user.disabled = true;
+        cf.auth_pwd.disabled = true;
+        cf.cfAlert_Select.disabled = true;
+        cf.cfAlert_Day.disabled = true;
+        cf.cfAlert_Hour.disabled = true;
+    }
+
+	if (cf.schedule_daylightadjust.value == 1)
+		cf.adjust.checked = true;
+
+    if (cf.auth_enable.value == 1)
+        cf.smtp_auth.checked = true;
+
+    if(cf.smtp_check.value != "OK")
+    {
+        alert(cf.smtp_check.value);
+        cf.smtp_check.value = "OK";
+        history.back();
+    }
+
+}
+
+function setGray()
+{
+    var cf = document.forms[0];
+
+    if(cf.email_notify.checked)
+    {
+        cf.smtp_auth.disabled = false;
+        cf.block_site.disabled = false;
+        cf.email_smtp.disabled = false;
+        cf.email_addr.disabled = false;
+        cf.auth_user.disabled = false;
+        cf.auth_pwd.disabled = false;
+        cf.cfAlert_Select.disabled = false;
+    }
+    else
+    {
+        cf.smtp_auth.disabled = true;
+        cf.block_site.disabled = true;
+        cf.email_smtp.disabled = true;
+        cf.email_addr.disabled = true;
+        cf.auth_user.disabled = true;
+        cf.auth_pwd.disabled = true;
+        cf.cfAlert_Select.disabled = true;
+        cf.cfAlert_Day.disabled = true;
+        cf.cfAlert_Hour.disabled = true;
+    }
+}
+
+function CancelAction()
+{
+    var cf = document.forms[0];
+
+    cf.result.value="cancel";
+    return true;
+}
+
+function setAuthGray()
+{
+    var cf = document.forms[0];
+
+    if(cf.smtp_auth.checked)
+    {
+        cf.auth_user.disabled = false;
+        cf.auth_pwd.disabled = false;
+    }
+    else
+    {
+        cf.auth_user.disabled = true;
+        cf.auth_pwd.disabled = true;
+    }
+}
+//-->
+</script>
+</head>
+<BODY bgColor=#ffffff onload="init();loadhelp('FW_email');document.forms[0].elements[0].focus();">
+<FORM action=fwEmail.cgi method="POST" name=formname>
+<table border="0" cellpadding="0" cellspacing="3" width="100%">
+    <tr>
+        <td colspan="2">
+            <h1>E-Mail</h1></td></tr>
+    <tr>
+        <td colspan="2" background="liteblue.gif" height="12">&nbsp; </td></tr>
+    <tr>
+        <td colspan="2"><input type="checkbox" name="email_notify" value="checkboxValue" onclick = "javascript:setGray();"><B>E-Mail-Benachrichtigung aktivieren</B></td></tr>
+    <tr>
+        <td colspan="2" background="liteblue.gif" height="12">&nbsp; </td></tr>
+    <tr>
+        <td colspan="2"><a href="javascript:loadhelp('FW_email','receive')" tabindex="-1"><B>Benachrichtigungen und Protokolle per E-Mail senden</B> </a></td></tr>
+    <tr>
+        <td nowrap>Server für den E-Mail-Versand:</td>
+        <td width="50%" align="right">
+            <input type="text" name="email_smtp" value="<%104%>" size="24" maxlength="50"></td></tr>
+    <tr>
+        <td nowrap>Mailadresse des Empfängers:</td>
+        <td width="50%" align="right">
+            <input type="text" name="email_addr" value="<%105%>" size="24" maxlength="50"></td></tr>
+
+    <tr>
+        <td colSpan=2><input type="checkbox" name="smtp_auth" onclick = "javascript:setAuthGray();">
+        <B>Mailserver erfordert Authentifizierung</B></td></tr>    
+    <tr>
+        <td>Benutzername</td>
+        <td align=right width="50%"><INPUT maxLength=64 name=auth_user size=24
+        value= "<%106%>"> </td></tr>
+    <tr>
+        <td>Passwort</td>
+        <td align=right width="50%"><INPUT type=password maxLength=64 name=auth_pwd size=24
+        value= "<%107%>"> </td></tr>
+    
+    <tr>
+        <td colspan="2" background="liteblue.gif" height="12">&nbsp; </td></tr>
+    <tr>
+        <td colspan="2"><a href="javascript:loadhelp('FW_email','alert')" tabindex="-1"><input type="checkbox"  name="block_site" value="checkboxValue"><B>Benachrichtigungen sofort senden</B></a></td></tr>
+    <tr>
+        <td colspan="2" nowrap>Bei Zugriffsversuchen auf gesperrte Seiten.</td></tr>
+    <tr>
+        <td colspan="2" background="liteblue.gif" height="12">&nbsp; </td></tr>
+    <tr>
+	    <td colspan="2" nowrap><a href="javascript:loadhelp('FW_email','schedule')" tabindex="-1"><B>Protokolle nach diesem Zeitplan senden</B></a></td></tr>
+    <tr>
+	    <td colspan="2">
+	        <select name="cfAlert_Select" size="1" onchange="OnAlertChange();">
+	            <option selected value=1>Bei vollem Protokoll</option>
+	            <option value=2>Stündlich</option>
+	            <option value=3>Täglich</option>
+	            <option value=4>Wöchentlich</option>
+	            <option value=0>Keine</option></select></td></tr>
+    <tr>
+	    <td colspan="2">Wochentag &nbsp;
+	        <select name="cfAlert_Day" size="1" onFocus="if (AlertTimeDisabled) this.blur()">
+	            <option selected value=0>Sonntag</option>
+	            <option value=1>Montag</option>
+	            <option value=2>Dienstag</option>
+	            <option value=3>Mittwoch</option>
+	            <option value=4>Donnerstag</option>
+	            <option value=5>Freitag</option>
+	            <option value=6>Samstag</option></select></td></tr>
+    <tr>
+	    <td colspan="2">Uhrzeit <select name="cfAlert_Hour" size="1" onFocus="if (AlertHourDisabled) this.blur()">
+		        <option value=0>24:00</option>
+		        <option selected value=1>1:00</option>
+		        <option value=2>2:00</option>
+		        <option value=3>3:00</option>
+		        <option value=4>4:00</option>
+		        <option value=5>5:00</option>
+		        <option value=6>6:00</option>
+		        <option value=7>7:00</option>
+		        <option value=8>8:00</option>
+		        <option value=9>9:00</option>
+		        <option value=10>10:00</option>
+		        <option value=11>11:00</option>
+		        <option value=12>12:00</option>
+		        <option value=13>13:00</option>
+		        <option value=14>14:00</option>
+		        <option value=15>15:00</option>
+		        <option value=16>16:00</option>
+		        <option value=17>17:00</option>
+		        <option value=18>18:00</option>
+		        <option value=19>19:00</option>
+		        <option value=20>20:00</option>
+		        <option value=21>21:00</option>
+		        <option value=22>22:00</option>
+		        <option value=23>23:00</option>
+		        </select>
+        </td></tr>
+    <tr>
+        <td colspan="2" background="liteblue.gif" height="12"> &nbsp;</td></tr>
+    <tr>
+        <td colspan="2"><a href="javascript:loadhelp('FW_email','timezone')" tabindex="-1"><B>Zeitzone</B></a></td></tr>
+    <tr>
+        <td colspan="2">
+            <SELECT name=time_zone size=1 >
+                <OPTION value=-12 <%108%>>(GMT-12:00) Eniwetok,Kwajalein</OPTION>
+                <OPTION value=-11 <%109%>>(GMT-11:00) Midway-Insel, Samoa</OPTION>
+                <OPTION value=-10 <%110%>>(GMT-10:00) Hawaii</OPTION>
+                <OPTION value=-9 <%111%>>(GMT-09:00) Alaska</OPTION>
+                <OPTION value=-8 <%112%>>(GMT-08:00) Pacific Time (USA/Kanada)</OPTION>
+                <OPTION value=-7 <%113%>>(GMT-07:00) Mountain Time (USA/Kanada)</OPTION>
+                <OPTION value=-6 <%114%>>(GMT-06:00) Central Time (USA/Kanada)</OPTION>
+                <OPTION value=-5 <%115%>>(GMT-05:00) Eastern Time (USA/Kanada)</OPTION>
+                <OPTION value=-4 <%116%>>(GMT-04:00) Altlantic Time (Kanada)</OPTION>
+                <OPTION value=-3 <%117%>>(GMT-03:00) Neufundland, Brasilia, Buenos Aires</OPTION>
+                <OPTION value=-2 <%118%>>(GMT-02:00) Mittelatlantik</OPTION>
+                <OPTION value=-1 <%119%>>(GMT-01:00) Azoren, Kapverdische Inseln</OPTION>
+                <OPTION value=0 <%120%>>(GMT) Greenwich Mean Time, Dublin, London</OPTION>
+                <OPTION value=1 <%121%>>(GMT+01:00) Berlin, Stockholm, Rom, Bern, Brüssel, Paris</OPTION>
+                <OPTION value=2 <%122%>>(GMT+02:00) Athen, Helsinki, Osteuropa, Israel</OPTION>
+                <OPTION value=3 <%123%>>(GMT+03:00) Bagdad, Kuwait, Nairobi, Riad, Moskau</OPTION>
+                <OPTION value=4 <%124%>>(GMT+04:00) Abu Dhabi, Maskat, Kazan, Wolgograd</OPTION>
+                <OPTION value=5 <%125%>>(GMT+05:00) Islamabad, Karatschi, Jekaterinburg</OPTION>
+                <OPTION value=6 <%126%>>(GMT+06:00) Almaty, Dhaka</OPTION>
+                <OPTION value=7 <%127%>>(GMT+07:00) Bangkok, Jakarta, Hanoi</OPTION>
+                <OPTION value=8 <%128%>>(GMT+08:00) Beijing, Hongkong, Perth, Singapur</OPTION>
+                <OPTION value=9 <%129%>>(GMT+09:00) Tokio, Osaka, Sapporo, Seoul, Jakutsk</OPTION>
+                <OPTION value=10 <%130%>>(GMT+10:00) Canberra, Melbourne, Sydney</OPTION>
+                <OPTION value=11 <%131%>>(GMT+11:00) Magadan, Salomonen, Neukaledonien</OPTION>
+                <OPTION value=12 <%132%>>(GMT+12:00) Fidschi, Kamtschatka, Auckland</OPTION></SELECT></td></tr>
+    <tr>
+        <td colspan="2">
+            <input type="checkbox" name="adjust" value="adjust">Automatisch an Sommer-/Winterzeit anpassen</td></tr>
+    <tr>
+        <td colspan="2" align="center"><BR><B>Aktuelle Uhrzeit: &nbsp; <%133%></B><BR> &nbsp; </td></tr>
+    <tr>
+        <td colspan="2" background="liteblue.gif" height="12">&nbsp; </td></tr>
+    <tr>
+	    <td colspan="2" align="center">
+	        <input type="SUBMIT" name="cfAlert_Apply" value="Übernehmen" onClick="return checkData()" >
+	        <input type="SUBMIT" name="Cancel" value="Abbrechen" onclick="CancelAction()"></td></tr>
+</table>
+<INPUT name=email_enable type=hidden value= "<%134%>">
+<INPUT name=email_alert type=hidden value= "<%135%>">
+<INPUT name=auth_enable type=hidden value= "<%136%>">
+<INPUT name=smtp_check type=hidden value= "<%137%>">
+<INPUT name=time_type type=hidden value= "<%138%>">
+<INPUT name=time_day type=hidden value= "<%139%>">
+<INPUT name=time_hour type=hidden value= "<%140%>">
+<INPUT name=schedule_daylightadjust type=hidden value= "<%141%>">
+<INPUT name=result type=hidden value= "apply">
+</form>
+<p>
+</p>
+</body>
+</html>
+

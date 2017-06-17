@@ -1,0 +1,104 @@
+#!/bin/bash
+ROOT=$(pwd)
+FILE=versions
+
+rm -f ${FILE}
+#kernel
+echo kernel >> ${FILE}
+svn info ${ROOT}/src/linux/linux | grep Changed | grep -v Author >> ${FILE}
+#nat
+echo nat fw >> ${FILE}
+svn info ${ROOT}/ap/acos/acos_nat | grep Changed | grep -v Author >> ${FILE}
+#ppp
+echo ppp >> ${FILE}
+svn info ${ROOT}/ap/gpl/ppp-2.4.4 | grep Changed | grep -v Author >> ${FILE}
+#pppoe
+echo pppoe >> ${FILE}
+svn info ${ROOT}/ap/gpl/pppoecd | grep Changed | grep -v Author >> ${FILE}
+#pptp
+echo ppptp >> ${FILE}
+svn info ${ROOT}/ap/gpl/pptp | grep Changed | grep -v Author >> ${FILE}
+#dhcpd dhcpc
+echo udhcpd udhcpc >> ${FILE}
+svn info ${ROOT}/ap/gpl/udhcpd | grep Changed | grep -v Author >> ${FILE}
+#bpa
+echo bpa >> ${FILE}
+svn info ${ROOT}/ap/gpl/bpalogin | grep Changed | grep -v Author >> ${FILE}
+#dnsmasq
+echo dnsmasq >> ${FILE}
+svn info ${ROOT}/ap/gpl/dnsmasq-2.15 | grep Changed | grep -v Author >> ${FILE}
+#ntpclient
+echo ntpclient >> ${FILE}
+svn info ${ROOT}/ap/gpl/ntpclient | grep Changed | grep -v Author >> ${FILE}
+#zebra
+echo rip >> ${FILE}
+svn info ${ROOT}/ap/gpl/zebra | grep Changed | grep -v Author >> ${FILE}
+#bpa_monitor
+echo bpa_monitor >> ${FILE}
+svn info ${ROOT}/ap/acos/bpa_monitor | grep Changed | grep -v Author >> ${FILE}
+#ddns
+echo ddns >> ${FILE}
+svn info ${ROOT}/ap/acos/ddns | grep Changed | grep -v Author >> ${FILE}
+#ftpc
+echo ftpc >> ${FILE}
+svn info ${ROOT}/ap/acos/ftpc | grep Changed | grep -v Author >> ${FILE}
+#pot
+echo pot >> ${FILE}
+svn info ${ROOT}/ap/acos/pot | grep Changed | grep -v Author >> ${FILE}
+#swresetd
+echo swresetd >> ${FILE}
+svn info ${ROOT}/ap/acos/swresetd | grep Changed | grep -v Author >> ${FILE}
+#dns_redirect
+echo dns_redirect >> ${FILE}
+svn info ${ROOT}/ap/acos/dns_redirect | grep Changed | grep -v Author >> ${FILE}
+#heartbeat
+echo heartbeat >> ${FILE}
+svn info ${ROOT}/ap/acos/heartbeat | grep Changed | grep -v Author >> ${FILE}
+#lltd
+echo lltd >> ${FILE}
+svn info ${ROOT}/ap/acos/lltd | grep Changed | grep -v Author >> ${FILE}
+#rc
+echo rc >> ${FILE}
+svn info ${ROOT}/ap/acos/rc | grep Changed | grep -v Author >> ${FILE}
+#telnet enable
+echo telnetenable >> ${FILE}
+svn info ${ROOT}/ap/acos/telnet_enable | grep Changed | grep -v Author >> ${FILE}
+#upnp
+echo upnp >> ${FILE}
+svn info ${ROOT}/ap/acos/upnp | grep Changed | grep -v Author >> ${FILE}
+#upnp_sa
+echo upnp_sa >> ${FILE}
+svn info ${ROOT}/ap/acos/upnp_sa | grep Changed | grep -v Author >> ${FILE}
+#email
+echo email >> ${FILE}
+svn info ${ROOT}/ap/acos/email | grep Changed | grep -v Author >> ${FILE}
+#timesync
+echo timesync >> ${FILE}
+svn info ${ROOT}/ap/acos/timesync | grep Changed | grep -v Author >> ${FILE}
+#wandetect
+echo wandetect >> ${FILE}
+svn info ${ROOT}/ap/acos/wandetect | grep Changed | grep -v Author >> ${FILE}
+#nvram
+echo nvram >> ${FILE}
+svn info ${ROOT}/ap/acos/nvram | grep Changed | grep -v Author >> ${FILE}
+#httpd
+echo httpd >> ${FILE}
+svn info ${ROOT}/project/acos/httpd | grep Changed | grep -v Author >> ${FILE}
+#www
+echo www >> ${FILE}
+svn info ${ROOT}/project/acos/www | grep Changed | grep -v Author >> ${FILE}
+#default
+echo default >> ${FILE}
+svn info ${ROOT}/project/acos/nvram | grep Changed | grep -v Author >> ${FILE}
+#wsc
+echo wsc >> ${FILE}
+svn info ${ROOT}/src/router/mipsel/install/wsc/Wsccmd/src/linux/bin/wsccmd | grep Changed | grep -v Author >> ${FILE}
+#sm3.0
+echo smart_wizard >> ${FILE}
+svn info ${ROOT}/ap/acos/upnp_sa | grep Changed | grep -v Author >> ${FILE}
+#layer 7 filter
+echo l7_filter >> ${FILE}
+svn info ${ROOT}/project/gpl/l7filter | grep Changed | grep -v Author >> ${FILE}
+#tc
+echo tc >> ${FILE}
+svn info ${ROOT}/ap/gpl/iproute2 | grep Changed | grep -v Author >> ${FILE}

@@ -1,0 +1,73 @@
+<html>
+<head>
+<%0%>
+<title>Routerformular</title>
+<link rel="stylesheet" href="form.css">
+<script language="javascript" type="text/javascript">
+<!-- hide script from old browsers
+var pchar = "|"; // progress char
+var maxchars = 94;
+var delay_time = 1000; // msecs
+var charcount = 0;
+
+function makeStr(strSize, fillChar)
+{
+	var temp = "";
+	for (i=0; i < strSize ; i ++)
+		temp = temp + fillChar;
+	return temp;
+}
+
+function updateProgress()
+{
+	if (charcount < maxchars)
+	{
+		charcount ++;
+		document.forms[0].progress.value = makeStr(charcount,pchar);
+		setTimeout("updateProgress()",delay_time);
+	}
+}
+
+//-->
+</script>
+</head>
+<body bgcolor="#ffffff" onLoad="updateProgress();document.forms[0].submit();">
+<form name="formname" method="POST" action="ver_write.cgi"> 
+<table border="0" cellpadding="0" cellspacing="3" width="100%">
+<tr>
+<td colspan="2">
+	<h1>Assistent für die Aktualisierung der Firmware</H1>
+</td>
+</tr>
+
+<tr> <!-- RULE -->
+ <td colspan="2" background="liteblue.gif" height="12"> &nbsp;</td>
+</tr>
+
+<tr>
+    <td colspan="2" align="center"><B>Die Router-Firmware wird aktualisiert. Bitte haben Sie etwas Geduld.</B></td>
+</tr>
+<tr>
+</tr>
+
+<tr> <!-- RULE -->
+ <td colspan="2" background="liteblue.gif" height="12"> &nbsp;</td>
+</tr>
+
+<tr>
+ <td nowrap><B><BIG>Hinweis: Die Firmware-Aktualisierung nimmt etwa 1,5 Minuten in Anspruch. <BR>Schalten Sie das Gerät nicht aus und drücken Sie nicht die Reset-Taste. </BIG></B></td>
+</tr>
+<tr>
+ <td nowrap align="center"><input type="text" name="progress" value="" style="color: blue" size="42"></td>
+</tr>
+
+<tr><td nowrap align="center"><br><img src="upload.gif" width="290" height="82" alt="" border="0"></td></tr>
+</table>
+
+<input type="hidden" name="stop" value="no">
+<input type="hidden" name="pgbarcount" value="0">
+</form>
+<p></p>
+
+</body>
+</html>

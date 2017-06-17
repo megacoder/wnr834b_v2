@@ -1,0 +1,50 @@
+<html>
+<head>
+<%2%>
+<title> Help </title> 
+<link rel="stylesheet" href="help.css">
+
+</head>
+<body bgcolor="#0099cc" >
+
+<h1>WAN Setup Help </h1> 
+<p>Using this page, you can set up a Default DMZ Server and allow the router to respond to a 'ping' from the internet. Both of these options have security issues, so use them carefully.
+</p>
+
+<a name="spi"></a>
+<p><b>Disable SPI Firewall</b> - The SPI (Stateful Packet Inpection) Firewall protects your LAN against Denial of Service attacks. This should only be disabled in special circumstances.</p>
+
+<a name="dmz"></a>
+<p><b> Default DMZ Server </b>
+<p>Specifying a Default DMZ Server allows you to set up a computer or server that is available to anyone on the Internet for services that you haven't defined. There are security issues with doing this, so only do this if you're willing to risk open access. If you do not assign a Default DMZ Server, the router discards any incoming service requests which are undefined.
+
+<p>	To assign a computer or server to be a DMZ server: 
+<ol>
+<li>Click the <i>Default DMZ Server</i> check box</li>.
+<li>Type the IP address for that server. </li>
+<li>Click <b> Apply</b>. </li>
+</ol>
+
+<hr>
+
+<a name="ping"></a>
+<p><b> Respond To Ping On Internet Port </b>
+<p>
+If you want the Router to respond to a 'Ping' from the Internet, click this check box. This can be used as a diagnostic tool. Again, like the DMZ server, this can be a security problem. You shouldn't check this box unless you have a specific reason to do so. </p>
+
+<a name="mtu"></a>
+<p><b>MTU Size</b>
+<p>The normal MTU (Maximum Transmit Unit) value for most Ethernet networks is 1500 Bytes, 1492 Bytes for PPPoE connections, or 1436 for PPTP connections. For some ISPs you may need to reduce the MTU. But this is rarely required, and should not be done unless you are sure it is necessary for your ISP connection.</p>
+
+<a name="nat"></a>
+<p><b>NAT Filtering</b>
+<p>This option determines how the router deals with inbound traffic. The Secured option provides a secured firewall to protect the PCs on LAN from attacks from the Internet, but it may cause some Internet games, point-to-point applications, or multimedia applications not to work. The Open option, on the other hand, provides a much less secured firewall, while it allows almost all Internet applications to work.</p>
+
+
+<p>
+&nbsp;
+</p>
+
+</body>
+</html>
+

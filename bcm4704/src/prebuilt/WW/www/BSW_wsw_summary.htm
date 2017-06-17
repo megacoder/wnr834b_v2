@@ -1,0 +1,101 @@
+<html>
+<head>
+<%2%>
+<title>Configuration Assistant</title>
+<link rel="stylesheet" type="text/css" href="style.css">
+<script type="text/javascript">
+<!-- hide script from old browsers
+function selectEdit(value)
+{
+	if (value == 0)
+	    document.forms[0].select.value = 0;
+	else if (value == 1)
+		document.forms[0].select.value = 1;
+	else if (value == 2)
+		document.forms[0].select.value = 2;		
+}
+
+function printPage()
+{
+    if (window.print)
+        window.print();
+    else
+        alert("Your browser doesn't support print function!");
+}
+// -->
+</script>
+</head>
+
+<body bgcolor="#ffffff" leftmargin="0" marginwidth="0" topmargin="0" marginheight="0">
+<form name="wsw_summary" action="wsw_summary.cgi" method="post">
+
+<table BORDER="0" CELLSPACING="0" CELLPADDING="5" width="100%">
+  <tr>
+   <td valign="top">
+     <h1><br>&nbsp;&nbsp;Review your network settings. </h1>
+     <p>&nbsp;&nbsp;Each of these settings can be changed by logging in to http://www.routerlogin.com</p>
+     <p>&nbsp;</p>
+     <table border="0" cellpadding="2">
+ 
+<tr>
+	<td width="50%"><b>&nbsp;&nbsp;Connection Type:</b></td>
+	<td width="50%"><%12%></td>
+</tr>    
+<tr>
+	<td width="50%"><b>&nbsp;&nbsp;Country:</b></td>
+	<td width="50%"><%398%></td>
+</tr>
+<tr>
+	<td width="50%"><b>&nbsp;&nbsp;Wireless Network Name(SSID):</b></td>
+	<td width="50%"><%399%></td>
+</tr>
+<tr>
+	<td width="50%"><b>&nbsp;&nbsp;Wireless Channel:</b></td>
+	<td width="50%"><%400%></td>
+</tr>
+<tr>
+	<td width="50%"><b>&nbsp;&nbsp;Wireless Mode:</b></td>
+	<td width="50%"><%401%></td>
+</tr>
+<tr>
+	<td width="50%"><b>&nbsp;&nbsp;Security Type:</b></td>
+	<td width="50%"><%402%></td>
+</tr>
+	<%403%>
+	<%404%>
+    <%405%>
+<!-- CA1.63_3.4
+<tr>
+	<td width="50%"><b>&nbsp;&nbsp;Admin Username(case sensitive):</b></td>
+	<td width="50%">admin</td>
+</tr> 
+<tr>
+	<td width="50%"><b>&nbsp;&nbsp;Admin Password(case sensitive):</b></td>
+	<td width="50%"><%406%></td>
+</tr> 
+-->
+     </table>
+     <p>&nbsp;</p>
+     <p>&nbsp;&nbsp;Note: Clicking the "Next" button below will apply the new wireless setting.<br>
+     &nbsp;&nbsp;Please make sure your wireless adapter uses the same settings.</p>
+     <p>&nbsp;</p>
+     <p>&nbsp;</p>
+   <td><img src="spacer.gif" width="1" height="18" border="0" alt="" /></td>
+  </tr>
+
+ <tr>
+ <td>&nbsp;&nbsp;
+ <input type="submit" name="Back" value="  <Back  " onClick="selectEdit(1)">
+ <input type="button" name="Print" value="  Print  " onClick="printPage()">
+ <input type="submit" name="Next" value="  Next>  " onClick="selectEdit(2)">
+ </td>
+ </tr> 
+ 
+</table> 
+
+<input type="hidden" name="select" value="0"> 
+</form>
+</BODY>
+
+</HTML>
+
