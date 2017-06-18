@@ -1,9 +1,0 @@
-/.cvsignore/1.1.1.1/Fri Mar  5 07:30:38 2010//
-/Makefile/1.1.1.1/Fri Mar  5 07:30:38 2010//
-/__errno_location.c/1.1.1.1/Fri Mar  5 07:30:38 2010//
-/__h_errno_location.c/1.1.1.1/Fri Mar  5 07:30:38 2010//
-/__uClibc_main.c/1.1.1.1/Fri Mar  5 07:30:38 2010//
-/errno.c/1.1.1.1/Fri Mar  5 07:30:38 2010//
-/tempname.c/1.1.1.1/Fri Mar  5 07:30:38 2010//
-/tempname.h/1.1.1.1/Fri Mar  5 07:30:38 2010//
-D

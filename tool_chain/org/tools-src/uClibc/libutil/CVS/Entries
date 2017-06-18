@@ -1,9 +1,0 @@
-/.cvsignore/1.1.1.1/Fri Mar  5 07:30:37 2010//
-/Makefile/1.1.1.1/Fri Mar  5 07:30:37 2010//
-/forkpty.c/1.1.1.1/Fri Mar  5 07:30:37 2010//
-/login.c/1.1.1.1/Fri Mar  5 07:30:37 2010//
-/login_tty.c/1.1.1.1/Fri Mar  5 07:30:37 2010//
-/logout.c/1.1.1.1/Fri Mar  5 07:30:37 2010//
-/logwtmp.c/1.1.1.1/Fri Mar  5 07:30:37 2010//
-/openpty.c/1.1.1.1/Fri Mar  5 07:30:37 2010//
-D

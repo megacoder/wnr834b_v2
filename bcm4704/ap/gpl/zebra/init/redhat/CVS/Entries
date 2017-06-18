@@ -1,9 +1,0 @@
-/bgpd.init/1.1.1.1/Fri Mar  5 07:31:05 2010//
-/ospf6d.init/1.1.1.1/Fri Mar  5 07:31:05 2010//
-/ospfd.init/1.1.1.1/Fri Mar  5 07:31:05 2010//
-/ripd.init/1.1.1.1/Fri Mar  5 07:31:05 2010//
-/ripngd.init/1.1.1.1/Fri Mar  5 07:31:05 2010//
-/zebra.init/1.1.1.1/Fri Mar  5 07:31:05 2010//
-/zebra.logrotate/1.1.1.1/Fri Mar  5 07:31:05 2010//
-/zebra.spec.in/1.1.1.1/Fri Mar  5 07:31:05 2010//
-D
